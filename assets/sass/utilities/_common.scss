@@ -1,0 +1,155 @@
+.image-scale-hover {
+  overflow: hidden;
+
+  img {
+    transition: all ease 0.4s;
+    transform: scale(1.001);
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.new-label {
+  font-size: 12px;
+  background-color: $error-color;
+  color: $white-color;
+  line-height: 1;
+  padding: 1px 5px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  position: relative;
+  top: -1px;
+}
+
+.alert-dismissible .btn-close {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.z-index-step1 {
+  position: relative;
+  z-index: 4 !important;
+}
+
+.z-index-common {
+  position: relative;
+  z-index: 3;
+}
+
+.z-index-n1 {
+  z-index: -1;
+}
+
+
+.media-body {
+  flex: 1;
+}
+
+
+.badge {
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  text-align: center;
+  background-color: $theme-color;
+  color: $white-color;
+  padding: .35em .55em;
+  border-radius: 50%;
+}
+
+
+.vs-shape1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $theme-color;
+  border-radius: 38% 38% 38% 38% / 38% 38% 38% 38%;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.info-ruler {
+  border: 1px solid rgb(224, 224, 224);
+  box-shadow: 10.5px 18.187px 10px 0px rgba(4, 4, 4, 0.05);
+  background-color: $white-color;
+  padding: 24px 70px;
+  width: max-content;
+  margin: -40px 0 0 auto;
+  position: relative;
+  z-index: 3;
+  border-radius: 9999px;
+
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    display: inline-block;
+    color: $title-color;
+    font-size: 18px;
+    margin-right: 45px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $theme-color;
+    }
+  }
+}
+
+@include hd {
+  .body-shape1.background-image {
+    background-size: 100% 100%;
+  }
+}
+
+@include md {
+  .body-shape1.background-image {
+    padding-bottom: 50px;
+  }
+
+  .info-ruler {
+    margin: 40px 0 0 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+@include sm {
+  .info-ruler {
+    padding: 25px 30px;
+    border-radius: 12px;
+
+    li {
+      display: block;
+      margin: 0 0 20px 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}

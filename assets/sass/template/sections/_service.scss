@@ -1,0 +1,405 @@
+.service-style1 {
+  text-align: center;
+  background-color: $white-color;
+  padding: 57px 50px 40px 50px;
+  transition: all ease 0.4s;
+  border-radius: 12px;
+
+  .service-icon {
+    width: 130px;
+    height: 130px;
+    z-index: 1;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 42px 0;
+  }
+
+  .service-title {
+    font-weight: 600;
+  }
+
+  .service-text {
+    margin: 0;
+    transition: all ease 0.4s;
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+
+    .service-text,
+    .service-title a {
+      color: $white-color;
+    }
+
+    .service-title a {
+      &:hover {
+        color: $theme-color;
+      }
+    }
+  }
+}
+
+.service-style2 {
+  padding: 60px 60px 55px 60px;
+  background-color: $white-color;
+  border: 1px solid #cacaca;
+  margin: -1px;
+
+  .service-icon {
+    margin: 0 0 45px 0;
+  }
+
+  .service-title {
+    font-weight: 600;
+  }
+
+  .service-text {
+    font-weight: 300;
+    color: $title-color;
+    margin: 0;
+  }
+
+  &,
+  .service-title a,
+  .service-text,
+  .service-icon img {
+    transition: all ease 0.4s;
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+    border-color: transparent;
+
+    .service-title a,
+    .service-text {
+      color: $white-color;
+    }
+
+    .service-icon {
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    .service-title a {
+      &:hover {
+        color: $theme-color;
+      }
+    }
+  }
+}
+
+.service-style3 {
+  text-align: center;
+  max-width: 320px;
+  margin: 0 auto 30px auto;
+
+  .service-icon {
+    width: var(--icon-size, 135px);
+    height: var(--icon-size, 135px);
+    line-height: var(--icon-size, 135px);
+    margin: 23px auto 53px auto;
+    text-align: center;
+    border-radius: 38% 38% 38% 38% / 38% 38% 38% 38%;
+    transform: rotate(45deg);
+    position: relative;
+
+    img {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .icon-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $white-color;
+    border-radius: inherit;
+  }
+
+  .icon-shape {
+    position: absolute;
+    top: var(--shape-extra, -15px);
+    right: var(--shape-extra, -15px);
+    bottom: var(--shape-extra, -15px);
+    left: var(--shape-extra, -15px);
+    background-image: repeating-linear-gradient(90deg,
+        $theme-color,
+        $theme-color 6px,
+        #ffe2d8 6px,
+        #ffe2d8 12px
+        /* determines size */
+      );
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  .service-title {
+    margin: 0 0 10px 0;
+  }
+
+  .service-text {
+    margin: 0 0 30px 0;
+    color: #74787c;
+  }
+
+
+}
+
+.service-wrap1 {
+  position: relative;
+  z-index: 1;
+
+  .row {
+    --bs-gutter-y: 50px;
+  }
+
+  .clearfix {
+    margin: 0;
+  }
+}
+
+.service-shape1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 35% 35% 35% 35% / 35% 35% 35% 35%;
+
+  .shape-img {
+    overflow: hidden;
+    border-radius: inherit;
+  }
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #bcbcbc;
+    @extend .ripple-animation2;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  &:after {
+    animation-delay: 2.6s;
+  }
+
+  img {
+    transform: rotate(-45deg) scale(1.16);
+  }
+}
+
+.service-box-list {
+  background-color: #f5f6f9;
+  padding: 50px 60px 60px 60px;
+  max-width: 555px;
+  margin: 0 0 30px auto;
+
+  .service-box-title {
+    margin: 0 0 30px 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    border-bottom: 1px solid #d1d1d1;
+    font-size: 18px;
+    padding: 0 0 23px 45px;
+    margin: 0 0 25px 0;
+    position: relative;
+
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    i:first-child {
+      color: $theme-color;
+      font-size: 24px;
+      position: absolute;
+      left: 5px;
+      top: 1px;
+    }
+  }
+}
+
+.service-middle-img {
+  margin: 30px 0 80px 0;
+}
+
+
+.service-counter {
+  border: 1px solid #ddd;
+  padding: 50px 60px 40px 60px;
+  transition: all ease 0.4s;
+
+  &__icon {
+    margin: 0 0 30px 0;
+    
+    img {
+      transition: all ease 0.4s;
+    }
+  }
+
+  &__number {
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 1;
+    color: $theme-color;
+    line-height: 1;
+    transition: all ease 0.4s;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+    transition: all ease 0.4s;
+  }
+
+  &.active,
+  &:hover {
+    background-color: $secondary-color;
+    border-color: transparent;
+
+    .service-counter {
+      &__icon {
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+
+      &__text {
+        color: $white-color;
+      }
+    }
+  }
+}
+
+.service-counter-area {
+  margin: 50px 0 63px 0;
+}
+
+@include ml {
+  .service-style1 {
+    padding: 57px 35px 40px 35px;
+  }
+}
+
+@include lg {
+  .service-style1 {
+    padding: 42px 25px 30px 25px;
+
+    .service-icon {
+      width: 110px;
+      height: 110px;
+      margin: 0 0 22px 0;
+    }
+  }
+
+  .service-box-list {
+    padding: 40px 35px 50px 35px;
+    max-width: 100%;
+  }
+
+  .service-middle-img {
+    margin: 20px 0 60px 0;
+  }
+
+  .service-counter {
+    padding: 25px 35px 25px 35px;
+
+    &__number {
+      font-size: 48px;
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  .service-counter-area {
+    margin: 40px 0 40px 0;
+  }
+
+  .service-middle-img {
+    margin: 20px 0 35px 0;
+  }
+
+
+  .service-style2 {
+    padding: 45px 30px 40px 30px;
+
+    .service-title {
+      font-size: 20px;
+    }
+
+    .service-icon {
+      margin: 0px 0 20px 0;
+    }
+  }
+}
+
+@include md {
+  .service-wrap1 .row {
+    --bs-gutter-y: 1.5rem;
+  }
+
+  .service-shape1 {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+    margin: 80px auto 80px auto;
+    max-width: 80%;
+  }
+
+  .service-style3 {
+    --shape-extra: -10px;
+    --icon-size: 100px;
+
+    .service-icon {
+      margin: 23px auto 40px auto;
+    }
+
+    .service-icon {
+      img {
+        max-width: 50px;
+      }
+    }
+  }
+
+  .service-counter {
+    padding: 25px 20px 25px 20px;
+  }
+
+  .service-box-list {
+    padding: 40px 20px 50px 20px;
+  }
+}
+
+
+@include sm {
+  .service-shape1 {
+    margin: 0 auto 40px auto;
+    max-width: 80%;
+    transform: rotate(0);
+
+    img {
+      transform: none;
+    }
+  }
+}

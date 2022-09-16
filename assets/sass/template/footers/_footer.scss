@@ -1,0 +1,106 @@
+.widget-area {
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+.copyright-wrap {
+  text-align: center;  
+  padding: 40px 0;
+  background-color: #001458;
+}
+
+.copyright-text {
+  margin: 0;
+  font-size: 14px;
+  color: $white-color;
+
+  a {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+
+    &:hover {
+      color: $theme-color;
+    }
+  }
+}
+
+
+.footer-layout1 {
+  background-color: $secondary-color;
+  --body-color: #fff;
+  --title-color: #fff;
+
+  .vs-btn {
+    &:hover {
+      color: #000000;
+    }
+  }
+}
+
+.footer-layout2 {
+  margin-top: 50px;
+  
+  .widget-area {
+    max-width: 1450px;
+    margin: 0 auto 0 auto;
+    padding: 70px 0 30px 0;
+    background-color: $white-color;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-top {
+    padding-bottom: 390px;
+    margin-bottom: -290px;
+  }
+
+  .copyright-wrap {
+    margin-top: -138px;
+    padding-top: 181px;
+    background-color: $theme-color;
+  }
+
+  .copyright-text a:hover {
+    color: $secondary-color;
+  }
+}
+
+.footer-layout3 {
+  .widget-area {
+    padding-bottom: 65px;
+  }
+
+  .copyright-wrap {
+    padding: 36px 0;
+    background-color: $smoke-color;
+  }
+  
+  .copyright-text {
+    color: $title-color;
+
+    a {
+      color: $theme-color;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+@include md {
+  .footer-layout1 {
+    .widget-area {
+      padding-top: 80px;
+      padding-bottom: 0;
+    }
+  }
+
+  .footer-layout2 {
+    .footer-top {
+      padding-bottom: 80px;
+      margin-bottom: 0;
+    }
+  }
+}

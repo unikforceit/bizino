@@ -1,0 +1,130 @@
+.breadcumb-menu {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  min-width: 275px;
+  list-style-type: none;
+  background-color: $secondary-color;
+  padding: 27px 0 27px 30px;
+  position: relative;
+  border-radius: 7px 0 0 7px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    top: 0;
+    width: 99999px;
+    background-color: inherit;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 23px;
+    list-style: none;
+    position: relative;
+
+    &:after {
+      content: '|';
+      position: relative;
+      margin-left: 28px;
+      font-weight: 400;
+      font-size: 12px;
+      opacity: 0.7;
+      top: -2px;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      margin-right: 0;
+      text-decoration: underline;
+
+      &:after {
+        display: none;
+      }
+
+    }
+  }
+
+  li,
+  a,
+  span {
+    word-break: break-word;
+    white-space: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: $white-color;
+    font-family: $title-font;
+  }
+
+  a:hover {
+    color: $theme-color;
+  }
+}
+
+
+.breadcumb-menu-wrap {
+  min-height: 81px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  margin: 20px 0 0 0;
+}
+
+.breadcumb-title {
+  color: $white-color;
+  margin: -0.1em 0 -0.1em 0;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.breadcumb-wrapper {
+  padding-top: 115px;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+
+
+@include xl {
+  .breadcumb-title {
+    font-size: 60px;
+  }
+}
+
+@include lg {
+  .breadcumb-title {
+    font-size: 40px;
+  }
+}
+
+@include md {
+  .breadcumb-wrapper {
+    padding-top: 55px;
+    padding-bottom: 0px;
+    text-align: center;
+  }
+
+
+  .breadcumb-menu-wrap {
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .breadcumb-menu {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 7px 7px 0 0;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .breadcumb-title {
+    font-size: 36px;
+  }
+}

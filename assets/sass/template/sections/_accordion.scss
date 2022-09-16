@@ -1,0 +1,99 @@
+.accordion-style1 {
+  margin: 0 0 30px 0;
+  text-align: left;
+
+  .accordion-collapse {
+    border: none;
+  }
+
+  .accordion-item {
+    border: 1px solid transparent;
+    border-radius: 12px;
+    margin: 0 0 20px 0;
+    box-shadow: none;
+    transition: all ease 0.4s;
+
+    &:first-of-type {
+      .accordion-button {
+        border-radius: 12px;
+      }
+    }
+
+    &.active {
+      border-color: #e0e0e0;
+      box-shadow: 10px 10px 10px 0px rgba(4, 4, 4, 0.05);
+    }
+  }
+
+  .accordion-button {
+    border: none;
+    background-color: $smoke-color;
+    color: $title-color;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 19px 35px;
+    text-align: left;
+    border-radius: 12px;
+    margin: -1px;
+    width: calc(100% + 2px);
+    transition: all ease 0.4s;
+
+    &:after {
+      content: '\f0d7';
+      position: absolute;
+      right: 20px;
+      font-family: $icon-font;
+      background-image: none;
+      width: 40px;
+      height: 40px;
+      line-height: 38px;
+      text-align: center;
+      background-color: $white-color;
+      border: 2px solid #e0e0e0;
+      border-radius: 50%;
+    }
+
+    &:hover,
+    &:not(.collapsed) {
+      background-color: $secondary-color;
+      color: $white-color;
+
+      &:after {
+        background-color: $theme-color;
+        color: $white-color;
+        border-color: transparent;
+      }
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .accordion-item:last-of-type .accordion-button.collapsed,
+  .accordion-item:last-of-type .accordion-collapse {
+    border-radius: 12px;
+  }
+
+  .accordion-body {
+    padding: 25px 35px 8px 35px;
+
+    p {
+      line-height: 28px;
+    }
+  }
+}
+
+
+@include sm {
+  .accordion-style1 {
+    .accordion-button {
+      font-size: 16px;
+      padding: 15px 50px 15px 20px;
+    }
+
+    .accordion-body {
+      padding: 25px 20px 8px 20px;
+    }
+  }
+}

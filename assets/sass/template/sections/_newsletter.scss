@@ -1,0 +1,152 @@
+.newsletter-style1 {
+  .newsletter-icon {
+    width: 190px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -40px auto 12px auto;
+    background-color: $secondary-color;
+    color: $white-color;
+    font-size: 60px;
+    border-radius: 37% 37% 37% 37% / 37% 37% 37% 37%;
+    transform: rotate(45deg);
+
+    i {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .newsletter-title {
+    color: $white-color;
+    margin: 0 0 5px 0;
+  }
+
+  .newsletter-text {
+    color: $white-color;
+    font-size: 18px;
+    margin: 0 0 36px 0;
+  }
+
+  .form-group {
+    margin: 0;
+  }
+
+  input {
+    border: 2px solid $white-color;
+    background-color: transparent;
+    color: $white-color;
+    height: 86px;
+    padding: 0 50px 0 40px;
+    border-radius: 9999px;
+
+    @include inputPlaceholder {
+      color: $white-color;
+      padding: 0;
+    }
+  }
+
+  .vs-btn {
+    width: 190px;
+    height: 60px;
+    padding: 0;
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    text-transform: uppercase;
+  }
+}
+
+.newsletter-bg1 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 1650px;
+  height: 434px;
+}
+
+
+.newsletter-style2 {
+  .form-group {
+    display: flex;
+    margin: 0;
+  }
+
+  .form-control {
+    flex: 1;
+    height: 80px;
+    color: $title-color;
+    font-size: 16px;
+    color: #070707;
+    border: none;
+    padding: 0 40px 0 40px;
+    border-radius: 9999px;
+    margin-right: 15px;
+
+    @include inputPlaceholder {
+      color: $title-color;
+    }
+  }
+}
+
+.newsletter-inner1 {
+  padding: 100px 0 0 43px;
+}
+
+
+@include hd {
+  .newsletter-bg1 {
+    max-width: 90%;
+  }
+}
+
+@include lg {
+  .newsletter-inner1 {
+    padding: 100px 0 60px 0;
+
+    .form-group {
+      display: block;
+
+      input {
+        height: 67px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .newsletter-bg1 {
+    height: calc(100% - 40px);
+  }
+}
+
+@include md {
+  .newsletter-inner1 {
+    padding: 40px 0 60px 0;
+  }
+}
+
+@include sm {
+  .newsletter-style1 {
+    input {
+      height: 50px;
+    }
+
+    .vs-btn {
+      position: relative;
+      top: 0;
+      right: 0;
+      margin: 20px 0 0 0;
+    }
+
+    .newsletter-title {
+      font-size: 30px;
+    }
+
+    .newsletter-icon {
+      width: 140px;
+      height: 140px;
+      font-size: 50px;
+    }
+  }
+}

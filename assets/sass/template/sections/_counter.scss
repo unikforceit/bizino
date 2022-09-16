@@ -1,0 +1,77 @@
+.vs-counter {
+  text-align: center;
+  padding: 93px 0;
+
+  @media (min-width: $md) {
+    &:nth-child(even) {
+      background-color: rgba(#ffffff, 0.06);
+    }
+  }
+
+  @media (min-width: $sm) and (max-width: $md) {
+
+    &:nth-child(3),
+    &:nth-child(2) {
+      background-color: rgba(#ffffff, 0.06);
+    }
+  }
+
+  @include sm {
+    &:nth-child(even) {
+      background-color: rgba(#ffffff, 0.06);
+    }
+  }
+
+  &__number {
+    color: $white-color;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 3px 0;
+
+    .amount {
+      font-size: 68.5px;
+    }
+
+    .quora {
+      font-size: 38px;
+      vertical-align: top;
+      text-transform: uppercase;
+      position: relative;
+      top: 1px;
+    }
+  }
+
+
+  &__text {
+    color: #c3d0ff;
+    margin: 0;
+  }
+
+}
+
+
+@include lg {
+  .vs-counter {
+    padding: 60px 0;
+
+    &__number {
+      .amount {
+        font-size: 40px;
+      }
+
+      .quora {
+        font-size: 24px;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+}
+
+@include md {
+  .vs-counter {
+    padding: 40px 0;
+  }
+}
