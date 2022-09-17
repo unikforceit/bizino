@@ -47,7 +47,7 @@
                 $breadcrumb_img = bizino_opt('bizino_allHeader_bg', 'url');
                 $def_breadcrumb = '';
             }else{
-                $breadcrumb_img = get_template_directory_uri() . "/assets/img/header-bg-1-1.jpg";
+                $breadcrumb_img = '';
                 $def_breadcrumb = 'bredacrumb-default';
             }
             echo '<!-- Page title -->';
@@ -133,11 +133,11 @@
             $breadcrumb_img = bizino_opt('bizino_allHeader_bg', 'url');
             $def_breadcrumb = '';
         }else{
-            $breadcrumb_img = get_template_directory_uri() . "/assets/img/header-bg-1-1.jpg";
+            $breadcrumb_img = '';
             $def_breadcrumb = 'bredacrumb-default';
         }
         echo '<!-- Page title -->';
-        echo '<div class="breadcumb-wrapper '.esc_attr($def_breadcrumb).'" data-bg-src="'.esc_url($breadcrumb_img).'">';
+        echo '<div class="breadcumb-wrapper '.esc_attr($def_breadcrumb).'">';
             echo '<div class="container z-index-common">';
                 echo '<div class="breadcumb-content text-center">';
                     if( class_exists( 'ReduxFramework' )  ){
@@ -307,6 +307,7 @@
                             )
                         );
                     }
+                    echo '</div>';
                 echo '</div>';
             echo '</div>';
         echo '</div>';

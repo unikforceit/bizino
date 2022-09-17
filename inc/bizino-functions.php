@@ -410,7 +410,7 @@ function bizino_global_header_option() {
     if( class_exists( 'ReduxFramework' ) ){
         $bizino_show_header_topbar = bizino_opt( 'bizino_header_topbar_switcher' );
         $bizino_cart_show          = bizino_opt( 'bizino_header_cart_icon_switcher' );
-
+        $breadcrumb_img = bizino_opt('bizino_allHeader_bg', 'url');
         echo '<!--=======================Mobile Menu======================= -->';
         echo '<div class="vs-menu-wrapper">';
             echo '<div class="vs-menu-area text-center">';
@@ -515,6 +515,7 @@ function bizino_global_header_option() {
             echo '</div>';
         echo '</header>';
     }else{
+            $breadcrumb_img = get_template_directory_uri() . "/assets/img/header-bg-1-1.jpg";
         echo '<!--=======================Mobile Menu======================= -->';
         echo '<div class="vs-menu-wrapper">';
             echo '<div class="vs-menu-area text-center">';
@@ -534,6 +535,7 @@ function bizino_global_header_option() {
             echo '</div>';
         echo '</div>';
         echo '<!--=============Header Area=============-->';
+        echo '<div data-bg-src="'.esc_url($breadcrumb_img).'">';
         echo '<header class="vs-header header-layout1 default-header">';
             echo '<div class="sticky-wrapper">';
                 echo '<div class="sticky-active">';

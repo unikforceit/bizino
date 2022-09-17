@@ -63,7 +63,7 @@
         'title_reply_after'     => '</h3></div>',
         'comment_notes_before'  => '<p class="text-theme mb-4">'.esc_html__('Your email address will not be published. Required fields are marked *','bizino').'</p>',
         'logged_in_as'          => '<p class="logged-in-as mb-4 pb-2">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>','bizino' ), admin_url( 'profile.php' ), esc_attr( $user_identity ), wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
-        'class_submit'          => 'vs-btn style2',
+        'class_submit'          => 'vs-btn',
         'submit_field'          => '<div class="row"><div class="col-12 form-group mb-0">%1$s %2$s</div></div>',
     	'submit_button'         => '<button type="submit" name="%1$s" id="%2$s" class="%3$s">'.esc_html__('Post Comment','bizino').'</button>',
     	'fields'                => $fields,

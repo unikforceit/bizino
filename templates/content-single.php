@@ -114,7 +114,7 @@
         * @Hooked bizino_blog_details_post_navigation_cb 10
         *
         */
-        do_action( 'bizino_blog_details_post_navigation' );
+        //do_action( 'bizino_blog_details_post_navigation' );
 
         /**
         *
