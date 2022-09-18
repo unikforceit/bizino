@@ -319,14 +319,15 @@
                     }
                 }
             } else {
-                echo '<div class="copyright-wrap bg-theme">';
-                    echo '<div class="container">';
-                            echo '<div class="col-lg-auto text-center">';
-                                echo '<p class="mb-0 text-white">'.sprintf( 'Copyright <i class="fal fa-copyright"></i> %s <a href="%s">%s</a> All Rights Reserved by <a href="%s">%s</a>',date('Y'),esc_url('#'),__( 'Bizino.','bizino' ),esc_url('#'),__( 'Vecuro', 'bizino' ) ).'</p>';
-                            echo '</div>';
-                        echo '</div>';
-                    echo '</div>';
-                echo '</div>';
+                echo '<div class="copyright-wrap">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-auto">
+                                    <p class="copyright-text">'.sprintf( 'Copyright <i class="fal fa-copyright"></i> %s <a href="%s">%s</a> All Rights Reserved by <a href="%s">%s</a>',date('Y'),esc_url('#'),__( 'Bizino.','bizino' ),esc_url('#'),__( 'Vecuro', 'bizino' ) ).'</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
             }
 
         }
