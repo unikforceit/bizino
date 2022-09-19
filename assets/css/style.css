@@ -533,31 +533,6 @@ ul.wp-block-latest-posts li {
   margin: 15px 0;
 }
 
-.wp-block-search {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-.wp-block-search .wp-block-search__input {
-  width: 100%;
-  max-width: calc(100% - 120px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  height: 50px;
-  padding-left: 20px;
-}
-.wp-block-search .wp-block-search__button {
-  margin: 0;
-  width: 120px;
-  border: none;
-  height: 50px;
-  color: #fff;
-  background-color: var(--theme-color);
-}
-.wp-block-search .wp-block-search__button:hover {
-  background-color: var(--title-color);
-  opacity: 0.8;
-}
-
 ul.wp-block-rss a {
   color: inherit;
 }
@@ -785,10 +760,6 @@ ul.wp-block-rss a {
   }
 }
 @media (max-width: 768px) {
-  .wp-block-search .wp-block-search__input {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
   .wp-block-latest-comments {
     padding-left: 10px;
   }
@@ -2826,14 +2797,15 @@ a.text-theme:hover,
   border-radius: 7px;
 }
 .widget select,
-.widget input {
+.widget input,
+.wp-block-search .wp-block-search__input{
   height: 60px;
   border: none;
   background-color: var(--input-bg, #ecf0fb);
   border-radius: 9999px;
 }
 
-.widget_title {
+.widget_title, .widget_block label {
   position: relative;
   font-size: 20px;
   font-weight: 700;
@@ -2843,13 +2815,16 @@ a.text-theme:hover,
   text-transform: uppercase;
 }
 
-.widget .search-form {
+.widget .search-form, .wp-block-search__inside-wrapper {
   position: relative;
 }
-.widget .search-form input {
+.widget .search-form input, .wp-block-search .wp-block-search__input {
   padding-right: 70px;
 }
-.widget .search-form button {
+.wp-block-search__input {
+  padding: 0 30px 0 28px;
+}
+.widget .search-form button, .wp-block-search .wp-block-search__button {
   width: 40px;
   height: 40px;
   text-align: center;
@@ -2862,7 +2837,20 @@ a.text-theme:hover,
   top: 10px;
   border-radius: 50%;
 }
-.widget .search-form button:hover {
+
+.wp-block-search .wp-block-search__button {
+  font-size: 0;
+}
+
+.wp-block-search__button:before {
+  content: "\f002";
+  font-family: Font Awesome\ 5 Pro;
+  font-size: 15px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.widget .search-form button:hover, .wp-block-search .wp-block-search__button:hover {
   background-color: var(--theme-color);
   color: var(--white-color);
 }
