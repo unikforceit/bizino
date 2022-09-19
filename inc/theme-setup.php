@@ -78,11 +78,6 @@ if ( ! function_exists( 'bizino_setup' ) ){
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
-        // support woocommerce
-        add_theme_support( 'woocommerce' );
-        add_theme_support( 'wc-product-gallery-zoom' );
-        add_theme_support( 'wc-product-gallery-slider' );
-
 	}
 }
 add_action( 'after_setup_theme', 'bizino_setup' );

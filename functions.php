@@ -26,12 +26,6 @@ require_once BIZINO_DIR_PATH_INC . 'theme-setup.php';
 //essential scripts
 require_once BIZINO_DIR_PATH_INC . 'essential-scripts.php';
 
-// Woo Hooks
-require_once BIZINO_DIR_PATH_INC . 'woo-hooks/bizino-woo-hooks.php';
-
-// Woo Hooks Functions
-require_once BIZINO_DIR_PATH_INC . 'woo-hooks/bizino-woo-hooks-functions.php';
-
 // plugin activation
 require_once BIZINO_DIR_PATH_FRAM . 'plugins-activation/bizino-active-plugins.php';
 

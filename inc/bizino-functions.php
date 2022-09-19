@@ -336,71 +336,49 @@ function bizino_footer_global_option(){
         'b'         => array(),
     );
 
-    echo '<footer class="footer-wrapper footer-layout1 bg-dark">';
+    echo '<footer class="footer-wrapper footer-layout1" data-bg-src="'.get_template_directory_uri().'/assets/img/footer-bg-1-1.jpg">';
         echo '<div class="widget-area">';
             echo '<div class="container">';
                 if( ( is_active_sidebar( 'bizino-footer-1' ) || is_active_sidebar( 'bizino-footer-2' ) || is_active_sidebar( 'bizino-footer-3' ) || is_active_sidebar( 'bizino-footer-4' ) ) ) :
                     echo '<div class="row justify-content-between">';
                         if( is_active_sidebar( 'bizino-footer-1' ) ) :
-                            echo '<div class="col-md-12 col-lg-4">';
+                            echo '<div class="col-lg-auto col-xl-4">';
                                 dynamic_sidebar( 'bizino-footer-1' );
                             echo '</div>';
                         endif;
 
                         if( is_active_sidebar( 'bizino-footer-2' ) ) :
-                            echo '<div class="col-md-6 col-lg-4 col-xl-3">';
+                            echo '<div class="col-lg-auto col-xl-4">';
                                 dynamic_sidebar( 'bizino-footer-2' );
                             echo '</div>';
                         endif;
 
                         if( is_active_sidebar( 'bizino-footer-3' ) ) :
-                            echo '<div class="col-md-6 col-lg-4 col-xl-3">';
+                            echo '<div class="col-lg-auto col-xl-4">';
                                 dynamic_sidebar( 'bizino-footer-3' );
                             echo '</div>';
                         endif;
                     echo '</div> ';
                 endif;
-                if( $bizino_footer_gallery_active ){
-                    $bizino_gallery_image = bizino_opt( 'bizino_gallery_footer_widget' );
-                    if( !empty( $bizino_gallery_image ) && isset( $bizino_gallery_image ) ){
-                        echo '<div class="footer-instagram pt-30" data-pos-for=".copyright-wrap" data-sec-pos="bottom-half">';
-                            echo '<div class="row instagram-footer vs-carousel">';
-                                foreach( $bizino_gallery_image as $single_image ){
-                                    echo '<div class="col-md-2">';
-                                        echo '<div class="gallery-thumb">';
-                                            echo bizino_img_tag( array(
-                                                'url'   => esc_url( $single_image['image'] ),
-                                                'class' => 'w-100'
-                                            ) );
-                                            echo '<a href="'.esc_url( $single_image['image'] ).'" class="icon-thumb popup-image"><i class="fab fa-instagram"></i></a>';
-                                        echo '</div>';
-                                    echo '</div>';
-                                }
-                            echo '</div>';
-                        echo '</div>';
-                    }
-                }
             echo '</div>';
         echo '</div>';
         if( $bizino_footer_bottom_active == '1' ){
-            echo '<div class="copyright-wrap bg-theme">';
-                echo '<div class="container">';
-                    echo '<div class="row align-items-center justify-content-between">';
-                        echo '<div class="col-lg-auto text-center text-lg-end">';
+            echo '<div class="copyright-wrap">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-auto">';
                             if( ! empty( bizino_opt( 'bizino_copyright_text' ) ) ){
-                                echo '<p class="mb-0 text-white">'.wp_kses( bizino_opt( 'bizino_copyright_text' ), $allowhtml ).'</p>';
+                                echo '<p class="copyright-text">'.wp_kses( bizino_opt( 'bizino_copyright_text' ), $allowhtml ).'</p>';
                             }
-                        echo '</div>';
-
-                        echo '<div class="col-auto d-none d-lg-block">';
-                            echo '<div class="vs-social">';
-                                bizino_social_icon();
-                            echo '</div>';
-                        echo '</div>';
-
-                    echo '</div>';
-                echo '</div>';
-            echo '</div>';
+                            echo '</div>
+                            <div class="col-auto d-none d-md-block">
+                                <div class="header-social">';
+                                    bizino_social_icon();
+                                echo '</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>';
         }
     echo '</footer>';
 }
@@ -411,6 +389,8 @@ function bizino_global_header_option() {
         $bizino_show_header_topbar = bizino_opt( 'bizino_header_topbar_switcher' );
         $bizino_cart_show          = bizino_opt( 'bizino_header_cart_icon_switcher' );
         $breadcrumb_img = bizino_opt('bizino_allHeader_bg', 'url');
+
+        $breadcrumb_bg = !empty($breadcrumb_img) ? $breadcrumb_img : get_template_directory_uri() . "/assets/img/header-bg-1-1.jpg";
         echo '<!--=======================Mobile Menu======================= -->';
         echo '<div class="vs-menu-wrapper">';
             echo '<div class="vs-menu-area text-center">';
@@ -429,7 +409,7 @@ function bizino_global_header_option() {
                 echo '</div>';
             echo '</div>';
         echo '</div>';
-
+        echo '<div data-bg-src="'.esc_url($breadcrumb_bg).'">';
         echo '<!--===================== Header Area =====================-->';
         echo '<header class="vs-header header-layout1">';
             if( $bizino_show_header_topbar ){
@@ -496,11 +476,6 @@ function bizino_global_header_option() {
                                 echo '</div>';
                                 echo '<div class="col-5 col-sm-auto order-2 order-sm-3 text-end">';
                                     echo '<div class="header-btn">';
-                                        if( class_exists( 'woocommerce' ) && $bizino_cart_show ){
-                                        $count = WC()->cart->cart_contents_count;
-                                        echo '<a href="#" class="cart-icon me-4 me-lg-3 mr-xl-0 has-badge sideMenuToggler"><i class="fal fa-shopping-cart"></i><span class="badge">'.esc_html( $count ).'</span></a>';
-                                        }
-
                                         if( ! empty( bizino_opt( 'bizino_btn_text' ) ) ){
                                         echo '<a href="'.esc_url(bizino_opt( 'bizino_btn_url' )).'" class="vs-btn d-none d-xl-inline-block">'.esc_html(bizino_opt( 'bizino_btn_text' )).'</a>';
                                         }
@@ -515,7 +490,8 @@ function bizino_global_header_option() {
             echo '</div>';
         echo '</header>';
     }else{
-            $breadcrumb_img = get_template_directory_uri() . "/assets/img/header-bg-1-1.jpg";
+        $breadcrumb_bg = !empty($breadcrumb_img) ? $breadcrumb_img : get_template_directory_uri() . "/assets/img/header-bg-1-1.jpg";
+
         echo '<!--=======================Mobile Menu======================= -->';
         echo '<div class="vs-menu-wrapper">';
             echo '<div class="vs-menu-area text-center">';
@@ -535,7 +511,7 @@ function bizino_global_header_option() {
             echo '</div>';
         echo '</div>';
         echo '<!--=============Header Area=============-->';
-        echo '<div data-bg-src="'.esc_url($breadcrumb_img).'">';
+        echo '<div data-bg-src="'.esc_url($breadcrumb_bg).'">';
         echo '<header class="vs-header header-layout1 default-header">';
             echo '<div class="sticky-wrapper">';
                 echo '<div class="sticky-active">';

@@ -83,26 +83,6 @@ function bizino_register_required_plugins() {
             'required'  => true,
         ),
         array(
-            'name'      => esc_html__( 'WooCommerce', 'bizino' ),
-            'slug'      => 'woocommerce',
-            'version'   => '',
-            'required'  => true,
-        ),
-
-        array(
-            'name'      => esc_html__( 'TI WooCommerce Wishlist', 'bizino' ),
-            'slug'      => 'ti-woocommerce-wishlist',
-            'version'   => '',
-            'required'  => true,
-        ),
-        array(
-            'name'      => esc_html__( 'WPC Smart Quick View for WooCommerce', 'bizino' ),
-            'slug'      => 'woo-smart-quick-view',
-            'version'   => '',
-            'required'  => true,
-        ),
-
-        array(
             'name'      => esc_html__( 'Max Mega Menu', 'bizino' ),
             'slug'      => 'megamenu',
             'version'   => '',
