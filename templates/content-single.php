@@ -13,7 +13,7 @@
     }
 
     ?>
-    <div <?php post_class(); ?> >
+    <div <?php post_class('vs-blog blog-single'); ?> >
     <?php
         if( class_exists('ReduxFramework') ) {
             $bizino_post_details_title_position = bizino_opt('bizino_post_details_title_position');
@@ -102,8 +102,7 @@
 
                     echo '</div>';
                 echo '</div>';  
-            } 
-        echo '</div>'; 
+            }
 
         /**
         *

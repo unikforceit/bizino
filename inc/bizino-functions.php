@@ -261,18 +261,15 @@ function bizino_comment_callback( $comment, $args, $depth ) {
             ?>
             <!-- Comment Content -->
             <div class="comment-content">
-                <h4 class="name h4"><?php echo esc_html( ucwords( get_comment_author() ) ); ?></h4>
                 <span class="commented-on"><i class="fal fa-calendar-alt"></i> <?php printf( esc_html__('%1$s', 'bizino'), get_comment_date() ); ?> </span>
-
+                <h4 class="name h4"><?php echo esc_html( ucwords( get_comment_author() ) ); ?></h4>
                 <?php comment_text(); ?>
                 <div class="reply_and_edit">
                     <?php
-                        $reply_text = '<i class="fal fa-reply"></i>'.esc_html__( 'Reply', 'bizino' ).'';
-                        $edit_reply_text = '<i class="far fa-pencil-alt"></i>'.esc_html__( 'Edit', 'bizino' ).'';
+                        $reply_text = esc_html__( 'Reply', 'bizino' );
+                        //$edit_reply_text = '<i class="far fa-pencil-alt"></i>'.esc_html__( 'Edit', 'bizino' ).'';
                         comment_reply_link(array_merge( $args, array( 'add_below' => $add_below, 'depth' => 3, 'max_depth' => 5, 'reply_text' => $reply_text ) ) );
                     ?>
-
-                    <div class="replay-btn"><?php edit_comment_link( $edit_reply_text, '  ', '' ); ?></div>
                 </div>
                 <?php if ( $comment->comment_approved == '0' ) : ?>
                 <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'bizino' ); ?></p>
@@ -387,10 +384,12 @@ function bizino_footer_global_option(){
 function bizino_global_header_option() {
     if( class_exists( 'ReduxFramework' ) ){
         $bizino_show_header_topbar = bizino_opt( 'bizino_header_topbar_switcher' );
-        $bizino_cart_show          = bizino_opt( 'bizino_header_cart_icon_switcher' );
         $breadcrumb_img = bizino_opt('bizino_allHeader_bg', 'url');
 
         $breadcrumb_bg = !empty($breadcrumb_img) ? $breadcrumb_img : get_template_directory_uri() . "/assets/img/header-bg-1-1.jpg";
+        if (is_404()){
+            $breadcrumb_bg =  get_template_directory_uri() . "/assets/img/error-bg.jpg";
+        }
         echo '<!--=======================Mobile Menu======================= -->';
         echo '<div class="vs-menu-wrapper">';
             echo '<div class="vs-menu-area text-center">';
@@ -491,7 +490,9 @@ function bizino_global_header_option() {
         echo '</header>';
     }else{
         $breadcrumb_bg = !empty($breadcrumb_img) ? $breadcrumb_img : get_template_directory_uri() . "/assets/img/header-bg-1-1.jpg";
-
+        if (is_404()){
+            $breadcrumb_bg =  get_template_directory_uri() . "/assets/img/error-bg.jpg";
+        }
         echo '<!--=======================Mobile Menu======================= -->';
         echo '<div class="vs-menu-wrapper">';
             echo '<div class="vs-menu-area text-center">';
@@ -534,12 +535,6 @@ function bizino_global_header_option() {
                                         ) );
                                         }
                                     echo '</nav>';
-                                echo '</div>';
-                                echo '<div class="col-5 col-sm-auto order-2 order-sm-3 text-end">';
-                                    echo '<div class="header-btn">';
-                                        echo '<button type="submit" class="header-search-btn searchBoxTggler icon-btn style2"><i class="far fa-search"></i></button>';
-                                        echo '<button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fas fa-bars"></i></button>';
-                                    echo '</div>';
                                 echo '</div>';
                             echo '</div>';
                         echo '</div>';

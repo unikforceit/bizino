@@ -407,7 +407,7 @@
             }
             if( function_exists( 'bizino_social_sharing_buttons' ) && $bizino_post_details_share_options ) {
                 echo '<div class="col-md-auto text-md-end mt-20 mt-md-0">';
-                echo '<span class="share-links-title">'.__( 'Social Network', 'bizino' ).'</span>';
+                echo '<span class="share-links-title">'.__( 'Share:', 'bizino' ).'</span>';
                     echo '<ul class="social-links">';
                         echo bizino_social_sharing_buttons();
                     echo '</ul>';
@@ -427,46 +427,32 @@
             }
             if( !empty( get_the_author_meta('description')  ) && $postauthorbox == '1' ) {
                 echo '<!-- Post Author -->';
-                echo '<div class="blog-author d-md-flex align-items-center">';
-                    echo '<!-- Author Thumb -->';
-                    echo '<div class="media-img">';
-                        echo bizino_img_tag( array(
-                            "url"   => esc_url( get_avatar_url( get_the_author_meta('ID'), array(
-                            "size"  => 150
-                            ) ) ),
-                        ) );
-                    echo '</div>';
-                    echo '<!-- End of Author Thumb -->';
-                    echo '<div class="media-body">';
-                        echo '<p class="author-degi">'.esc_html__( 'Written by', 'bizino' ).'</p>';
-                        echo bizino_heading_tag( array(
-                            "tag"   => "h3",
-                            "text"  => bizino_anchor_tag( array(
-                                "text"  => esc_html( ucwords( get_the_author() ) ),
-                                "url"   => esc_url( get_author_posts_url( get_the_author_meta('ID') ) )
-                            ) ),
-                            'class' => 'author-name h4',
-                        ) );
+                echo ' <div class="blog-author">
+                            <div class="media-img">';
+                                echo bizino_img_tag( array(
+                                    "url"   => esc_url( get_avatar_url( get_the_author_meta('ID'), array(
+                                        "size"  => 150
+                                    ) ) ),
+                                ) );
+                                echo '</div>
+                            <div class="media-body">';
+                echo '<p class="author-degi">'.esc_html__( 'Written by', 'bizino' ).'</p>';
+                echo bizino_heading_tag( array(
+                    "tag"   => "h3",
+                    "text"  => bizino_anchor_tag( array(
+                        "text"  => esc_html( ucwords( get_the_author() ) ),
+                        "url"   => esc_url( get_author_posts_url( get_the_author_meta('ID') ) )
+                    ) ),
+                    'class' => 'author-name h5',
+                ) );
 
-                        if( ! empty( get_the_author_meta('description') ) ) {
-                            echo '<p class="author-text mb-0">';
-                                echo esc_html( get_the_author_meta('description') );
-                            echo '</p>';
-                        }
-
-                        $bizino_social_icons = get_user_meta( get_the_author_meta('ID'), '_bizino_social_profile_group',true );
-
-                        if( is_array( $bizino_social_icons ) && !empty( $bizino_social_icons ) ) {
-                            echo '<div class="d-flex gap-2 text-white">';
-                            foreach( $bizino_social_icons as $singleicon ) {
-                                if( ! empty( $singleicon['_bizino_social_profile_icon'] ) ) {
-                                    echo '<a class="icon-btn3 size-40" href="'.esc_url( $singleicon['_bizino_lawyer_social_profile_link'] ).'"><i class="fab '.esc_attr( $singleicon['_bizino_social_profile_icon'] ).'"></i></a>';
-                                }
-                            }
-                            echo '</div>';
-                        }
-                    echo '</div>';
-                echo '</div>';
+                if( ! empty( get_the_author_meta('description') ) ) {
+                    echo '<p class="author-text">';
+                    echo esc_html( get_the_author_meta('description') );
+                    echo '</p>';
+                }
+                echo '</div>
+                        </div>';
                 echo '<!-- End of Post Author -->';
             }
 
@@ -490,6 +476,7 @@
             if ( comments_open() || get_comments_number() ) {
                 comments_template();
             }
+            echo '</div>';
         }
     }
 
@@ -512,18 +499,9 @@
     // page start wrapper hook function
     if( !function_exists('bizino_page_start_wrap_cb') ) {
         function bizino_page_start_wrap_cb( ) {
-            if( is_page( 'cart' ) ){
-                $section_class = "vs-cart-wrapper space-top space-bottom";
-            }elseif( is_page( 'checkout' ) ){
-                $section_class = "vs-checkout-wrapper space-top space-bottom";
-            }elseif( is_page('wishlist') ){
-                $section_class = "space-top space-bottom";
-            }else{
-                $section_class = "space-top space-bottom";
-            }
-            echo '<section class="'.esc_attr( $section_class ).'">';
-                echo '<div class="container">';
-                    echo '<div class="row">';
+            echo '</div>';
+            echo '<section class="position-relative space-top space-extra-bottom">
+                    <div class="container">';
         }
     }
 
@@ -531,7 +509,6 @@
     if( !function_exists('bizino_page_end_wrap_cb') ) {
         function bizino_page_end_wrap_cb( ) {
                     echo '</div>';
-                echo '</div>';
             echo '</section>';
         }
     }
@@ -588,11 +565,7 @@
     // page content hook function
     if( !function_exists('bizino_page_content_cb') ) {
         function bizino_page_content_cb( ) {
-            if(  class_exists('woocommerce') && ( is_woocommerce() || is_cart() || is_checkout() || is_page('wishlist') || is_account_page() )  ) {
-                echo '<div class="woocommerce--content">';
-            } else {
                 echo '<div class="page--content clearfix">';
-            }
 
                 the_content();
 
@@ -772,7 +745,7 @@
             if( class_exists('ReduxFramework') ) {
                 $bizino_post_details_post_navigation = bizino_opt('bizino_post_details_post_navigation');
             } else {
-                $bizino_post_details_post_navigation = true;
+                $bizino_post_details_post_navigation = false;
             }
 
             $prevpost = get_previous_post();
@@ -805,9 +778,6 @@
                                 echo '</div>';
                             echo '</div>';
                         }
-                        echo '<div class="col-auto d-none d-sm-block">';
-                            echo '<a href="blog.html" class="pagi-icon"><i class="flaticon-menu-1 fa-3x"></i></a>';
-                        echo '</div>';
                         if( ! empty( $nextpost ) ) {
                             echo '<div class="col">';
                                 echo '<div class="post-pagi-box next">';

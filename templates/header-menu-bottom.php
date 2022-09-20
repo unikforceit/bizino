@@ -53,7 +53,7 @@
             echo '<!-- Page title -->';
             echo '<div class="breadcumb-wrapper '.esc_attr($def_breadcrumb).'" id="breadcumbwrap" data-bg-src="'.esc_url($breadcrumb_img).'">';
                 echo '<div class="container z-index-common">';
-                    echo '<div class="breadcumb-content text-center">';
+                    echo '<div class="breadcumb-content">';
                         if( defined('CMB2_LOADED') || class_exists('ReduxFramework') ) {
                             if( !empty( bizino_meta('page_breadcrumb_settings') ) ) {
                                 if( bizino_meta('page_breadcrumb_settings') == 'page' ) {
@@ -139,7 +139,7 @@
         echo '<!-- Page title -->';
         echo '<div class="breadcumb-wrapper '.esc_attr($def_breadcrumb).'">';
             echo '<div class="container z-index-common">';
-                echo '<div class="breadcumb-content text-center">';
+                echo '<div class="breadcumb-content">';
                     if( class_exists( 'ReduxFramework' )  ){
                         $bizino_page_title_switcher  = bizino_opt('bizino_page_title_switcher');
                     }else{

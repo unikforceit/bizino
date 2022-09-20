@@ -4506,6 +4506,9 @@ blockquote cite:before {
 .blog-single .blog-author .author-name {
   margin: 0 0 7px 0;
 }
+.blog-single .blog-author .author-name a{
+  color: #000000;
+}
 .blog-single .blog-author .author-text {
   margin: 0;
 }

@@ -28,24 +28,18 @@
 
     // get header
     get_header();
-
-    echo '<section class="vs-error-wrapper bg-dark space-bottom">';
-        echo '<div class="container">';
-            echo '<div class="error-content text-center">';
-                echo '<h1 class="error-number text-white">'.esc_html( $bizino404title ).'</h1>';
-                echo '<h2 class="error-title text-white">'.esc_html( $bizino404subtitle ).'</h2>';
-                echo '<p class="error-text text-white">'.esc_html( $bizino404desc ).'</p>';
-                echo '<div class="row justify-content-center mb-20">';
-                    echo '<div class="col-lg-9 col-xl-8 pt-1">';
-                        echo '<form action="'.esc_url( home_url('/') ).'" class="search-inline">';
-                            echo '<input name="s" type="text" class="form-control" placeholder="'.esc_attr__( 'Enter Your Keyword....', 'bizino' ).'">';
-                            echo '<button><i class="far fa-search"></i></button>';
-                        echo '</form>';
-                    echo '</div>';
-                echo '</div>';
-                echo '<a href="'.esc_url( home_url('/') ).'" class="vs-btn style-black style-white-hover"><i class="fas fa-home me-2 pe-1"></i>'.esc_html( $bizino404btntext ).'</a>';
-            echo '</div>';
-        echo '</div>';
-    echo '</section>';
+    echo ' <section class="overflow-hidden  ">
+            <div class="error-content">
+                <div class="error-shape1"></div>
+                <h1 class="error-number">'.esc_html( $bizino404title ).'</h1>
+                <h2 class="error-title">'.esc_html( $bizino404subtitle ).'</h2>
+                <p class="error-text">'.esc_html( $bizino404desc ).'</p>
+                <form action="'.esc_url( home_url('/') ).'" class="search-inline">
+                    <input name="s" type="text" class="form-control" placeholder="'.esc_attr__( 'Enter Your Keyword....', 'bizino' ).'">
+                    <button><i class="far fa-search"></i></button>
+                </form>
+                <a href="'.esc_url( home_url('/') ).'" class="vs-btn">'.esc_html( $bizino404btntext ).'</a>
+            </div>
+        </section>';
     //footer
     get_footer();
