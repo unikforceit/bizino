@@ -839,6 +839,14 @@
                 'default'   => '0',
             ),
             array(
+                'id'       => 'bizino_post_details_author_thumb',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => esc_html__( 'Author Thumb', 'bizino' ),
+                'compiler' => 'true',
+                'subtitle' => esc_html__( 'Upload your author logo ( recommendation png format ).', 'bizino' ),
+            ),
+            array(
                 'id'       => 'bizino_post_details_post_navigation',
                 'type'     => 'switch',
                 'title'    => esc_html__('Post Navigation', 'bizino'),

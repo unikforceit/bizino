@@ -58,7 +58,7 @@ echo '<!-- Single Post -->';
                 }
                 ?>
                 <div class="blog-meta">
-                    <a href="#"><i class="fas fa-user"></i> <?php echo get_the_author_meta('display_name');?></a>
+                    <a href="<?php esc_url( get_author_posts_url( get_the_author_meta('ID') ) );?>"><i class="fas fa-user"></i> <?php echo get_the_author_meta('display_name');?></a>
                     <?php
                     if( $bizino_display_post_comment ){
                         if( get_comments_number() == 1 ){

@@ -151,16 +151,7 @@
                             $bizino_page_title_tag    = bizino_opt('bizino_page_title_tag');
                         }else{
                             $bizino_page_title_tag    = 'h1';
-                        }
-                        if( class_exists('woocommerce') && is_shop() ) {
-                            echo bizino_heading_tag(
-                                array(
-                                    "tag"   => esc_attr( $bizino_page_title_tag ),
-                                    "text"  => wp_kses( woocommerce_page_title( false ), $allowhtml ),
-                                    'class' => 'breadcumb-title'
-                                )
-                            );
-                        }elseif ( is_archive() ){
+                        }if ( is_archive() ){
                             echo bizino_heading_tag(
                                 array(
                                     "tag"   => esc_attr( $bizino_page_title_tag ),
@@ -177,7 +168,7 @@
                                     echo bizino_heading_tag(
                                         array(
                                             "tag"   => esc_attr( $bizino_page_title_tag ),
-                                            "text"  => !empty( $bizino_blog_page_custom_title ) && $bizino_blog_page_title_setting == 'custom' ? esc_html( $bizino_blog_page_custom_title) : esc_html__( 'Latest News', 'bizino' ),
+                                            "text"  => !empty( $bizino_blog_page_custom_title ) && $bizino_blog_page_title_setting == 'custom' ? esc_html( $bizino_blog_page_custom_title) : esc_html__( 'Our Blog', 'bizino' ),
                                             'class' => 'breadcumb-title'
                                         )
                                     );
@@ -186,7 +177,7 @@
                                 echo bizino_heading_tag(
                                     array(
                                         "tag"   => "h1",
-                                        "text"  => esc_html__( 'Latest News', 'bizino' ),
+                                        "text"  => esc_html__( 'Our Blog', 'bizino' ),
                                         'class' => 'breadcumb-title',
                                     )
                                 );
@@ -207,42 +198,6 @@
                                     'class' => 'breadcumb-title'
                                 )
                             );
-                        }elseif( is_singular( 'product' ) ){
-                            $posttitle_position  = bizino_opt('bizino_product_details_title_position');
-                            $postTitlePos = false;
-                            if( class_exists( 'ReduxFramework' ) ){
-                                if( $posttitle_position && $posttitle_position != 'header' ){
-                                    $postTitlePos = true;
-                                }
-                            }else{
-                                $postTitlePos = false;
-                            }
-
-                            if( $postTitlePos != true ){
-                                echo bizino_heading_tag(
-                                    array(
-                                        "tag"   => esc_attr( $bizino_page_title_tag ),
-                                        "text"  => wp_kses( get_the_title( ), $allowhtml ),
-                                        'class' => 'breadcumb-title'
-                                    )
-                                );
-                            } else {
-                                if( class_exists( 'ReduxFramework' ) ){
-                                    $bizino_post_details_custom_title  = bizino_opt('bizino_product_details_custom_title');
-                                }else{
-                                    $bizino_post_details_custom_title = __( 'Shop Details','bizino' );
-                                }
-
-                                if( !empty( $bizino_post_details_custom_title ) ) {
-                                    echo bizino_heading_tag(
-                                        array(
-                                            "tag"   => esc_attr( $bizino_page_title_tag ),
-                                            "text"  => wp_kses( $bizino_post_details_custom_title, $allowhtml ),
-                                            'class' => 'breadcumb-title'
-                                        )
-                                    );
-                                }
-                            }
                         }else{
                             $posttitle_position  = bizino_opt('bizino_post_details_title_position');
                             $postTitlePos = false;
@@ -271,7 +226,7 @@
                                 echo bizino_heading_tag(
                                     array(
                                         "tag"   => esc_attr( $bizino_page_title_tag ),
-                                        "text"  => wp_kses( get_the_title( ), $allowhtml ),
+                                        "text"  => wp_kses( 'Blog Details', $allowhtml ),
                                         'class' => 'breadcumb-title'
                                     )
                                 );

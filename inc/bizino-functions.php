@@ -545,19 +545,6 @@ function bizino_global_header_option() {
     }
 
 }
-// bizino woocommerce breadcrumb
-function bizino_woo_breadcrumb( $args ) {
-    return array(
-        'delimiter'   => '',
-        'wrap_before' => '<div class="breadcumb-menu-wrap container"><ul class="breadcumb-menu">',
-        'wrap_after'  => '</ul></div>',
-        'before'      => '<li>',
-        'after'       => '</li>',
-        'home'        => _x( 'Home', 'breadcrumb', 'bizino' ),
-    );
-}
-
-add_filter( 'woocommerce_breadcrumb_defaults', 'bizino_woo_breadcrumb' );
 
 function bizino_custom_search_form( $class ) {
     echo '<!-- Search Form -->';

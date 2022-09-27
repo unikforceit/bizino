@@ -44,7 +44,7 @@
             echo '<div class="blog-content">';
 
                 if( $bizino_display_post_date ){
-                    echo '<a class="blog-date" href="'.esc_url( bizino_blog_date_permalink() ).'"><i class="fal fa-calendar-alt"></i> '.esc_html( get_the_date() ).'</a>';
+                    echo '<a class="blog-date" href="'.esc_url( bizino_blog_date_permalink() ).'">'.esc_html( get_the_date() ).'</a>';
                 }
                 // Blog Post Meta
                 do_action( 'bizino_blog_post_meta' );

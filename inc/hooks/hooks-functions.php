@@ -382,7 +382,7 @@
             echo '<!-- Blog Meta -->';
             echo '<div class="blog-meta">';
 
-                echo '<a href="#"><i class="fas fa-user"></i> '. get_the_author_meta('display_name') . '</a>';
+                echo '<a href="'.esc_url( get_author_posts_url( get_the_author_meta('ID') ) ).'"><i class="fas fa-user"></i> '. get_the_author_meta('display_name') . '</a>';
                 if( $bizino_display_post_comment ){
                     if( get_comments_number() == 1 ){
                         $comment_text = __( ' Comment', 'bizino' );
@@ -422,6 +422,10 @@
         function bizino_blog_details_author_bio_cb( ) {
             if( class_exists('ReduxFramework') ) {
                 $postauthorbox =  bizino_opt( 'bizino_post_details_author_desc_trigger' );
+                $postauthorboxthumb =  bizino_opt( 'bizino_post_details_author_thumb' );
+                $author_thumb = !empty($postauthorboxthumb['url']) ? $postauthorboxthumb['url'] : get_avatar_url( get_the_author_meta('ID'), array(
+                    "size"  => 150
+                ) );
             } else {
                 $postauthorbox = '1';
             }
@@ -430,9 +434,7 @@
                 echo ' <div class="blog-author">
                             <div class="media-img">';
                                 echo bizino_img_tag( array(
-                                    "url"   => esc_url( get_avatar_url( get_the_author_meta('ID'), array(
-                                        "size"  => 150
-                                    ) ) ),
+                                    "url"   => esc_url( $author_thumb ),
                                 ) );
                                 echo '</div>
                             <div class="media-body">';
