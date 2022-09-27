@@ -78,7 +78,7 @@ if ( ! function_exists( 'bizino_breadcrumbs' ) ) {
                 foreach ( $cat_parents as $parent ) {
                     $html .= '<li>' . wp_kses( $parent, wp_kses_allowed_html( 'a' ) ) . '</li>';
                 }
-                $html .= '<li class="active" title="' . esc_attr( get_the_title() ) . '">' . wp_kses( get_the_title(), $allowhtml ) . '</li>';
+                $html .= '<li class="active" title="' . esc_attr( get_the_title() ) . '">' . wp_kses( 'Blog Details', $allowhtml ) . '</li>';
             }
         } elseif ( is_singular( 'page' ) ) {
             if ( $post->post_parent ) {
@@ -134,11 +134,7 @@ if ( ! function_exists( 'bizino_breadcrumbs' ) ) {
         $html .= '</ul>';
         $html .= '</div>';
 
-        if( class_exists('woocommerce') ) {
-            woocommerce_breadcrumb();
-        } else {
-            echo apply_filters( 'bizino_breadcrumbs_filter', $html );
-        }
+        echo apply_filters( 'bizino_breadcrumbs_filter', $html );
 
     }
 }
