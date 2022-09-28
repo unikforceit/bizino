@@ -418,24 +418,6 @@
                 'required' => array( 'bizino_header_topbar_switcher', 'equals', '1' )
             ),
             array(
-                'id'       => 'bizino_header_wishlist_icon_switcher',
-                'type'     => 'switch',
-                'default'  => 1,
-                'on'       => esc_html__( 'Show', 'bizino' ),
-                'off'      => esc_html__( 'Hide', 'bizino' ),
-                'title'    => esc_html__( 'Header Wishlist?', 'bizino' ),
-                'subtitle' => esc_html__( 'Click Show To Display Wishlist?', 'bizino'),
-            ),
-            array(
-                'id'       => 'bizino_header_cart_icon_switcher',
-                'type'     => 'switch',
-                'default'  => 1,
-                'on'       => esc_html__( 'Show', 'bizino' ),
-                'off'      => esc_html__( 'Hide', 'bizino' ),
-                'title'    => esc_html__( 'Header Cart?', 'bizino' ),
-                'subtitle' => esc_html__( 'Click Show To Display Cart?', 'bizino'),
-            ),
-            array(
                 'id'       => 'bizino_btn_text',
                 'type'     => 'text',
                 'validate' => 'html',

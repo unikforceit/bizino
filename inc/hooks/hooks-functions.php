@@ -74,7 +74,7 @@
                     } else {
                         echo '<!-- Back to Top Button -->';
                         echo '<a href="'.esc_url('#').'" class="scrollToTop scroll-btn">';
-                            echo '<i class="far fa-arrow-up"></i>';
+                            echo '<i class="fal fa-arrow-up"></i>';
                         echo '</a>';
                         echo '<!-- End of Back to Top Button -->';
                     }
@@ -82,7 +82,7 @@
             }else{
                 echo '<!-- Back to Top Button -->';
                 echo '<a href="'.esc_url('#').'" class="scrollToTop scroll-btn">';
-                    echo '<i class="far fa-arrow-up"></i>';
+                    echo '<i class="fal fa-arrow-up"></i>';
                 echo '</a>';
                 echo '<!-- End of Back to Top Button -->';
             }
