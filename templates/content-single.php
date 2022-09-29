@@ -17,7 +17,6 @@
     <?php
         if( class_exists('ReduxFramework') ) {
             $bizino_post_details_title_position = bizino_opt('bizino_post_details_title_position');
-            $bizino_display_post_date      =  bizino_opt('bizino_display_post_date');
         } else {
             $bizino_post_details_title_position = 'header';
             $bizino_display_post_date      =  '1';
@@ -42,10 +41,6 @@
             do_action( 'bizino_blog_post_thumb' );
 
             echo '<div class="blog-content">';
-
-                if( $bizino_display_post_date ){
-                    echo '<a class="blog-date" href="'.esc_url( bizino_blog_date_permalink() ).'">'.esc_html( get_the_date() ).'</a>';
-                }
                 // Blog Post Meta
                 do_action( 'bizino_blog_post_meta' );
 

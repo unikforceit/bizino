@@ -378,10 +378,14 @@
             } else {
                 $bizino_display_post_comment   = '1';
             }
-
+            $bizino_display_post_date = bizino_opt('bizino_display_post_date') ? bizino_opt('bizino_display_post_date') : '1';
             echo '<!-- Blog Meta -->';
+            if( $bizino_display_post_date ){
+                echo '<a class="blog-date" href="'.esc_url( bizino_blog_date_permalink() ).'">';
+                echo esc_html( get_the_date() );
+                echo '</a>';
+            }
             echo '<div class="blog-meta">';
-
                 echo '<a href="'.esc_url( get_author_posts_url( get_the_author_meta('ID') ) ).'"><i class="fas fa-user"></i> '. get_the_author_meta('display_name') . '</a>';
                 if( $bizino_display_post_comment ){
                     if( get_comments_number() == 1 ){
@@ -617,7 +621,7 @@
                 echo '<!-- End Post Thumbnail -->';
             }elseif( $format == 'video' ){
                 if( has_post_thumbnail() && ! empty ( bizino_meta( 'post_format_video' ) ) ){
-                    echo '<div class="blog-video blog-image">';
+                    echo '<div class="blog-img">';
                         if( ! is_single() ){
                             echo '<a href="'.esc_url( get_permalink() ).'" class="post-thumbnail">';
                         }
@@ -625,7 +629,7 @@
                         if( ! is_single() ){
                             echo '</a>';
                         }
-                        echo '<a href="'.esc_url( bizino_meta( 'post_format_video' ) ).'" class="play-btn overlay-center popup-video">';
+                        echo '<a href="'.esc_url( bizino_meta( 'post_format_video' ) ).'" class="play-btn popup-video">';
                           echo '<i class="fas fa-play"></i>';
                         echo '</a>';
                     echo '</div>';

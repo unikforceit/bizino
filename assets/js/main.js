@@ -42,17 +42,17 @@
   /*---------- 03. Mobile Menu Active ----------*/
   $.fn.vsmobilemenu = function (options) {
     var opt = $.extend({
-        menuToggleBtn: ".vs-menu-toggle",
-        bodyToggleClass: "vs-body-visible",
-        subMenuClass: "vs-submenu",
-        subMenuParent: "vs-item-has-children",
-        subMenuParentToggle: "vs-active",
-        meanExpandClass: "vs-mean-expand",
-        appendElement: '<span class="vs-mean-expand"></span>',
-        subMenuToggleClass: "vs-open",
-        toggleSpeed: 400,
-      },
-      options
+          menuToggleBtn: ".vs-menu-toggle",
+          bodyToggleClass: "vs-body-visible",
+          subMenuClass: "vs-submenu",
+          subMenuParent: "vs-item-has-children",
+          subMenuParentToggle: "vs-active",
+          meanExpandClass: "vs-mean-expand",
+          appendElement: '<span class="vs-mean-expand"></span>',
+          subMenuToggleClass: "vs-open",
+          toggleSpeed: 400,
+        },
+        options
     );
 
     return this.each(function () {
@@ -165,9 +165,9 @@
     $(this).on("click", function (e) {
       e.preventDefault();
       $("html, body").animate({
-          scrollTop: 0,
-        },
-        lastScrollTop / 3
+            scrollTop: 0,
+          },
+          lastScrollTop / 3
       );
       return false;
     });
@@ -262,7 +262,7 @@
 
     // Custom Arrow Button
     var prevButton = '<button type="button" class="slick-prev"><i class="' + d("prev-arrow") + '"></i></button>',
-      nextButton = '<button type="button" class="slick-next"><i class="' + d("next-arrow") + '"></i></button>';
+        nextButton = '<button type="button" class="slick-next"><i class="' + d("next-arrow") + '"></i></button>';
 
     // Function For Custom Arrow Btn
     $("[data-slick-next]").each(function () {
@@ -309,23 +309,23 @@
       nextArrow: d("next-arrow") ? nextButton : '<button type="button" class="slick-next"><i class="fal fa-long-arrow-right"></i></button>',
       rtl: $("html").attr("dir") == "rtl" ? true : false,
       responsive: [{
-          breakpoint: 1600,
-          settings: {
-            arrows: d("xl-arrows") ? true : false,
-            dots: d("xl-dots") ? true : false,
-            slidesToShow: d("xl-slide-show") ?
+        breakpoint: 1600,
+        settings: {
+          arrows: d("xl-arrows") ? true : false,
+          dots: d("xl-dots") ? true : false,
+          slidesToShow: d("xl-slide-show") ?
               d("xl-slide-show") : d("slide-show"),
-            centerMode: d("xl-center-mode") ? true : false,
-            centerPadding: 0,
-          },
+          centerMode: d("xl-center-mode") ? true : false,
+          centerPadding: 0,
         },
+      },
         {
           breakpoint: 1400,
           settings: {
             arrows: d("ml-arrows") ? true : false,
             dots: d("ml-dots") ? true : false,
             slidesToShow: d("ml-slide-show") ?
-              d("ml-slide-show") : d("slide-show"),
+                d("ml-slide-show") : d("slide-show"),
             centerMode: d("ml-center-mode") ? true : false,
             centerPadding: 0,
           },
@@ -336,7 +336,7 @@
             arrows: d("lg-arrows") ? true : false,
             dots: d("lg-dots") ? true : false,
             slidesToShow: d("lg-slide-show") ?
-              d("lg-slide-show") : d("slide-show"),
+                d("lg-slide-show") : d("slide-show"),
             centerMode: d("lg-center-mode") ? d("lg-center-mode") : false,
             centerPadding: 0,
           },
@@ -383,7 +383,7 @@
   var invalidCls = "is-invalid";
   var $email = '[name="email"]';
   var $validation =
-    '[name="name"],[name="email"],[name="number"],[name="subject"],[name="message"]'; // Must be use (,) without any space
+      '[name="name"],[name="email"],[name="number"],[name="subject"],[name="message"]'; // Must be use (,) without any space
   var formMessages = $(".form-messages");
 
   function sendContact() {
@@ -392,33 +392,33 @@
     valid = validateContact();
     if (valid) {
       jQuery
-        .ajax({
-          url: $(form).attr("action"),
-          data: formData,
-          type: "POST",
-        })
-        .done(function (response) {
-          // Make sure that the formMessages div has the 'success' class.
-          formMessages.removeClass("error");
-          formMessages.addClass("success");
-          // Set the message text.
-          formMessages.text(response);
-          // Clear the form.
-          $(form + ' input:not([type="submit"]),' + form + " textarea").val("");
-        })
-        .fail(function (data) {
-          // Make sure that the formMessages div has the 'error' class.
-          formMessages.removeClass("success");
-          formMessages.addClass("error");
-          // Set the message text.
-          if (data.responseText !== "") {
-            formMessages.html(data.responseText);
-          } else {
-            formMessages.html(
-              "Oops! An error occured and your message could not be sent."
-            );
-          }
-        });
+          .ajax({
+            url: $(form).attr("action"),
+            data: formData,
+            type: "POST",
+          })
+          .done(function (response) {
+            // Make sure that the formMessages div has the 'success' class.
+            formMessages.removeClass("error");
+            formMessages.addClass("success");
+            // Set the message text.
+            formMessages.text(response);
+            // Clear the form.
+            $(form + ' input:not([type="submit"]),' + form + " textarea").val("");
+          })
+          .fail(function (data) {
+            // Make sure that the formMessages div has the 'error' class.
+            formMessages.removeClass("success");
+            formMessages.addClass("error");
+            // Set the message text.
+            if (data.responseText !== "") {
+              formMessages.html(data.responseText);
+            } else {
+              formMessages.html(
+                  "Oops! An error occured and your message could not be sent."
+              );
+            }
+          });
     }
   }
 
@@ -442,10 +442,10 @@
     unvalid($validation);
 
     if (
-      !$($email).val() ||
-      !$($email)
-      .val()
-      .match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)
+        !$($email).val() ||
+        !$($email)
+            .val()
+            .match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)
     ) {
       $($email).addClass(invalidCls);
       valid = false;
@@ -487,11 +487,11 @@
 
       function setPosition() {
         var sectionHeight = Math.floor(section.height() / 2), // Main Height of section
-          posValue = convertInteger(section.attr(getPosValue)), // positioning value
-          posData = section.attr(mainAttr), // how much to position
-          posFor = section.attr(posAttr), // On Which section is for positioning
-          parentPT = convertInteger($(posFor).css("padding-top")), // Default Padding of  parent
-          parentPB = convertInteger($(posFor).css("padding-bottom")); // Default Padding of  parent
+            posValue = convertInteger(section.attr(getPosValue)), // positioning value
+            posData = section.attr(mainAttr), // how much to position
+            posFor = section.attr(posAttr), // On Which section is for positioning
+            parentPT = convertInteger($(posFor).css("padding-top")), // Default Padding of  parent
+            parentPB = convertInteger($(posFor).css("padding-bottom")); // Default Padding of  parent
         if (posData === "top-half") {
           $(posFor).css("padding-bottom", parentPB + sectionHeight + "px");
           section.css("margin-top", "-" + sectionHeight + "px");
@@ -514,9 +514,9 @@
   if ($(postionHandler).length) {
     $(postionHandler).imagesLoaded(function () {
       $(postionHandler).sectionPosition(
-        "data-sec-pos",
-        "data-pos-for",
-        "data-pos-amount"
+          "data-sec-pos",
+          "data-pos-for",
+          "data-pos-amount"
       );
     });
   }
@@ -524,8 +524,8 @@
   /*----------- 12. Filter ----------*/
   $(".filter-active").imagesLoaded(function () {
     var $filter = ".filter-active",
-      $filterItem = ".filter-item",
-      $filterMenu = ".filter-menu-active";
+        $filterItem = ".filter-item",
+        $filterMenu = ".filter-menu-active";
 
     if ($($filter).length > 0) {
       var $grid = $($filter).isotope({
@@ -557,11 +557,11 @@
   /*----------- 13. Custom Tab  ----------*/
   $.fn.vsTab = function (options) {
     var opt = $.extend({
-        sliderTab: false,
-        tabButton: "button",
-        indicator: false,
-      },
-      options
+          sliderTab: false,
+          tabButton: "button",
+          indicator: false,
+        },
+        options
     );
 
     $(this).each(function () {
@@ -596,14 +596,14 @@
 
           // Change Indicator On slide Change
           $(slider).on(
-            "beforeChange",
-            function (event, slick, currentSlide, nextSlide) {
-              $menu
-                .find(opt.tabButton + '[data-slide-go-to="' + nextSlide + '"]')
-                .addClass("active")
-                .siblings()
-                .removeClass("active");
-            }
+              "beforeChange",
+              function (event, slick, currentSlide, nextSlide) {
+                $menu
+                    .find(opt.tabButton + '[data-slide-go-to="' + nextSlide + '"]')
+                    .addClass("active")
+                    .siblings()
+                    .removeClass("active");
+              }
           );
         });
       }

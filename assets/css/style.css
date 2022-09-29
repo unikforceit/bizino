@@ -6221,15 +6221,15 @@ blockquote cite:before {
   color: #74787c;
 }
 @media (min-width: 991px) {
-  .event-style1:nth-child(even) .event-wrap {
+  .event-style1.event-style2 .event-wrap {
     flex-direction: row;
   }
-  .event-style1:nth-child(even) .event-content {
+  .event-style1.event-style2 .event-content {
     margin-right: 0;
     margin-left: -195px;
     align-self: flex-start;
   }
-  .event-style1:nth-child(even) .event-img {
+  .event-style1.event-style2 .event-img {
     margin-bottom: 0;
     margin-top: 70px;
   }

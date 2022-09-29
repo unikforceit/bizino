@@ -467,9 +467,9 @@ function bizino_global_header_option() {
                         <div class="col-auto">
                             <div class="header-social">
                                 <span class="social-label">Get In Touch:</span>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-google"></i></a>
+                                <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="https://google.com"><i class="fab fa-google"></i></a>
                             </div>
                         </div>
                     </div>
@@ -601,9 +601,9 @@ function bizino_global_header_option() {
                             <div class="col-auto">
                                 <div class="header-social">
                                     <span class="social-label">Get In Touch:</span>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-google"></i></a>
+                                    <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://google.com"><i class="fab fa-google"></i></a>
                                 </div>
                             </div>
                         </div>
