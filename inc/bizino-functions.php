@@ -194,13 +194,11 @@ function bizino_image_alt( $url = '' ){
 function bizino_social_icon(){
     $bizino_social_icon = bizino_opt( 'bizino_social_links' );
     if( ! empty( $bizino_social_icon ) && isset( $bizino_social_icon ) ){
-        echo '<ul>';
         foreach( $bizino_social_icon as $social_icon ){
             if( ! empty( $social_icon['title'] ) ){
-                echo '<li><a href="'.esc_url( $social_icon['url'] ).'"><i class="'.esc_attr( $social_icon['title'] ).'"></i></a></li> ';
+                echo '<a href="'.esc_url( $social_icon['url'] ).'"><i class="'.esc_attr( $social_icon['title'] ).'"></i></a>';
             }
         }
-        echo '</ul>';
     }
 }
 
