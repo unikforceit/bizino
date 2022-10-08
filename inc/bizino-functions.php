@@ -760,13 +760,11 @@ function bizino_post_classes( $classes, $class, $post_id ) {
             if( $bizino_blog_style != '2' )
                 $classes[] = "vs-blog blog-single";
             else{
-                $classes[] = "blog-fliped";
+                $classes[] = "vs-blog blog-style2 layout2";
             }
         }else{
             $classes[] = "vs-blog blog-single";
         }
-    }elseif( get_post_type() === 'product' ){
-        // Return Class
     }elseif( get_post_type() === 'page' ){
         $classes[] = "page--item";
     }
