@@ -4622,7 +4622,7 @@ blockquote cite:before {
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
-.blog-single .blog-img .play-btn {
+.blog-img .play-btn {
   --icon-size: 60px;
   --icon-font-size: 20px;
   position: absolute;
@@ -4720,6 +4720,7 @@ blockquote cite:before {
 .blog-style2 .blog-img {
   overflow: hidden;
   border-radius: 12px;
+  position: relative;
 }
 .blog-style2 .blog-img img {
   width: 100%;
@@ -4937,7 +4938,7 @@ blockquote cite:before {
   .blog-single .blog-img {
     margin-bottom: -20px;
   }
-  .blog-single .blog-img .play-btn {
+ .blog-img .play-btn {
     --icon-size: 40px;
     --icon-font-size: 14px;
     top: calc(50% - 10px);

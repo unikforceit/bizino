@@ -36,10 +36,9 @@ echo '<!-- Single Post -->';
     	$bizino_blog_style = '1';
     }
 
-    if( $bizino_blog_style == '2' ){
-	    do_action( 'bizino_blog_post_content' );
-	}else {
-
+    if( $bizino_blog_style == '1' ){
+        do_action( 'bizino_blog_post_content' );
+    }else{
         $bizino_display_post_date = bizino_opt('bizino_display_post_date') ? bizino_opt('bizino_display_post_date') : '1';
         $bizino_display_post_comment = bizino_opt('bizino_display_post_comment') ? bizino_opt('bizino_display_post_date') : '1';
         $bizino_excerpt_length = bizino_opt('bizino_blog_postExcerpt') ? bizino_opt('bizino_blog_postExcerpt') : '20';
@@ -49,14 +48,15 @@ echo '<!-- Single Post -->';
                     <a href="<?php echo esc_url( get_permalink() );?>"><?php bizino_blog_post_thumb_cb();?></a>
                 </div>
             <?php } ?>
+                <div class="blog-body">
+            <?php
+            if( $bizino_display_post_date ){
+                echo '<div class="blog-date"><a href="'.esc_url( bizino_blog_date_permalink() ).'">';
+                echo esc_html( get_the_date() );
+                echo '</a></div>';
+            }
+            ?>
             <div class="blog-content">
-                <?php
-                if( $bizino_display_post_date ){
-                    echo '<a class="blog-date" href="'.esc_url( bizino_blog_date_permalink() ).'">';
-                    echo esc_html( get_the_date() );
-                    echo '</a>';
-                }
-                ?>
                 <div class="blog-meta">
                     <a href="<?php esc_url( get_author_posts_url( get_the_author_meta('ID') ) );?>"><i class="fas fa-user"></i> <?php echo get_the_author_meta('display_name');?></a>
                     <?php
@@ -70,14 +70,10 @@ echo '<!-- Single Post -->';
                     }
                     ?>
                 </div>
-                <h2 class="blog-title"><a href="<?php echo esc_url( get_permalink() );?>"><?php echo get_the_title();?></a></h2>
-               <?php
-                    echo bizino_paragraph_tag( array(
-                        "text"  => wp_kses( wp_trim_words( get_the_excerpt(), $bizino_excerpt_length, '' ), $allowhtml ),
-                        'class' => 'blog-text'
-                    ) );
-               ?>
+                <h3 class="blog-title h5"><a href="<?php echo esc_url( get_permalink() );?>"><?php echo get_the_title();?></a></h3>
+                <a href="<?php echo esc_url( get_permalink() );?>" class="icon-btn style4"><i class="fal fa-long-arrow-right"></i></a>
             </div>
-    <?php }
+        </div>
+            <?php }
 ?>
 </div>
