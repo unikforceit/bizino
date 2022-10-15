@@ -51,7 +51,7 @@
                 $def_breadcrumb = 'bredacrumb-default';
             }
             echo '<!-- Page title -->';
-            echo '<div class="breadcumb-wrapper '.esc_attr($def_breadcrumb).'" id="breadcumbwrap" data-bg-src="'.esc_url($breadcrumb_img).'">';
+            echo '<div class="breadcumb-wrapper '.esc_attr($def_breadcrumb).'" id="breadcumbwrap">';
                 echo '<div class="container z-index-common">';
                     echo '<div class="breadcumb-content">';
                         if( defined('CMB2_LOADED') || class_exists('ReduxFramework') ) {
