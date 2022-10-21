@@ -7679,7 +7679,6 @@ blockquote cite:before {
 
 .cta-video {
   position: relative;
-  margin-top: 100px;
 }
 .cta-video .play-btn {
   z-index: 5;
@@ -7732,11 +7731,6 @@ blockquote cite:before {
   }
 }
 /* Large devices */
-@media (max-width: 1199px) {
-  .cta-video {
-    margin-top: 70px;
-  }
-}
 /*------------------- 4.19. Accordion -------------------*/
 .accordion-style1 {
   margin: 0 0 30px 0;

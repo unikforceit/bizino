@@ -31,6 +31,7 @@ if ( ! function_exists( 'bizino_setup' ) ){
 		add_theme_support( 'post-thumbnails' );
 
         add_image_size( 'bizino-shop-single',459,390,true );
+        add_image_size( 'bizino-blog-content',410,240,true );
 
 		// This theme uses wp_nav_menu() in three locations.
         register_nav_menus( array(
