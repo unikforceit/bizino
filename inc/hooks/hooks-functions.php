@@ -600,7 +600,7 @@
             $bizino_post_slider_thumbnail = bizino_meta( 'post_format_slider' );
 
             if( !empty( $bizino_post_slider_thumbnail ) ){
-                echo '<div class="blog-img vs-carousel" data-arrows="true" data-slide-show="1">';
+                echo '<div class="blog-img vs-carousel-global" data-arrows="true" data-slide-show="1">';
                     foreach( $bizino_post_slider_thumbnail as $single_image ){
                         echo bizino_img_tag( array(
                             'url'   => esc_url( $single_image )
