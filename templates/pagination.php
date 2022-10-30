@@ -15,11 +15,11 @@
     if( !empty( bizino_pagination() ) ) :
 ?>
 <!-- Post Pagination -->
-<div class="vs-pagination pb-30">
+<div class="vs-pagination">
     <ul>
         <?php
-            $prev 	= '<i class="fas fa-angle-left"></i>';
-            $next 	= '<i class="fas fa-angle-right"></i>';
+            $prev 	= '<i class="fal fa-angle-double-left"></i>';
+            $next 	= '<i class="fal fa-angle-double-right"></i>';
             // previous
             if( get_previous_posts_link() ){
                 echo '<li>';

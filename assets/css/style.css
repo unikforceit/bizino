@@ -4211,7 +4211,7 @@ a.text-theme:hover,
 /*------------------- 4.5. Pagination  -------------------*/
 .vs-pagination {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .vs-pagination ul {
   margin: 0;
@@ -7718,7 +7718,7 @@ blockquote cite:before {
   .cta-shape3,
 .cta-shape2 {
     border-radius: 0;
-    height: 100%;
+    height: auto;
   }
   .cta-shape1 {
     max-width: 600px;

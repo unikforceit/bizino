@@ -238,7 +238,7 @@
             } elseif( $bizino_blog_grid == '2' ) {
                 $bizino_blog_grid_class = 'col-md-6 col-xl-4';
             } elseif($bizino_blog_grid == '3') {
-                $bizino_blog_grid_class = 'col-md-4';
+                $bizino_blog_grid_class = 'col-md-6 col-xl-4';
             }
 
             if($bizino_blog_style != '1') {
@@ -384,7 +384,7 @@
             echo '<!-- Blog Meta -->';
             if( $bizino_display_post_date ){
                 echo '<a class="blog-date" href="'.esc_url( bizino_blog_date_permalink() ).'">';
-                echo esc_html( get_the_date() );
+                echo esc_html( get_the_date('M j, Y') );
                 echo '</a>';
             }
             echo '<div class="blog-meta">';
@@ -596,7 +596,8 @@
             }else{
                 $format = 'standard';
             }
-
+            $bizino_blog_style = bizino_opt('bizino_blog_style');
+            $thumb_size = $bizino_blog_style == '2' && !is_single() ? 'bizino-blog-content' : 'full';
             $bizino_post_slider_thumbnail = bizino_meta( 'post_format_slider' );
 
             if( !empty( $bizino_post_slider_thumbnail ) ){
@@ -614,7 +615,7 @@
                         echo '<a href="'.esc_url( get_permalink() ).'" class="post-thumbnail">';
                     }
 
-                    the_post_thumbnail();
+                    the_post_thumbnail($thumb_size);
 
                     if( ! is_single() ){
                         echo '</a>';
@@ -627,7 +628,7 @@
                         if( ! is_single() ){
                             echo '<a href="'.esc_url( get_permalink() ).'" class="post-thumbnail">';
                         }
-                            the_post_thumbnail();
+                            the_post_thumbnail($thumb_size);
                         if( ! is_single() ){
                             echo '</a>';
                         }
