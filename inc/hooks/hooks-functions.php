@@ -155,13 +155,14 @@
             if( class_exists('ReduxFramework') ) {
                 $bizino_blog_style = bizino_opt('bizino_blog_style');
                 if( $bizino_blog_style  == '2' ){
-                   echo '';
+                   $order_last = "order-last";
                 }else{
+                    $order_last = "";
                     $bizino_blog_sidebar = bizino_opt('bizino_blog_sidebar');
                     if( $bizino_blog_sidebar == '1' && is_active_sidebar('bizino-blog-sidebar') ) {
                         echo '<div class="col-lg-12">';
                     } elseif( $bizino_blog_sidebar == '2' && is_active_sidebar('bizino-blog-sidebar') ) {
-                        echo '<div class="col-lg-8">';
+                        echo '<div class="col-lg-8 '.$order_last.'">';
                     } else {
                         echo '<div class="col-lg-8">';
                     }
@@ -189,10 +190,10 @@
                 $bizino_blog_style = bizino_opt('bizino_blog_style');
                 $bizino_blog_sidebar = bizino_opt('bizino_blog_sidebar');
             } else {
-                $bizino_blog_sidebar = '2';
+                $bizino_blog_sidebar = '3';
                 $bizino_blog_style = '1';
             }
-            if( $bizino_blog_sidebar != 1 && is_active_sidebar('bizino-blog-sidebar') &&  $bizino_blog_style != '2' ) {
+            if( $bizino_blog_sidebar != '1' && is_active_sidebar('bizino-blog-sidebar') &&  $bizino_blog_style != '2' ) {
                 // Sidebar
                 get_sidebar();
             }
@@ -205,9 +206,9 @@
             if( class_exists('ReduxFramework') ) {
                 $bizino_blog_single_sidebar = bizino_opt('bizino_blog_single_sidebar');
             } else {
-                $bizino_blog_single_sidebar = 4;
+                $bizino_blog_single_sidebar = '3';
             }
-            if( $bizino_blog_single_sidebar != 1 ) {
+            if( $bizino_blog_single_sidebar != '1' ) {
                 // Sidebar
                 get_sidebar();
             }
@@ -338,8 +339,8 @@
     // blog details wrapper start hook function
     if( !function_exists('bizino_blog_details_wrapper_start_cb') ) {
         function bizino_blog_details_wrapper_start_cb( ) {
-            echo ' <section class="vs-blog-wrapper blog-details space-top space-extra-bottom">
-                        <div class="container">';
+            echo '<section class="vs-blog-wrapper blog-details space-top space-extra-bottom">
+                    <div class="container">';
                     if( is_active_sidebar( 'bizino-blog-sidebar' ) ){
                         $bizino_gutter_class = 'gx-40';
                     }else{
@@ -484,7 +485,6 @@
             if ( comments_open() || get_comments_number() ) {
                 comments_template();
             }
-            echo '</div>';
         }
     }
 
