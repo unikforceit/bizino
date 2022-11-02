@@ -597,7 +597,7 @@
                         'img' => esc_url( get_template_directory_uri() .'/assets/img/left-sideber.png')
                     ),
                     '3' => array(
-                        'alt' => esc_attr__('2 Column Right','bizino'),
+                        'alt' => esc_attr__('3 Column Right','bizino'),
                         'img' => esc_url(  get_template_directory_uri() .'/assets/img/right-sideber.png' )
                     ),
 
@@ -736,7 +736,7 @@
                         'img' => esc_url( get_template_directory_uri() .'/assets/img/left-sideber.png')
                     ),
                     '3' => array(
-                        'alt' => esc_attr__('2 Column Right','bizino'),
+                        'alt' => esc_attr__('3 Column Right','bizino'),
                         'img' => esc_url(  get_template_directory_uri() .'/assets/img/right-sideber.png' )
                     ),
 

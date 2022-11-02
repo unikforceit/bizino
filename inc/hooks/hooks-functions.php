@@ -154,16 +154,18 @@
         function bizino_blog_col_start_wrap_cb() {
             if( class_exists('ReduxFramework') ) {
                 $bizino_blog_style = bizino_opt('bizino_blog_style');
-
-                $bizino_blog_sidebar = bizino_opt('bizino_blog_sidebar');
-                if( $bizino_blog_sidebar == '1' && is_active_sidebar('bizino-blog-sidebar') ) {
-                    echo '<div class="col-lg-12">';
-                } elseif( $bizino_blog_sidebar == '2' && is_active_sidebar('bizino-blog-sidebar') ) {
-                    echo '<div class="col-lg-8 order-last">';
-                } else {
-                    echo '<div class="col-lg-8">';
+                if( $bizino_blog_style  == '2' ){
+                   echo '';
+                }else{
+                    $bizino_blog_sidebar = bizino_opt('bizino_blog_sidebar');
+                    if( $bizino_blog_sidebar == '1' && is_active_sidebar('bizino-blog-sidebar') ) {
+                        echo '<div class="col-lg-12">';
+                    } elseif( $bizino_blog_sidebar == '2' && is_active_sidebar('bizino-blog-sidebar') ) {
+                        echo '<div class="col-lg-8">';
+                    } else {
+                        echo '<div class="col-lg-8">';
+                    }
                 }
-                
             } else {
                 if( is_active_sidebar('bizino-blog-sidebar') ) {
                     echo '<div class="col-lg-8">';
@@ -187,10 +189,10 @@
                 $bizino_blog_style = bizino_opt('bizino_blog_style');
                 $bizino_blog_sidebar = bizino_opt('bizino_blog_sidebar');
             } else {
-                $bizino_blog_sidebar = '3';
+                $bizino_blog_sidebar = '2';
                 $bizino_blog_style = '1';
             }
-            if( $bizino_blog_sidebar != '1' && is_active_sidebar('bizino-blog-sidebar') &&  $bizino_blog_style != '2' ) {
+            if( $bizino_blog_sidebar != 1 && is_active_sidebar('bizino-blog-sidebar') &&  $bizino_blog_style != '2' ) {
                 // Sidebar
                 get_sidebar();
             }
@@ -203,9 +205,9 @@
             if( class_exists('ReduxFramework') ) {
                 $bizino_blog_single_sidebar = bizino_opt('bizino_blog_single_sidebar');
             } else {
-                $bizino_blog_single_sidebar = '3';
+                $bizino_blog_single_sidebar = 4;
             }
-            if( $bizino_blog_single_sidebar != '1' ) {
+            if( $bizino_blog_single_sidebar != 1 ) {
                 // Sidebar
                 get_sidebar();
             }
@@ -234,14 +236,13 @@
             if( $bizino_blog_grid == '1' ) {
                 $bizino_blog_grid_class = 'col-lg-12';
             } elseif( $bizino_blog_grid == '2' ) {
-                $bizino_blog_grid_class = 'col-lg-6';
+                $bizino_blog_grid_class = 'col-md-6 col-xl-4';
             } elseif($bizino_blog_grid == '3') {
                 $bizino_blog_grid_class = 'col-md-6 col-xl-4';
             }
 
-            if($bizino_blog_style == '1') {
+            if($bizino_blog_style != '1') {
                 if( have_posts() ) {
-                    echo '<div class="row gx-40">';
                     while( have_posts() ) {
                         the_post();
                         echo '<div class="'.$bizino_blog_grid_class.'">';
@@ -249,24 +250,19 @@
                         echo '</div>';
                     }
                     wp_reset_postdata();
-                } else {
+                }else{
                     get_template_part('templates/content','none');
                 }
-                echo '</div>';
-            } else {
-                echo '<div class="row gx-40">';
+            }else{
                     if( have_posts() ) {
                         while( have_posts() ) {
                             the_post();
-                            echo '<div class="col-md-6 col-xl-4">';
-                            get_template_part('templates/content',get_post_format());
-                            echo '</div>';
+                                get_template_part('templates/content',get_post_format());
                         }
                         wp_reset_postdata();
                     } else{
                         get_template_part('templates/content','none');
                     }
-                echo '</div>';
             }
         }
     }
@@ -342,8 +338,8 @@
     // blog details wrapper start hook function
     if( !function_exists('bizino_blog_details_wrapper_start_cb') ) {
         function bizino_blog_details_wrapper_start_cb( ) {
-            echo '<section class="vs-blog-wrapper blog-details space-top space-extra-bottom">
-                    <div class="container">';
+            echo ' <section class="vs-blog-wrapper blog-details space-top space-extra-bottom">
+                        <div class="container">';
                     if( is_active_sidebar( 'bizino-blog-sidebar' ) ){
                         $bizino_gutter_class = 'gx-40';
                     }else{
@@ -359,7 +355,7 @@
             if( class_exists('ReduxFramework') ) {
                 $bizino_blog_single_sidebar = bizino_opt('bizino_blog_single_sidebar');
                 if( $bizino_blog_single_sidebar == '2' && is_active_sidebar('bizino-blog-sidebar') ) {
-                    echo '<div class="col-lg-8 order-last">';
+                    echo '<div class="col-lg-8>';
                 } elseif( $bizino_blog_single_sidebar == '3' && is_active_sidebar('bizino-blog-sidebar') ) {
                     echo '<div class="col-lg-8">';
                 } else {
@@ -488,6 +484,7 @@
             if ( comments_open() || get_comments_number() ) {
                 comments_template();
             }
+            echo '</div>';
         }
     }
 
