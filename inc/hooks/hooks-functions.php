@@ -236,19 +236,21 @@
             if( $bizino_blog_grid == '1' ) {
                 $bizino_blog_grid_class = 'col-lg-12';
             } elseif( $bizino_blog_grid == '2' ) {
-                $bizino_blog_grid_class = 'col-md-6 col-xl-4';
+                $bizino_blog_grid_class = 'col-lg-6';
             } elseif($bizino_blog_grid == '3') {
-                $bizino_blog_grid_class = 'col-md-6 col-xl-4';
+                $bizino_blog_grid_class = 'col-lg-4';
             }
 
-            if($bizino_blog_style != '1') {
+            if($bizino_blog_style == '1') {
                 if( have_posts() ) {
+                    echo '<div class="row">';
                     while( have_posts() ) {
                         the_post();
                         echo '<div class="'.$bizino_blog_grid_class.'">';
                         get_template_part('templates/content',get_post_format());
                         echo '</div>';
                     }
+                    echo '</div>';
                     wp_reset_postdata();
                 }else{
                     get_template_part('templates/content','none');
@@ -256,8 +258,10 @@
             }else{
                     if( have_posts() ) {
                         while( have_posts() ) {
+                            echo '<div class="col-md-6 col-xl-4">';
                             the_post();
                                 get_template_part('templates/content',get_post_format());
+                            echo '</div>';
                         }
                         wp_reset_postdata();
                     } else{
