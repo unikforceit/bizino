@@ -670,24 +670,6 @@
                 'display_value' => 'text',
             ),
             array(
-                'id'       => 'bizino_blog_readmore_setting',
-                'type'     => 'button_set',
-                'title'    => esc_html__( 'Read More Text Setting', 'bizino' ),
-                'subtitle' => esc_html__( 'Control read more text from here.', 'bizino' ),
-                'options'  => array(
-                    "default"   => esc_html__('Default','bizino'),
-                    "custom"    => esc_html__('Custom','bizino'),
-                ),
-                'default'  => 'default',
-            ),
-            array(
-                'id'       => 'bizino_blog_custom_readmore',
-                'type'     => 'text',
-                'title'    => esc_html__('Read More Text', 'bizino'),
-                'subtitle' => esc_html__('Set read moer text here. If you use this option then you will able to set your won text.', 'bizino'),
-                'required' => array('bizino_blog_readmore_setting','equals','custom')
-            ),
-            array(
                 'id'       => 'bizino_blog_title_color',
                 'output'   => array( '.vs-blog .blog-title a'),
                 'type'     => 'color',
@@ -707,20 +689,6 @@
                 'type'     => 'color',
                 'title'    => esc_html__( 'Blog Excerpt / Content Color', 'bizino' ),
                 'subtitle' => esc_html__( 'Set Blog Excerpt / Content Color.', 'bizino' ),
-            ),
-            array(
-                'id'       => 'bizino_blog_read_more_button_color',
-                'output'   => array( '.blog-content .link-btn'),
-                'type'     => 'color',
-                'title'    => esc_html__( 'Read More Button Color', 'bizino' ),
-                'subtitle' => esc_html__( 'Set Read More Button Color.', 'bizino' ),
-            ),
-            array(
-                'id'       => 'bizino_blog_read_more_button_hover_color',
-                'output'   => array( '.blog-content .link-btn:hover'),
-                'type'     => 'color',
-                'title'    => esc_html__( 'Read More Button Hover Color', 'bizino' ),
-                'subtitle' => esc_html__( 'Set Read More Button Hover Color.', 'bizino' ),
             ),
             array(
                 'id'       => 'bizino_blog_pagination_color',
@@ -837,15 +805,6 @@
                 'off'       => esc_html__('Hide','bizino'),
                 'default'   => true,
             ),
-            array(
-                'id'       => 'bizino_post_details_related_post',
-                'type'     => 'switch',
-                'title'    => esc_html__('Related Post', 'bizino'),
-                'subtitle' => esc_html__('Control related post from here. If you use this option then you will able to show or hide related post ( Default setting Show ).', 'bizino'),
-                'on'        => esc_html__('Show','bizino'),
-                'off'       => esc_html__('Hide','bizino'),
-                'default'   => false,
-            ),
         )
     ));
 
@@ -883,15 +842,6 @@
                 'default'  => true,
                 'on'        => esc_html__('Enabled','bizino'),
                 'off'       => esc_html__('Disabled','bizino'),
-            ),
-            array(
-                'id'       => 'bizino_display_post_views',
-                'type'     => 'switch',
-                'title'    => esc_html__( 'Post Views', 'bizino' ),
-                'subtitle' => esc_html__( 'Switch On to Display Post Views.', 'bizino' ),
-                'default'  => true,
-                'on'        => esc_html__( 'Enabled', 'bizino'),
-                'off'       => esc_html__( 'Disabled', 'bizino'),
             ),
             array(
                 'id'       => 'bizino_display_post_comment',

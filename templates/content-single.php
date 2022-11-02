@@ -13,7 +13,8 @@
     }
 
     ?>
-    <div <?php post_class('vs-blog blog-single'); ?> >
+
+    <div <?php post_class('vs-blog blog-single'); ?>>
     <?php
         if( class_exists('ReduxFramework') ) {
             $bizino_post_details_title_position = bizino_opt('bizino_post_details_title_position');
@@ -53,7 +54,7 @@
                     bizino_link_pages();
                 }
 
-                echo '</div>';
+            echo '</div>';
 
             if( class_exists('ReduxFramework') ) {
                 $bizino_post_details_share_options = bizino_opt('bizino_post_details_share_options');
@@ -75,12 +76,11 @@
                             }
                             echo '<div class="col-md-auto">';
                             echo '<span class="share-links-title">'.$tag_text.'</span>';
-
-                                echo '<div class="tagcloud">';
+                              echo '<div class="tagcloud">';
                                     foreach( $bizino_post_tag as $tags ){
                                         echo '<a href="'.esc_url( get_tag_link( $tags->term_id ) ).'">'.esc_html( $tags->name ).'</a>';
                                     }
-                                echo '</div>';
+                              echo '</div>';
                             echo '</div>';
                         }
 
@@ -131,3 +131,7 @@
         *
         */
         do_action( 'bizino_blog_details_comments' );
+
+        ?>
+    </div>
+ 
