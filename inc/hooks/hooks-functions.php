@@ -359,7 +359,7 @@
             if( class_exists('ReduxFramework') ) {
                 $bizino_blog_single_sidebar = bizino_opt('bizino_blog_single_sidebar');
                 if( $bizino_blog_single_sidebar == '2' && is_active_sidebar('bizino-blog-sidebar') ) {
-                    echo '<div class="col-lg-8>';
+                    echo '<div class="col-lg-8">';
                 } elseif( $bizino_blog_single_sidebar == '3' && is_active_sidebar('bizino-blog-sidebar') ) {
                     echo '<div class="col-lg-8">';
                 } else {
@@ -488,7 +488,6 @@
             if ( comments_open() || get_comments_number() ) {
                 comments_template();
             }
-            echo '</div>';
         }
     }
 

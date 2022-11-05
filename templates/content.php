@@ -45,7 +45,7 @@ echo '<!-- Single Post -->';
     ?>
             <?php if (has_post_thumbnail()){?>
                 <div class="blog-img">
-                    <a href="<?php echo esc_url( get_permalink() );?>"><?php bizino_blog_post_thumb_cb();?></a>
+                    <?php bizino_blog_post_thumb_cb();?>
                 </div>
             <?php } ?>
                 <div class="blog-body">

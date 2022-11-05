@@ -37,7 +37,7 @@ if ( ! function_exists( 'bizino_breadcrumbs' ) ) {
 
         if( $args['breadcrumbs_classes'] ){
 
-            $args_el[] =  'class="'.esc_attr( $args['breadcrumbs_classes'] ).'"';
+            $args_el[] =  esc_attr( $args['breadcrumbs_classes'] );
 
         }
 
@@ -64,7 +64,7 @@ if ( ! function_exists( 'bizino_breadcrumbs' ) ) {
 
         $html = '';
         $html .= '<div class="breadcumb-menu-wrap">';
-        $html .= '<ul class="breadcumb-menu" '.implode( ' ',  $args_el ).'>';
+        $html .= '<ul class="breadcumb-menu '.implode( ' ',  $args_el ).'">';
         // Add Homepage link (always present)
         $html .= '<li><a href="' . esc_url( get_home_url('/') ) . '" title="' . esc_attr( $args['home_title'] ) . '">' . esc_attr( $args['home_title'] ) . '</a></li>';
         // Post
@@ -132,6 +132,7 @@ if ( ! function_exists( 'bizino_breadcrumbs' ) ) {
             $html .= '<li class="active">' . wp_kses( get_the_title( get_option( 'page_for_posts' ) ), $allowhtml ) . '</li>';
         }
         $html .= '</ul>';
+        $html .= '</div>';
         $html .= '</div>';
 
         echo apply_filters( 'bizino_breadcrumbs_filter', $html );

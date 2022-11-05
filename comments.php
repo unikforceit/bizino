@@ -52,7 +52,7 @@
 	  'author'  => '<div class="row"><div class="col-md-6 form-group mb-4"><input class="form-control" type="text" name="author" placeholder="'. esc_attr__( 'Enter Your Name *', 'bizino' ) .'" value="'. esc_attr( $commenter['comment_author'] ).'" '.esc_attr( $aria_req ).'><i class="far fa-user"></i></div>',
 	  'email'   => '<div class="col-md-6 form-group mb-4"><input class="form-control" type="email" name="email"  value="' . esc_attr(  $commenter['comment_author_email'] ) .'" placeholder="'. esc_attr__( 'Enter E-mail Address *', 'bizino' ) .'" '.esc_attr( $aria_req ).'><i class="far fa-envelope"></i></div></div>',
       'url'     => '',
-      'cookies' => '</div><div class="row"><div class="col-12"><div class="custom-checkbox notice mb-30"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . esc_attr( $consent ) . ' />' . '<label for="wp-comment-cookies-consent">'  . esc_html__( ' Save my name, email, and website in this browser for the next time I comment.','bizino' ) .  '<span class="checkmark"></span> </label> </div></div></div>'
+      'cookies' => '<div class="row"><div class="col-12"><div class="custom-checkbox notice mb-30"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . esc_attr( $consent ) . ' />' . '<label for="wp-comment-cookies-consent">'  . esc_html__( ' Save my name, email, and website in this browser for the next time I comment.','bizino' ) .  '<span class="checkmark"></span> </label> </div></div></div>'
     );
 
 	$args = array(

@@ -126,7 +126,6 @@
                     echo '</div>';
                 echo '</div>';
             echo '</div>';
-            echo '</div>';
             echo '<!-- End of Page title -->';
         }
     } else {
@@ -266,6 +265,4 @@
                     echo '</div>';
                 echo '</div>';
             echo '</div>';
-        echo '</div>';
-        echo '</div>';
     }
