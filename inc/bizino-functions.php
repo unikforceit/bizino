@@ -715,6 +715,25 @@ function bizino_getPostViews( $postID ){
     return $count;
 }
 
+function bizino_blog_category(){
+
+    if ( 'post' == get_post_type() ) {
+        $categories = get_the_category();
+        $output = '';
+        if($categories){
+            $index = 0;
+            foreach($categories as $category) {
+                $index++;
+                if ($index == 1) {
+                    $output .= '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . $category->cat_name . '</a>';
+                }
+            }
+        }
+        return $output;
+    }
+
+}
+
 
 /* This code filters the Categories archive widget to include the post count inside the link */
 add_filter( 'wp_list_categories', 'bizino_cat_count_span' );
