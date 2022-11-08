@@ -48,7 +48,7 @@ echo '<!-- Single Post -->';
                     <?php bizino_blog_post_thumb_cb();?>
                 </div>
             <?php } ?>
-                <div class="blog-body">
+             <div class="blog-body">
             <?php
             if( $bizino_display_post_date ){
                 echo '<div class="blog-date"><a href="'.esc_url( bizino_blog_date_permalink() ).'">';

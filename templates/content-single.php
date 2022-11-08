@@ -45,8 +45,6 @@
                 // Blog Post Meta
                 do_action( 'bizino_blog_post_meta' );
 
-                echo '<h2 class="blog-title">'.wp_kses( get_the_title(), $allowhtml ).'</h2>';
-
                 if( get_the_content() ){
 
                     the_content();
@@ -132,3 +130,5 @@
         *
         */
         do_action( 'bizino_blog_details_comments' );
+        ?>
+    </div>

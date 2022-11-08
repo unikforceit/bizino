@@ -226,7 +226,7 @@
                                 echo bizino_heading_tag(
                                     array(
                                         "tag"   => esc_attr( $bizino_page_title_tag ),
-                                        "text"  => wp_kses( 'Blog Details', $allowhtml ),
+                                        "text"  => wp_kses( wp_trim_words(get_the_title(), 4, ''), $allowhtml ),
                                         'class' => 'breadcumb-title'
                                     )
                                 );
@@ -265,4 +265,7 @@
                     echo '</div>';
                 echo '</div>';
             echo '</div>';
+            if (is_front_page()){
+                echo '</div>';
+            }
     }
