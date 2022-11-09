@@ -102,7 +102,7 @@ select {
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-  
+
   &.style3 {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
   }
@@ -144,7 +144,7 @@ input[type="checkbox"] {
   display: none;
 
   &:checked {
-    ~label {
+    ~ label {
 
       &:before {
         content: "\f00c";
@@ -155,7 +155,7 @@ input[type="checkbox"] {
     }
   }
 
-  ~label {
+  ~ label {
     position: relative;
     padding-left: 30px;
     cursor: pointer;
@@ -190,7 +190,7 @@ input[type="radio"] {
   display: none;
 
 
-  ~label {
+  ~ label {
     position: relative;
     padding-left: 30px;
     cursor: pointer;
@@ -222,7 +222,7 @@ input[type="radio"] {
   }
 
   &:checked {
-    ~label {
+    ~ label {
       &::before {
         border-color: $theme-color;
         background-color: $theme-color;
@@ -246,7 +246,7 @@ label {
   margin-bottom: var(--bs-gutter-x);
   position: relative;
 
-  >i {
+  > i {
     position: absolute;
     right: calc((var(--bs-gutter-x) / 2) + 30px);
     top: 18px;
@@ -255,7 +255,7 @@ label {
   }
 
   &.has-label {
-    >i {
+    > i {
       top: 47px;
     }
   }
@@ -291,7 +291,7 @@ textarea.is-invalid {
   }
 }
 
-.row.no-gutters>.form-group {
+.row.no-gutters > .form-group {
   margin-bottom: 0;
 }
 

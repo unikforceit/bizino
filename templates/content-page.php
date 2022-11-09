@@ -13,17 +13,17 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <div id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 
+    <?php
 
-	/**
-	 * page content 
-	 * Comments Template
-	 * @Hook  bizino_page_content
-	 *
-	 * @Hooked bizino_page_content_cb
-	 * 
-	 *
-	 */
-	do_action( 'bizino_page_content' );
-	?>
+    /**
+     * page content
+     * Comments Template
+     * @Hook  bizino_page_content
+     *
+     * @Hooked bizino_page_content_cb
+     *
+     *
+     */
+    do_action('bizino_page_content');
+    ?>
 </div>

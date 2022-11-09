@@ -36,7 +36,7 @@
   }
 
   input[type=checkbox] {
-    &~label {
+    & ~ label {
       &:before {
         border: 1px solid #BDBDBD;
         border-radius: 3px;
@@ -44,7 +44,7 @@
     }
 
     &:checked {
-      ~label {
+      ~ label {
         &:before {
           background-color: $theme-color;
           border-color: transparent;
@@ -134,9 +134,9 @@
     margin: -10px 0 -15px 0;
     padding: 0;
 
-    >.vs-comment-item {
+    > .vs-comment-item {
       &:last-child {
-        >.vs-post-comment {
+        > .vs-post-comment {
           border-bottom: none;
           padding-bottom: 0;
         }

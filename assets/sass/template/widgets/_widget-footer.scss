@@ -51,7 +51,7 @@
     }
 
     li {
-      >span {
+      > span {
         @include equal-size(auto);
         position: relative;
         background-color: transparent;

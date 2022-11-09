@@ -31,12 +31,31 @@
       }
 
 
-      &:nth-child(1) {top: 10%; left: 5%;}
-      &:nth-child(2) {bottom: 16%; right: 0%;}
-      &:nth-child(3) {top: 1.5%; right: 6%;}
-      &:nth-child(4) {bottom: 10%; left: 5%;}
-      &:nth-child(5) {top: 26%; right: -14%;}
-      
+      &:nth-child(1) {
+        top: 10%;
+        left: 5%;
+      }
+
+      &:nth-child(2) {
+        bottom: 16%;
+        right: 0%;
+      }
+
+      &:nth-child(3) {
+        top: 1.5%;
+        right: 6%;
+      }
+
+      &:nth-child(4) {
+        bottom: 10%;
+        left: 5%;
+      }
+
+      &:nth-child(5) {
+        top: 26%;
+        right: -14%;
+      }
+
       &.active {
         border-color: $theme-color;
       }
@@ -71,7 +90,7 @@
       animation-delay: 2.6s;
     }
   }
-  
+
 
   .testi-quote {
     margin: 0 0 50px 0;
@@ -113,7 +132,7 @@
 
 
 @include ml {
-  
+
   .testi-style1 {
 
     .testi-avater {

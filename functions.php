@@ -8,7 +8,7 @@
  */
 
 // Block direct access
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit;
 }
 

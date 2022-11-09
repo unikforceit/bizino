@@ -1,11 +1,8 @@
-
 // Function For Letter Spacing
 @function letter-spacing($psValue, $return: 'em', $fSize: '16') {
   @if $return=='em' {
     @return ($psValue) * 0.001 + em;
-  }
-
-  @else {
+  } @else {
     @return ($psValue * $fSize) * 0.001;
   }
 }

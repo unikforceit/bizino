@@ -33,7 +33,7 @@
     display: block;
     position: relative;
 
-    >span {
+    > span {
       width: 38px;
       height: 38px;
       line-height: 38px;
@@ -51,7 +51,7 @@
     }
 
     &:hover {
-      >span {
+      > span {
         background-color: $secondary-color;
         color: $white-color;
       }

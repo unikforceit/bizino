@@ -680,7 +680,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 'notice_can_install_required'     => _n_noop(
 
-                    /* translators: 1: plugin name(s). */
+                /* translators: 1: plugin name(s). */
 
                     'This theme requires the following plugin: %1$s.',
 
@@ -692,7 +692,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 'notice_can_install_recommended'  => _n_noop(
 
-                    /* translators: 1: plugin name(s). */
+                /* translators: 1: plugin name(s). */
 
                     'This theme recommends the following plugin: %1$s.',
 
@@ -704,7 +704,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 'notice_ask_to_update'            => _n_noop(
 
-                    /* translators: 1: plugin name(s). */
+                /* translators: 1: plugin name(s). */
 
                     'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 
@@ -716,7 +716,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 'notice_ask_to_update_maybe'      => _n_noop(
 
-                    /* translators: 1: plugin name(s). */
+                /* translators: 1: plugin name(s). */
 
                     'There is an update available for: %1$s.',
 
@@ -728,7 +728,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 'notice_can_activate_required'    => _n_noop(
 
-                    /* translators: 1: plugin name(s). */
+                /* translators: 1: plugin name(s). */
 
                     'The following required plugin is currently inactive: %1$s.',
 
@@ -740,7 +740,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 'notice_can_activate_recommended' => _n_noop(
 
-                    /* translators: 1: plugin name(s). */
+                /* translators: 1: plugin name(s). */
 
                     'The following recommended plugin is currently inactive: %1$s.',
 
@@ -2088,7 +2088,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                     echo '<div id="message" class="error"><p>', wp_kses_post( $activate->get_error_message() ), '</p></div>',
 
-                        '<p><a href="', esc_url( $this->get_tgmpa_url() ), '" target="_parent">', esc_html( $this->strings['return'] ), '</a></p>';
+                    '<p><a href="', esc_url( $this->get_tgmpa_url() ), '" target="_parent">', esc_html( $this->strings['return'] ), '</a></p>';
 
 
 
@@ -2126,15 +2126,15 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 echo '<div id="message" class="error"><p>',
 
-                    sprintf(
+                sprintf(
 
-                        esc_html( $this->strings['plugin_already_active'] ),
+                    esc_html( $this->strings['plugin_already_active'] ),
 
-                        '<strong>' . esc_html( $this->plugins[ $slug ]['name'] ) . '</strong>'
+                    '<strong>' . esc_html( $this->plugins[ $slug ]['name'] ) . '</strong>'
 
-                    ),
+                ),
 
-                    '</p></div>';
+                '</p></div>';
 
             } elseif ( $this->does_plugin_require_update( $slug ) ) {
 
@@ -2148,15 +2148,15 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                         echo '<div id="message" class="error"><p>',
 
-                            sprintf(
+                        sprintf(
 
-                                esc_html( $this->strings['plugin_needs_higher_version'] ),
+                            esc_html( $this->strings['plugin_needs_higher_version'] ),
 
-                                '<strong>' . esc_html( $this->plugins[ $slug ]['name'] ) . '</strong>'
+                            '<strong>' . esc_html( $this->plugins[ $slug ]['name'] ) . '</strong>'
 
-                            ),
+                        ),
 
-                            '</p></div>';
+                        '</p></div>';
 
                     }
 
@@ -4124,21 +4124,21 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
             echo '<p style="float: right; padding: 0em 1.5em 0.5em 0;"><strong><small>',
 
-                esc_html(
+            esc_html(
 
-                    sprintf(
+                sprintf(
 
-                        /* translators: %s: version number */
+                /* translators: %s: version number */
 
-                        esc_html__('TGMPA v%s', 'bizino' ),
+                    esc_html__('TGMPA v%s', 'bizino' ),
 
-                        self::TGMPA_VERSION
+                    self::TGMPA_VERSION
 
-                    )
+                )
 
-                ),
+            ),
 
-                '</small></strong></p>';
+            '</small></strong></p>';
 
         }
 
@@ -4848,7 +4848,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
             return sprintf(
 
-                /* translators: 1: install status, 2: update status */
+            /* translators: 1: install status, 2: update status */
 
                 _x( '%1$s, %2$s', 'Install/Update Status', 'bizino' ),
 
@@ -5534,9 +5534,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
                         <div class="update-message">',
 
-                            esc_html__('Upgrade message from the plugin author:', 'bizino' ),
+            esc_html__('Upgrade message from the plugin author:', 'bizino' ),
 
-                            ' <strong>', wp_kses_data( $item['upgrade_notice'] ), '</strong>
+            ' <strong>', wp_kses_data( $item['upgrade_notice'] ), '</strong>
 
                         </div>
 
@@ -5926,7 +5926,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
                 echo '<div class="tgmpa">',
 
-                    '<h2 style="font-size: 23px; font-weight: 400; line-height: 29px; margin: 0; padding: 9px 15px 4px 0;">', esc_html( get_admin_page_title() ), '</h2>
+                '<h2 style="font-size: 23px; font-weight: 400; line-height: 29px; margin: 0; padding: 9px 15px 4px 0;">', esc_html( get_admin_page_title() ), '</h2>
 
                     <div class="update-php" style="width: 100%; height: 98%; min-height: 850px; padding-top: 1px;">';
 
@@ -7184,7 +7184,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 
                                 /* translators: 1: plugin name. */
 
-								$this->upgrader->strings['skin_update_successful'] = __( '%1$s installed and activated successfully.', 'bizino' );
+                                $this->upgrader->strings['skin_update_successful'] = __( '%1$s installed and activated successfully.', 'bizino' );
 
                                 $this->upgrader->strings['skin_upgrade_end'] = esc_html__('All installations and activations have been completed.', 'bizino' );
 

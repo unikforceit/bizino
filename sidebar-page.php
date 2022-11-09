@@ -12,15 +12,15 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-if ( ! is_active_sidebar( 'bizino-page-sidebar' ) ) {
+if (!is_active_sidebar('bizino-page-sidebar')) {
     return;
 }
 ?>
 
 <div class="col-lg-4">
     <div class="page-sidebar">
-    <?php 
-        dynamic_sidebar( 'bizino-page-sidebar' );
-    ?>               
+        <?php
+        dynamic_sidebar('bizino-page-sidebar');
+        ?>
     </div>
 </div>

@@ -208,7 +208,7 @@
     }
 
     &.active::before,
-    &.active+button::before,
+    &.active + button::before,
     &:first-child::before {
       opacity: 0;
       visibility: hidden;
@@ -331,7 +331,6 @@
     }
   }
 }
-
 
 
 @include md {

@@ -10,6 +10,7 @@
 
 .text-inherit {
   color: inherit;
+
   &:hover {
     color: $theme-color;
   }

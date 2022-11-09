@@ -117,7 +117,7 @@
       }
 
       &.vs-active {
-        >a {
+        > a {
           color: $theme-color;
 
           &:before {
@@ -138,7 +138,7 @@
     }
 
     .vs-item-has-children {
-      >a {
+      > a {
         .vs-mean-expand {
           position: absolute;
           right: 0;
@@ -164,7 +164,7 @@
       }
 
       &.vs-active {
-        >a {
+        > a {
           .vs-mean-expand:before {
             content: '\f068';
           }
@@ -173,17 +173,16 @@
     }
   }
 
-  >ul {
+  > ul {
     padding: 0 40px;
 
-    >li {
+    > li {
       &:last-child {
         border-bottom: none;
       }
     }
   }
 }
-
 
 
 .vs-menu-toggle {
@@ -222,7 +221,7 @@
     max-width: 270px;
   }
 
-  .vs-mobile-menu>ul {
+  .vs-mobile-menu > ul {
     padding: 0 20px;
   }
 }

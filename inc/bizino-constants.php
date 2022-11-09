@@ -8,7 +8,7 @@
  */
 
 // Block direct access
-if ( !defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
@@ -19,24 +19,24 @@ if ( !defined( 'ABSPATH' ) ) {
  */
 
 // Base URI
-if ( ! defined( 'BIZINO_DIR_URI' ) ) {
-    define('BIZINO_DIR_URI', get_parent_theme_file_uri().'/' );
+if (!defined('BIZINO_DIR_URI')) {
+    define('BIZINO_DIR_URI', get_parent_theme_file_uri() . '/');
 }
 
 // Assist URI
-if ( ! defined( 'BIZINO_DIR_ASSIST_URI' ) ) {
-    define( 'BIZINO_DIR_ASSIST_URI', get_theme_file_uri('/assets/') );
+if (!defined('BIZINO_DIR_ASSIST_URI')) {
+    define('BIZINO_DIR_ASSIST_URI', get_theme_file_uri('/assets/'));
 }
 
 
 // Css File URI
-if ( ! defined( 'BIZINO_DIR_CSS_URI' ) ) {
-    define( 'BIZINO_DIR_CSS_URI', get_theme_file_uri('/assets/css/') );
+if (!defined('BIZINO_DIR_CSS_URI')) {
+    define('BIZINO_DIR_CSS_URI', get_theme_file_uri('/assets/css/'));
 }
 
 // Skin Css File
-if ( ! defined( 'BIZINO_DIR_SKIN_CSS_URI' ) ) {
-    define( 'BIZINO_DIR_SKIN_CSS_URI', get_theme_file_uri('/assets/css/skins/') );
+if (!defined('BIZINO_DIR_SKIN_CSS_URI')) {
+    define('BIZINO_DIR_SKIN_CSS_URI', get_theme_file_uri('/assets/css/skins/'));
 }
 
 
@@ -48,7 +48,7 @@ if (!defined('BIZINO_DIR_JS_URI')) {
 
 // External PLugin File URI
 if (!defined('BIZINO_DIR_PLUGIN_URI')) {
-    define('BIZINO_DIR_PLUGIN_URI', get_theme_file_uri( '/assets/plugins/'));
+    define('BIZINO_DIR_PLUGIN_URI', get_theme_file_uri('/assets/plugins/'));
 }
 
 // Base Directory
@@ -77,11 +77,11 @@ if (!defined('BIZINO_DIR_PATH_HOOKS')) {
 }
 
 //Demo Data Folder Directory Path
-if( !defined( 'BIZINO_DEMO_DIR_PATH' ) ){
-    define( 'BIZINO_DEMO_DIR_PATH', BIZINO_DIR_PATH_INC.'demo-data/' );
+if (!defined('BIZINO_DEMO_DIR_PATH')) {
+    define('BIZINO_DEMO_DIR_PATH', BIZINO_DIR_PATH_INC . 'demo-data/');
 }
-    
+
 //Demo Data Folder Directory URI
-if( !defined( 'BIZINO_DEMO_DIR_URI' ) ){
-    define( 'BIZINO_DEMO_DIR_URI', BIZINO_DIR_URI.'inc/demo-data/' );
+if (!defined('BIZINO_DEMO_DIR_URI')) {
+    define('BIZINO_DEMO_DIR_URI', BIZINO_DIR_URI . 'inc/demo-data/');
 }

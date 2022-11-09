@@ -14,7 +14,7 @@
   padding: 22px 40px;
   border-radius: 9999px;
   z-index: 1;
-  
+
   &:before {
     content: '';
     position: absolute;
@@ -31,7 +31,7 @@
     transition: all ease .4s;
   }
 
-  >i {
+  > i {
     margin-left: 8px;
   }
 
@@ -105,7 +105,7 @@
     &:before {
       background-color: $theme-color;
     }
-    
+
     i {
       width: 64px;
       height: 64px;
@@ -138,7 +138,6 @@
   }
 
 }
-
 
 
 // Icon Btn
@@ -190,7 +189,7 @@
     border: 2px solid $theme-color;
     color: $theme-color;
   }
-  
+
   &:hover {
     border-color: transparent;
     box-shadow: none;
@@ -209,7 +208,7 @@
   padding: 0;
   background-color: transparent;
 
-  >i {
+  > i {
     display: inline-block;
     width: var(--icon-size, 124px);
     height: var(--icon-size, 124px);
@@ -264,7 +263,7 @@
       background-color: $white-color;
       color: $title-color;
     }
-    
+
     &:hover {
       &:after,
       &::before,
@@ -277,16 +276,16 @@
 
   &.style3 {
     border-radius: 50%;
-    
+
     > i {
       background-color: transparent;
       border: none;
       --icon-size: 65px;
       --icon-font-size: 18px;
-      color:  var(--white-color);
+      color: var(--white-color);
     }
 
-    &:before, 
+    &:before,
     &:after {
       background-color: transparent;
       border: 1px solid var(--white-color);
@@ -342,8 +341,6 @@
   }
 
 }
-
-
 
 
 // Scroll To Top
@@ -429,7 +426,7 @@
 .view-big-btn {
   text-align: center;
   display: inline-block;
-  
+
   i {
     display: inline-block;
     text-align: center;
@@ -457,7 +454,7 @@
       background-color: $secondary-color;
     }
   }
-  
+
 }
 
 @include xl {

@@ -1,4 +1,4 @@
-.vs-hero-wrapper  {
+.vs-hero-wrapper {
   position: relative;
   z-index: 1;
 }
@@ -22,11 +22,11 @@
     background-color: $white-color;
     border-color: transparent;
   }
-  
+
   &.style2 {
     display: block;
     margin: 10px 0;
-    
+
     &:hover,
     &.active {
       background-color: $theme-color;
@@ -109,7 +109,7 @@
 }
 
 @include hd {
-  .ls-wrapper>.ls-layer {
+  .ls-wrapper > .ls-layer {
     &.ls-hd-none {
       display: none !important;
     }
@@ -118,7 +118,7 @@
 
 
 @include ml {
-  .ls-wrapper>.ls-layer {
+  .ls-wrapper > .ls-layer {
     &.ls-ml-none {
       display: none !important;
     }

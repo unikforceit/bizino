@@ -215,7 +215,7 @@
     margin: 0 0 20px 0;
 
 
-    >i:first-child {
+    > i:first-child {
       position: absolute;
       top: -2px;
       left: 0;
@@ -237,7 +237,7 @@
     font-weight: 500;
     padding-left: 60px;
 
-    >i:first-child {
+    > i:first-child {
       top: 5px;
       width: 35px;
       height: 35px;
@@ -245,7 +245,6 @@
     }
   }
 }
-
 
 
 .about-box2 {
@@ -295,7 +294,7 @@
     }
 
     &.active::before,
-    &.active+button::before,
+    &.active + button::before,
     &:first-child::before {
       opacity: 0;
       visibility: hidden;

@@ -337,12 +337,12 @@ ul.wp-block-rss a {
   margin: 0 0 1.5em;
   padding-top: 1em;
 
-  >.page-links-title {
+  > .page-links-title {
     margin-right: 10px;
   }
 
-  >span:not(.page-links-title):not(.screen-reader-text),
-  >a {
+  > span:not(.page-links-title):not(.screen-reader-text),
+  > a {
     display: inline-block;
     padding: 5px 13px;
     background-color: $white-color;
@@ -456,7 +456,7 @@ ul.wp-block-rss a {
         margin-bottom: 20px;
       }
 
-      .blog-content>p:nth-child(2n) {
+      .blog-content > p:nth-child(2n) {
         background: $smoke-color;
         padding: 5px 20px;
       }
@@ -505,7 +505,7 @@ ul.wp-block-rss a {
   }
 
   .search-grid-meta {
-    >* {
+    > * {
       display: inline-block;
       margin-right: 15px;
       font-size: 14px;
@@ -573,7 +573,7 @@ ul.wp-block-rss a {
     padding-left: 10px;
   }
 
-  .page--content.clearfix+.vs-comment-form {
+  .page--content.clearfix + .vs-comment-form {
     margin-top: 24px;
   }
 }

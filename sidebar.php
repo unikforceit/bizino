@@ -10,17 +10,17 @@
 
 
 // Block direct access
-if( !defined( 'ABSPATH' ) ){
+if (!defined('ABSPATH')) {
     exit;
 }
 
-if ( ! is_active_sidebar( 'bizino-blog-sidebar' ) ) {
+if (!is_active_sidebar('bizino-blog-sidebar')) {
     return;
 }
 ?>
 
 <div class="col-lg-4">
     <aside class="sidebar-area">
-	    <?php dynamic_sidebar( 'bizino-blog-sidebar' ); ?>
-	</aside>
+        <?php dynamic_sidebar('bizino-blog-sidebar'); ?>
+    </aside>
 </div>

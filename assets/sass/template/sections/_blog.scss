@@ -211,7 +211,6 @@ blockquote {
 }
 
 
-
 .blog-single {
   position: relative;
   margin-bottom: 60px;
@@ -221,7 +220,7 @@ blockquote {
     margin-top: -0.45em;
     padding-top: 0;
 
-    >span,
+    > span,
     a {
       font-size: 14px;
       margin: 0 17px 0 0;
@@ -291,7 +290,7 @@ blockquote {
     margin: -17.5px 0 26px 0;
     border-radius: 10px;
 
-    &:hover{
+    &:hover {
       background-color: $secondary-color;
       color: $white-color;
     }
@@ -426,7 +425,6 @@ blockquote {
     }
   }
 }
-
 
 
 .blog-details {
@@ -644,11 +642,11 @@ blockquote {
         }
       }
     }
-    
+
     .blog-title {
       a {
         color: $white-color;
-        
+
         &:hover {
           color: $theme-color;
         }
@@ -815,7 +813,7 @@ blockquote {
 
     .blog-meta {
 
-      >span,
+      > span,
       a {
         &:not(:last-child) {
           &:after {

@@ -19,14 +19,14 @@
  */
 
 
-
 /**
  * Include the TGM_Plugin_Activation class.
  */
 require_once BIZINO_DIR_PATH_FRAM . 'plugins-activation/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'bizino_register_required_plugins' );
-function bizino_register_required_plugins() {
+add_action('tgmpa_register', 'bizino_register_required_plugins');
+function bizino_register_required_plugins()
+{
 
     /*
     * Array of plugin arrays. Required keys are name and slug.
@@ -36,71 +36,71 @@ function bizino_register_required_plugins() {
     $plugins = array(
 
         array(
-            'name'                  => esc_html__( 'Bizino Core', 'bizino' ),
-            'slug'                  => 'bizino-core',
-            'version'               => '1.0',
-            'source'                => BIZINO_DIR_PATH_FRAM . 'plugins/bizino-core.zip',
-            'required'              => true,
+            'name' => esc_html__('Bizino Core', 'bizino'),
+            'slug' => 'bizino-core',
+            'version' => '1.0',
+            'source' => BIZINO_DIR_PATH_FRAM . 'plugins/bizino-core.zip',
+            'required' => true,
         ),
 
         array(
-            'name'                  => esc_html__( 'LayerSlider', 'bizino' ),
-            'slug'                  => 'LayerSlider',
-            'version'               => '1.0',
-            'source'                => BIZINO_DIR_PATH_FRAM . 'plugins/LayerSlider.zip',
-            'required'              => true,
+            'name' => esc_html__('LayerSlider', 'bizino'),
+            'slug' => 'LayerSlider',
+            'version' => '1.0',
+            'source' => BIZINO_DIR_PATH_FRAM . 'plugins/LayerSlider.zip',
+            'required' => true,
         ),
         array(
-            'name'                  => esc_html__( 'One Click Demo Importer', 'bizino' ),
-            'slug'                  => 'one-click-demo-import',
-            'required'              => true,
-        ),
-
-        array(
-            'name'      => esc_html__( 'Elementor', 'bizino' ),
-            'slug'      => 'elementor',
-            'version'   => '',
-            'required'  => true,
+            'name' => esc_html__('One Click Demo Importer', 'bizino'),
+            'slug' => 'one-click-demo-import',
+            'required' => true,
         ),
 
         array(
-            'name'      => esc_html__( 'Redux Framework', 'bizino' ),
-            'slug'      => 'redux-framework',
-            'version'   => '',
-            'required'  => true,
+            'name' => esc_html__('Elementor', 'bizino'),
+            'slug' => 'elementor',
+            'version' => '',
+            'required' => true,
         ),
 
         array(
-            'name'      => esc_html__( 'CMB2', 'bizino' ),
-            'slug'      => 'cmb2',
-            'required'  => true,
+            'name' => esc_html__('Redux Framework', 'bizino'),
+            'slug' => 'redux-framework',
+            'version' => '',
+            'required' => true,
         ),
 
         array(
-            'name'      => esc_html__( 'Contact Form 7', 'bizino' ),
-            'slug'      => 'contact-form-7',
-            'version'   => '',
-            'required'  => true,
+            'name' => esc_html__('CMB2', 'bizino'),
+            'slug' => 'cmb2',
+            'required' => true,
+        ),
+
+        array(
+            'name' => esc_html__('Contact Form 7', 'bizino'),
+            'slug' => 'contact-form-7',
+            'version' => '',
+            'required' => true,
         ),
         array(
-            'name'      => esc_html__( 'Max Mega Menu', 'bizino' ),
-            'slug'      => 'megamenu',
-            'version'   => '',
-            'required'  => true,
+            'name' => esc_html__('Max Mega Menu', 'bizino'),
+            'slug' => 'megamenu',
+            'version' => '',
+            'required' => true,
         ),
 
     );
 
     $config = array(
-        'id'           => 'bizino',
+        'id' => 'bizino',
         'default_path' => '',
-        'menu'         => 'tgmpa-install-plugins',
-        'has_notices'  => true,
-        'dismissable'  => true,
-        'dismiss_msg'  => '',
+        'menu' => 'tgmpa-install-plugins',
+        'has_notices' => true,
+        'dismissable' => true,
+        'dismiss_msg' => '',
         'is_automatic' => false,
-        'message'      => '',
+        'message' => '',
     );
 
-    tgmpa( $plugins, $config );
+    tgmpa($plugins, $config);
 }

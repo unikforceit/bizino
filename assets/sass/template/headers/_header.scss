@@ -37,15 +37,15 @@
     }
   }
 
-  >ul {
-    >li {
+  > ul {
+    > li {
       margin: 0 13px;
 
       @include xl {
         margin: 0 18px;
       }
 
-      >a {
+      > a {
         .new-label {
           position: absolute;
           top: -10px;
@@ -73,7 +73,7 @@
       position: relative;
 
       &.menu-item-has-children {
-        >a {
+        > a {
 
           &:after {
             content: '\f107';
@@ -96,7 +96,7 @@
 
       &:hover {
 
-        >ul.sub-menu,
+        > ul.sub-menu,
         ul.mega-menu {
           visibility: visible;
           opacity: 1;
@@ -127,7 +127,7 @@
     z-index: -1;
     border-bottom: 3px solid $theme-color;
     box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.09),
-      0px 3px 0px 0px rgba(231, 13, 60, 0.004);
+    0px 3px 0px 0px rgba(231, 13, 60, 0.004);
     transform-origin: top center;
     transition: margin-top 0.4s ease-in-out 0s, visibility 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s, z-index 0s;
 
@@ -157,7 +157,7 @@
       padding: 3px 9px;
 
       &.menu-item-has-children {
-        >a:after {
+        > a:after {
           content: "\f105";
           float: right;
           top: 3px;
@@ -225,7 +225,6 @@
       padding: 0 15px;
 
 
-
       li {
         padding: 4px 0;
       }
@@ -235,9 +234,9 @@
       }
     }
 
-    >li {
+    > li {
 
-      >a {
+      > a {
         display: block;
         padding: 0;
         padding-bottom: 15px;
@@ -274,9 +273,9 @@
 }
 
 .menu-style1 {
-  >ul {
-    >li {
-      >a {
+  > ul {
+    > li {
+      > a {
         padding: 41px 0;
         color: $white-color;
       }
@@ -285,9 +284,9 @@
 }
 
 .menu-style2 {
-  >ul {
-    >li {
-      >a {
+  > ul {
+    > li {
+      > a {
         padding: 49px 0;
       }
     }
@@ -295,9 +294,9 @@
 }
 
 .menu-style3 {
-  >ul {
-    >li {
-      >a {
+  > ul {
+    > li {
+      > a {
         padding: 53px 0;
       }
     }
@@ -337,7 +336,7 @@
       margin-right: 0;
     }
 
-    >i {
+    > i {
       color: $theme-color;
       margin: 0 10px 0 0;
     }
@@ -353,7 +352,7 @@
 }
 
 .header-dropdown {
-  >.dropdown-toggle {
+  > .dropdown-toggle {
     color: $title-color;
 
     i {
@@ -480,7 +479,7 @@
   }
 
   .header-social .social-label,
-  .header-dropdown>.dropdown-toggle,
+  .header-dropdown > .dropdown-toggle,
   .header-links li {
     color: var(--light-color);
   }
@@ -488,13 +487,13 @@
   .header-social a,
   .header-number,
   .header-links li a:hover,
-  .header-dropdown>.dropdown-toggle:hover {
+  .header-dropdown > .dropdown-toggle:hover {
     color: $white-color;
   }
-  
+
   .header-number,
   .header-links li a:hover,
-  .header-dropdown>.dropdown-toggle:hover {
+  .header-dropdown > .dropdown-toggle:hover {
     color: $white-color;
 
     &:hover {
@@ -535,14 +534,14 @@
   }
 
   .header-social .social-label,
-  .header-dropdown>.dropdown-toggle,
+  .header-dropdown > .dropdown-toggle,
   .header-links li,
   .header-social a {
     color: $white-color;
   }
 
   .header-links li a:hover,
-  .header-dropdown>.dropdown-toggle:hover {
+  .header-dropdown > .dropdown-toggle:hover {
     color: $theme-color;
   }
 }

@@ -1,12 +1,13 @@
 .ocdi__demo-import-notice:not(:empty) {
-	background-color: transparent;
-	border-left: 0px;
-	box-shadow: none;
-	padding: 0px;
+    background-color: transparent;
+    border-left: 0px;
+    box-shadow: none;
+    padding: 0px;
 }
+
 .ocdi__demo-import-notice img {
-	border: 4px solid #dbe3ea;
-	width: auto;
+    border: 4px solid #dbe3ea;
+    width: auto;
 }
 
 div[aria-describedby="js-ocdi-modal-content"] .ui-dialog-buttonpane button {

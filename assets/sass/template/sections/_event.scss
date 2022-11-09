@@ -1,6 +1,6 @@
 .event-style1 {
   margin: 0 0 80px 0;
-  
+
   .event-wrap {
     display: flex;
     flex-direction: row-reverse;
@@ -39,7 +39,7 @@
 
   .event-date {
     color: $white-color;
-    font-weight: 600;  
+    font-weight: 600;
     font-size: 14px;
     line-height: 1;
     text-align: center;
@@ -65,7 +65,7 @@
       z-index: -1;
       transform: rotate(45deg);
     }
-        
+
     .day {
       font-size: 45px;
       display: block;
@@ -128,7 +128,7 @@
       }
     }
   }
-  
+
 }
 
 
@@ -159,7 +159,7 @@
 @include md {
   .event-style1 {
     margin: 0 0 30px 0;
-    
+
     .event-wrap {
       display: block;
     }
@@ -190,7 +190,7 @@
       position: relative;
       z-index: 2;
     }
-    
+
     .event-content {
       margin: 0;
       padding: 70px 15px 30px 15px;
@@ -212,7 +212,7 @@
       border-radius: 10px;
       font-size: 14px;
 
-      &:before{
+      &:before {
         transform: none;
       }
 
