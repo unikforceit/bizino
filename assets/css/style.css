@@ -9166,4 +9166,33 @@ ul.wp-block-categories-list.widget_categories.wp-block-categories {
     max-width: 100%;
   }
 }
+.footer-address .fa-laptop-house:before {
+  content: "\f966";
+}
+#google_language_translator select.goog-te-combo{
+  background: none !important;
+  border: none !important;
+  color: #fff !important;
+  width : auto;
+  font-size: 16px;
+}
+.header-dropdown i.fas.fa-globe {
+  position: absolute;
+  left: -28px;
+  top: 7px;
+  color: #fff;
+}#google_language_translator select.goog-te-combo option{
+   color: #000;
+ }
+.header-dropdown{
+  position: relative;
+}
+.skiptranslate.goog-te-gadget {
+  height: 30px;
+}
+/*select option { color: black; }
+select option:first-child{
+  color: green;
+}
+*/
 
