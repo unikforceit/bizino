@@ -10422,28 +10422,32 @@ ul.wp-block-categories-list.widget_categories.wp-block-categories {
 .footer-address .fa-laptop-house:before {
     content: "\f966";
 }
-
-#google_language_translator select.goog-te-combo {
+ 
+.bizino-translate select {
     background: none !important;
     border: none !important;
-    color: #fff !important;
+    color: #d3d3d3 !important;
     width: auto;
     font-size: 16px;
+    height: auto;
+    padding: 0;
 }
 
 .header-dropdown i.fas.fa-globe {
     position: absolute;
     left: -28px;
-    top: 7px;
-    color: #fff;
+    top: 4px;
+    color: #d3d3d3;
 }
 
-#google_language_translator select.goog-te-combo option {
-    color: #000;
+.bizino-translate select option {
+    color: #000 !important;
+    padding: 5px 10px !important;
 }
 
 .header-dropdown {
     position: relative;
+    max-width: 120px;
 }
 
 .skiptranslate.goog-te-gadget {
@@ -10454,13 +10458,18 @@ section.vs-header.header-layout3 .header-dropdown i.fas.fa-globe {
     color: #32373c;
 }
 
-section.vs-header.header-layout3 #google_language_translator select.goog-te-combo {
-    color: #32373c !important;
+
+.header-layout4 .bizino-translate select{
+    color: #fff !important;
+}
+.header-layout4 .bizino-translate select option {
+    color: #000 !important;
 }
 
-/*select option { color: black; }
-select option:first-child{
-  color: green;
-}
-*/
 
+.header-layout3 .bizino-translate select{
+    color: #000 !important;
+}
+.header-layout3 .bizino-translate select option {
+    color: #000 !important;
+}

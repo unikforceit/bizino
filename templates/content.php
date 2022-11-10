@@ -67,7 +67,7 @@ echo '<!-- Single Post -->';
                         } else {
                             $comment_text = __(' Comments', 'bizino');
                         }
-                        echo '<a href="' . esc_url(get_comments_link(get_the_ID())) . '"><i class="fas fa-comment-alt-lines"></i>' . esc_html(get_comments_number()) . '' . $comment_text . '</a>';
+                        echo '<a href="' . esc_url(get_comments_link(get_the_ID())) . '"><i class="far fa-comment-alt-lines"></i>' . esc_html(get_comments_number()) . '' . $comment_text . '</a>';
                     }
                     ?>
                 </div>

@@ -471,7 +471,7 @@ function bizino_global_header_option()
                                 <div class="header-dropdown">
                                     <div class="bizino-translate">
                                         <i class="fas fa-globe"></i>
-                                        <?php echo do_shortcode('[google-translator]'); ?>
+                                        <?php echo do_shortcode('[gtranslate]'); ?>
                                     </div>
                                 </div>
                             </div>
@@ -599,7 +599,7 @@ function bizino_global_header_option()
                                 <div class="header-dropdown">
                                     <div class="bizino-translate">
                                         <i class="fas fa-globe"></i>
-                                        <?php echo do_shortcode('[google-translator]'); ?>
+                                        <?php echo do_shortcode('[gtranslate]'); ?>
                                     </div>
                                 </div>
                             </div>

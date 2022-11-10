@@ -84,7 +84,7 @@ function bizino_register_required_plugins()
         ),
         array(
             'name' => esc_html__('G-Translate', 'bizino'),
-            'slug' => 'google-language-translator',
+            'slug' => 'gtranslate',
             'version' => '',
             'required' => true,
         ),
