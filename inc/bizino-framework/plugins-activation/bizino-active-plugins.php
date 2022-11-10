@@ -83,8 +83,8 @@ function bizino_register_required_plugins()
             'required' => true,
         ),
         array(
-            'name' => esc_html__('Max Mega Menu', 'bizino'),
-            'slug' => 'megamenu',
+            'name' => esc_html__('G-Translate', 'bizino'),
+            'slug' => 'google-language-translator',
             'version' => '',
             'required' => true,
         ),
