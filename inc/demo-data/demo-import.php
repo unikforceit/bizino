@@ -17,11 +17,11 @@ function bizino_import_files()
     return array(
         array(
             'import_file_name' => esc_html__('Bizino Demo', 'bizino'),
-            'local_import_file' => BIZINO_DEMO_DIR_PATH . 'bizino-demo.xml',
-            'local_import_widget_file' => BIZINO_DEMO_DIR_PATH . 'bizino-widgets-demo.json',
+            'local_import_file' => BIZINO_DEMO_DIR_PATH . 'demo.xml',
+            'local_import_widget_file' => BIZINO_DEMO_DIR_PATH . 'widgets.json',
             'local_import_redux' => array(
                 array(
-                    'file_path' => BIZINO_DEMO_DIR_PATH . 'redux_options_demo.json',
+                    'file_path' => BIZINO_DEMO_DIR_PATH . 'options.json',
                     'option_name' => 'bizino_opt',
                 ),
             ),

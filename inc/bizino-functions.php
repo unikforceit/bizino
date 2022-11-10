@@ -468,19 +468,21 @@ function bizino_global_header_option()
                                 </div>
                             </div>
                             <div class="col-auto">
+                                <?php if (class_exists('GTranslate')){ ?>
                                 <div class="header-dropdown">
-                                    <div class="bizino-translate">
-                                        <i class="fas fa-globe"></i>
-                                        <?php echo do_shortcode('[gtranslate]'); ?>
-                                    </div>
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                        <li>
+                                            <?php echo do_shortcode('[gtranslate]'); ?>
+                                        </li>
+                                    </ul>
                                 </div>
+                                <?php } ?>
                             </div>
                             <div class="col-auto">
                                 <div class="header-social">
-                                    <span class="social-label">Get In Touch:</span>
-                                    <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://google.com"><i class="fab fa-google"></i></a>
+                                    <span class="social-label"><?php esc_attr_e('Get In Touch:', 'bizino');?></span>
+                                    <?php bizino_social_icon();?>
                                 </div>
                             </div>
                         </div>
@@ -596,19 +598,21 @@ function bizino_global_header_option()
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <div class="header-dropdown">
-                                    <div class="bizino-translate">
-                                        <i class="fas fa-globe"></i>
-                                        <?php echo do_shortcode('[gtranslate]'); ?>
+                                <?php if (class_exists('GTranslate')){ ?>
+                                    <div class="header-dropdown">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                            <li>
+                                                <?php echo do_shortcode('[gtranslate]'); ?>
+                                            </li>
+                                        </ul>
                                     </div>
-                                </div>
+                                <?php } ?>
                             </div>
                             <div class="col-auto">
                                 <div class="header-social">
-                                    <span class="social-label">Get In Touch:</span>
-                                    <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://google.com"><i class="fab fa-google"></i></a>
+                                    <span class="social-label"><?php esc_attr_e('Get In Touch:', 'bizino');?></span>
+                                    <?php bizino_social_icon();?>
                                 </div>
                             </div>
                         </div>
