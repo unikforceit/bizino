@@ -45,13 +45,15 @@ if (is_page() || is_page_template('template-builder.php')) {
     if ($bizino_page_breadcrumb_area == '1') {
         if (class_exists('reduxframework')) {
             $breadcrumb_img = bizino_opt('bizino_allHeader_bg', 'url');
+            $breadcrumb_attr = !empty(bizino_opt('bizino_allHeader_bg', 'url')) ? 'data-bg-src='.esc_url($breadcrumb_img) : '';
             $def_breadcrumb = '';
         } else {
             $breadcrumb_img = '';
+            $breadcrumb_attr = '';
             $def_breadcrumb = 'bredacrumb-default';
         }
         echo '<!-- Page title -->';
-        echo '<div data-bg-src="'.esc_url($breadcrumb_img).'" class="breadcumb-wrapper ' . esc_attr($def_breadcrumb) . '" id="breadcumbwrap">';
+        echo '<div '.$breadcrumb_attr.' class="breadcumb-wrapper ' . esc_attr($def_breadcrumb) . '" id="breadcumbwrap">';
             echo '<div class="container z-index-common">';
                 echo '<div class="breadcumb-content">';
                 if (defined('CMB2_LOADED') || class_exists('ReduxFramework')) {
@@ -132,13 +134,15 @@ if (is_page() || is_page_template('template-builder.php')) {
 } else {
     if (class_exists('reduxframework')) {
         $breadcrumb_img = bizino_opt('bizino_allHeader_bg', 'url');
+        $breadcrumb_attr = !empty(bizino_opt('bizino_allHeader_bg', 'url')) ? 'data-bg-src='.esc_url($breadcrumb_img) : '';
         $def_breadcrumb = '';
     } else {
         $breadcrumb_img = '';
+        $breadcrumb_attr = '';
         $def_breadcrumb = 'bredacrumb-default';
     }
     echo '<!-- Page title -->';
-    echo '<div data-bg-src="'.esc_url($breadcrumb_img).'" class="breadcumb-wrapper ' . esc_attr($def_breadcrumb) . '">';
+    echo '<div '.$breadcrumb_attr.' class="breadcumb-wrapper ' . esc_attr($def_breadcrumb) . '">';
         echo '<div class="container z-index-common">';
             echo '<div class="breadcumb-content">';
             if (class_exists('ReduxFramework')) {
@@ -236,7 +240,7 @@ if (is_page() || is_page_template('template-builder.php')) {
                         if (class_exists('ReduxFramework')) {
                             $bizino_post_details_custom_title = bizino_opt('bizino_post_details_custom_title');
                         } else {
-                            $bizino_post_details_custom_title = __('Blog Details', 'bizino');
+                            $bizino_post_details_custom_title = __(wp_trim_words(get_the_title(), 4, ''), 'bizino');
                         }
 
                         if (!empty($bizino_post_details_custom_title)) {
