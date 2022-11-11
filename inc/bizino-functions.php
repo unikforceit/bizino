@@ -402,14 +402,7 @@ function bizino_global_header_option()
 {
     if (class_exists('ReduxFramework')) {
         $bizino_show_header_topbar = bizino_opt('bizino_header_topbar_switcher');
-        $breadcrumb_img = bizino_opt('bizino_allHeader_bg', 'url');
-
-        $breadcrumb_bg = !empty($breadcrumb_img) ? $breadcrumb_img : get_template_directory_uri() . "/assets/img/header-bg-1-1.jpg";
-        if (is_404()) {
-            $breadcrumb_bg = get_template_directory_uri() . "/assets/img/error-bg.jpg";
-        }
         ?>
-        <div data-bg-src="<?php echo esc_url($breadcrumb_bg) ?>">
         <!--==============================
                 Mobile Menu
                 ============================== -->
@@ -534,12 +527,7 @@ function bizino_global_header_option()
         <?php
     } else {
         $bizino_show_header_topbar = bizino_opt('bizino_header_topbar_switcher');
-        $breadcrumb_bg = !empty($breadcrumb_img) ? $breadcrumb_img : get_template_directory_uri() . "/assets/img/header-bg-1-1.jpg";
-        if (is_404()) {
-            $breadcrumb_bg = get_template_directory_uri() . "/assets/img/error-bg.jpg";
-        }
         ?>
-    <div data-bg-src="<?php echo esc_url($breadcrumb_bg) ?>">
         <!--==============================
                 Mobile Menu
                 ============================== -->

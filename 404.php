@@ -23,12 +23,12 @@ if (class_exists('ReduxFramework')) {
     $bizino404subtitle = __('Oops, Page Not Found', 'bizino');
     $bizino404desc = __('We Can\'t Seem to find the page you\'re looking for.', 'bizino');
     $bizino404btntext = __('Go Back Home', 'bizino');
-    $bizino_404_image = get_template_directory_uri() . '/assets/img/error.png';
+    $bizino_404_image = get_template_directory_uri() . '/assets/img/error-bg.jpg';
 }
 
 // get header
 get_header();
-echo ' <section class="overflow-hidden  ">
+echo ' <section data-bg-src="'.esc_url($bizino_404_image).'" class="overflow-hidden  ">
             <div class="error-content">
                 <div class="error-shape1"></div>
                 <h1 class="error-number">' . esc_html($bizino404title) . '</h1>

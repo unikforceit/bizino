@@ -64,7 +64,6 @@ if (!function_exists('bizino_breadcrumbs')) {
         // Open the breadcrumbs
 
         $html = '';
-        $html .= '<div class="breadcumb-menu-wrap">';
         $html .= '<ul class="breadcumb-menu ' . implode(' ', $args_el) . '">';
         // Add Homepage link (always present)
         $html .= '<li><a href="' . esc_url(get_home_url('/')) . '" title="' . esc_attr($args['home_title']) . '">' . esc_attr($args['home_title']) . '</a></li>';
@@ -79,7 +78,7 @@ if (!function_exists('bizino_breadcrumbs')) {
                 foreach ($cat_parents as $parent) {
                     $html .= '<li>' . wp_kses($parent, wp_kses_allowed_html('a')) . '</li>';
                 }
-                $html .= '<li class="active" title="' . esc_attr(get_the_title()) . '">' . wp_kses('Blog Details', $allowhtml) . '</li>';
+                $html .= '<li class="active" title="' . esc_attr(get_the_title()) . '">' . wp_kses(wp_trim_words(get_the_title(), 2), $allowhtml) . '</li>';
             }
         } elseif (is_singular('page')) {
             if ($post->post_parent) {
@@ -133,9 +132,6 @@ if (!function_exists('bizino_breadcrumbs')) {
             $html .= '<li class="active">' . wp_kses(get_the_title(get_option('page_for_posts')), $allowhtml) . '</li>';
         }
         $html .= '</ul>';
-        $html .= '</div>';
-        $html .= '</div>';
-
         echo apply_filters('bizino_breadcrumbs_filter', $html);
 
     }

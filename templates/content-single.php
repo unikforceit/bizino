@@ -64,37 +64,37 @@ if (!defined('ABSPATH')) {
 
     if (!empty($bizino_post_tag) || (function_exists('bizino_social_sharing_buttons') || $bizino_post_details_share_options)) {
         echo '<div class="share-links clearfix  ">';
-        echo '<div class="row justify-content-between">';
+            echo '<div class="row justify-content-between">';
 
-        if (is_array($bizino_post_tag) && !empty($bizino_post_tag)) {
-            if (count($bizino_post_tag) > 1) {
-                $tag_text = __('Tags:', 'bizino');
-            } else {
-                $tag_text = __('Tag:', 'bizino');
+            if (is_array($bizino_post_tag) && !empty($bizino_post_tag)) {
+                if (count($bizino_post_tag) > 1) {
+                    $tag_text = __('Tags:', 'bizino');
+                } else {
+                    $tag_text = __('Tag:', 'bizino');
+                }
+                echo '<div class="col-md-auto">';
+                echo '<span class="share-links-title">' . $tag_text . '</span>';
+
+                echo '<div class="tagcloud">';
+                foreach ($bizino_post_tag as $tags) {
+                    echo '<a href="' . esc_url(get_tag_link($tags->term_id)) . '">' . esc_html($tags->name) . '</a>';
+                }
+                echo '</div>';
+                echo '</div>';
             }
-            echo '<div class="col-md-auto">';
-            echo '<span class="share-links-title">' . $tag_text . '</span>';
 
-            echo '<div class="tagcloud">';
-            foreach ($bizino_post_tag as $tags) {
-                echo '<a href="' . esc_url(get_tag_link($tags->term_id)) . '">' . esc_html($tags->name) . '</a>';
-            }
+            /**
+             *
+             * Hook for Blog Details Share Options
+             *
+             * Hook bizino_blog_details_share_options
+             *
+             * @Hooked bizino_blog_details_share_options_cb 10
+             *
+             */
+            do_action('bizino_blog_details_share_options');
+
             echo '</div>';
-            echo '</div>';
-        }
-
-        /**
-         *
-         * Hook for Blog Details Share Options
-         *
-         * Hook bizino_blog_details_share_options
-         *
-         * @Hooked bizino_blog_details_share_options_cb 10
-         *
-         */
-        do_action('bizino_blog_details_share_options');
-
-        echo '</div>';
         echo '</div>';
     }
 
