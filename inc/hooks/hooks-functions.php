@@ -40,7 +40,7 @@ if (!function_exists('bizino_preloader_wrap_cb')) {
             echo '<div class="preloader  ">';
             echo '<button class="vs-btn preloaderCls">' . esc_html__('Cancel Preloader', 'bizino') . ' </button>';
             echo '<div class="preloader-inner">';
-            // echo '<img src="assets/img/logo.png" alt="HaarMax">';
+                    the_custom_logo();
             echo '<span class="loader"></span>';
             echo '</div>';
             echo '</div>';

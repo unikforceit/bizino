@@ -122,7 +122,7 @@ if (is_page() || is_page_template('template-builder.php')) {
                     if ($bizino_breadcrumb_switcher == '1' && (is_page() || is_page_template('template-builder.php'))) {
                         bizino_breadcrumbs(
                             array(
-                                'breadcrumbs_classes' => 'nav',
+                                'breadcrumbs_classes' => '',
                             )
                         );
                     }
@@ -265,7 +265,7 @@ if (is_page() || is_page_template('template-builder.php')) {
                 if ($bizino_breadcrumb_switcher == '1') {
                     bizino_breadcrumbs(
                         array(
-                            'breadcrumbs_classes' => 'nav',
+                            'breadcrumbs_classes' => '',
                         )
                     );
                 }

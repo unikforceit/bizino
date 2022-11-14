@@ -326,8 +326,11 @@ function bizino_footer_global_option()
     // Bizino Footer Bottom Enable Disable
     if (class_exists('ReduxFramework')) {
         $bizino_footer_bottom_active = bizino_opt('bizino_disable_footer_bottom');
+        $bizino_footer_background_image = !empty(bizino_opt('bizino_footer_background_image')['url']) ?
+            bizino_opt('bizino_footer_background_image')['url'] : '';
     } else {
         $bizino_footer_bottom_active = '1';
+        $bizino_footer_background_image = '';
     }
 
     $bizino_footer_gallery_active = bizino_opt('bizino_gallery_footer_widget');
@@ -350,7 +353,7 @@ function bizino_footer_global_option()
         'b' => array(),
     );
 
-    echo '<footer class="footer-wrapper footer-layout1" data-bg-src="' . get_template_directory_uri() . '/assets/img/footer-bg-1-1.jpg">';
+    echo '<footer class="footer-wrapper footer-layout1" data-bg-src="' . esc_url($bizino_footer_background_image) .'">';
     echo '<div class="widget-area">';
     echo '<div class="container">';
     if ((is_active_sidebar('bizino-footer-1') || is_active_sidebar('bizino-footer-2') || is_active_sidebar('bizino-footer-3') || is_active_sidebar('bizino-footer-4'))) :
@@ -434,6 +437,7 @@ function bizino_global_header_option()
                 $bizino_topbar_address = bizino_opt('bizino_topbar_address');
                 $mobile = bizino_opt('bizino_topbar_phone');
                 $bizino_topbar_email = bizino_opt('bizino_topbar_email');
+                $bizino_phone_icon = bizino_opt('bizino_phone_icon');
 
                 $email = is_email($bizino_topbar_email);
 
@@ -510,7 +514,7 @@ function bizino_global_header_option()
                             <?php
                             if (!empty($mobile)) {
                                 echo '<div class="col-auto d-none d-xxl-block">
-                                        <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '"><img src="' . get_template_directory_uri() . '/assets/img/phone-1-1.png" alt="Phone"> ' . esc_html($mobile) . '</a>
+                                        <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '"><img src="' . $bizino_phone_icon['url'] .'" alt="Phone"> ' . esc_html($mobile) . '</a>
                                     </div>';
                             }
                             if (!empty(bizino_opt('bizino_btn_text'))) {
@@ -526,7 +530,6 @@ function bizino_global_header_option()
         </header>
         <?php
     } else {
-        $bizino_show_header_topbar = bizino_opt('bizino_header_topbar_switcher');
         ?>
         <!--==============================
                 Mobile Menu
@@ -554,59 +557,6 @@ function bizino_global_header_option()
         Header Area
         ==============================-->
         <header class="vs-header header-layout1">
-            <?php
-            if ($bizino_show_header_topbar) {
-                $bizino_topbar_address = bizino_opt('bizino_topbar_address');
-                $mobile = bizino_opt('bizino_topbar_phone');
-                $bizino_topbar_email = bizino_opt('bizino_topbar_email');
-
-                $email = is_email($bizino_topbar_email);
-
-                $replace = array(' ', '-', ' - ');
-                $with = array('', '', '');
-
-                $emailurl = str_replace($replace, $with, $email);
-                $mobileurl = str_replace($replace, $with, $mobile);
-                ?>
-                <div class="header-top">
-                    <div class="container">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="col d-none d-lg-block">
-                                <div class="header-links">
-                                    <ul>
-                                        <?php
-                                        if (!empty($email)) {
-                                            echo '<li><i class="fal fa-envelope"></i><a class="text-reset" href="' . esc_attr('mailto:' . $emailurl) . '">' . esc_html($email) . '</a></li>';
-                                        }
-                                        if (!empty($bizino_topbar_address)) {
-                                            echo '<li><i class="fal fa-map-marker-alt"></i>' . esc_html($bizino_topbar_address) . '</li>';
-                                        }
-                                        ?>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-auto">
-                                <?php if (class_exists('GTranslate')){ ?>
-                                    <div class="header-dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                            <li>
-                                                <?php echo do_shortcode('[gtranslate]'); ?>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                <?php } ?>
-                            </div>
-                            <div class="col-auto">
-                                <div class="header-social">
-                                    <span class="social-label"><?php esc_attr_e('Get In Touch:', 'bizino');?></span>
-                                    <?php bizino_social_icon();?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
             <div class="sticky-wrapper">
                 <div class="sticky-active">
                     <!-- Main Menu Area -->
@@ -632,18 +582,6 @@ function bizino_global_header_option()
                                 <button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fal fa-bars"></i>
                                 </button>
                             </div>
-                            <?php
-                            if (!empty($mobile)) {
-                                echo '<div class="col-auto d-none d-xxl-block">
-                                        <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '"><img src="' . get_template_directory_uri() . '/assets/img/phone-1-1.png" alt="Phone"> ' . esc_html($mobile) . '</a>
-                                    </div>';
-                            }
-                            if (!empty(bizino_opt('bizino_btn_text'))) {
-                                echo '<div class="col-auto d-none d-xl-block">
-                                        <a href="' . esc_url(bizino_opt('bizino_btn_url')) . '" class="vs-btn">' . esc_html(bizino_opt('bizino_btn_text')) . '</a>
-                                    </div>';
-                            }
-                            ?>
                         </div>
                     </div>
                 </div>
@@ -660,7 +598,7 @@ function bizino_custom_search_form($class)
     echo '<form role="search" method="get" action="' . esc_url(home_url('/')) . '" class="' . esc_attr($class) . '">';
     echo '<label class="searchIcon">';
     echo bizino_img_tag(array(
-        "url" => esc_url(get_theme_file_uri('/assets/img/search-2.svg')),
+        "url" => '',
         "class" => "svg"
     ));
     echo '<input value="' . get_search_query() . '" name="s" required type="search" placeholder="' . esc_attr__('What are you looking for?', 'bizino') . '">';

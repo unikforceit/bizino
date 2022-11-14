@@ -404,6 +404,12 @@ Redux::setSection($opt_name, array(
             'required' => array('bizino_header_topbar_switcher', 'equals', '1')
         ),
         array(
+            'id' => 'bizino_phone_icon',
+            'type' => 'media',
+            'title' => esc_html__('Phone Image', 'bizino'),
+            'subtitle' => esc_html__('Phone Icon Image.', 'bizino'),
+        ),
+        array(
             'id' => 'bizino_topbar_phone',
             'type' => 'text',
             'validate' => 'html',
@@ -1215,6 +1221,14 @@ Redux::setSection($opt_name, array(
             'required' => array('bizino_footerwidget_enable', '=', '1'),
         ),
         array(
+            'id' => 'bizino_footer_background_image',
+            'type' => 'media',
+            'url' => true,
+            'title' => esc_html__('Footer BG', 'bizino'),
+            'compiler' => 'true',
+            'subtitle' => esc_html__('Upload your footer bg ( recommendation png format ).', 'bizino'),
+        ),
+        array(
             'id' => 'bizino_footer_widget_title_color',
             'type' => 'color',
             'title' => esc_html__('Footer Widget Title Color', 'bizino'),
@@ -1359,7 +1373,6 @@ if (file_exists(dirname(__FILE__) . '/../README.md')) {
                 'type' => 'raw',
                 'markdown' => true,
                 'content_path' => dirname(__FILE__) . '/../README.md', // FULL PATH, not relative please
-                //'content' => 'Raw content here',
             ),
         ),
     );
