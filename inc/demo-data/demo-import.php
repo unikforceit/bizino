@@ -36,7 +36,7 @@ function bizino_after_import_setup()
 {
     // Assign menus to their locations.
     $main_menu = get_term_by('name', 'Main Menu', 'nav_menu');
-    $mobile_menu = get_term_by('name', 'Mobile Menu', 'nav_menu');
+    $mobile_menu = get_term_by('name', 'Main Menu', 'nav_menu');
     $footer_menu = get_term_by('name', 'Footer Menu', 'nav_menu');
 
     set_theme_mod('nav_menu_locations', array(

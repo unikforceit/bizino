@@ -408,6 +408,7 @@ Redux::setSection($opt_name, array(
             'type' => 'media',
             'title' => esc_html__('Phone Image', 'bizino'),
             'subtitle' => esc_html__('Phone Icon Image.', 'bizino'),
+            'required' => array('bizino_header_topbar_switcher', 'equals', '1')
         ),
         array(
             'id' => 'bizino_topbar_phone',
