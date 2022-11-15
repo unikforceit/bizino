@@ -98,7 +98,7 @@ function bizino_theme_mobile_logo()
     } elseif (!bizino_opt('bizino_text_title') && bizino_opt('bizino_mobile_logo', 'url')) {
 
         $siteLogo = '<img class="img-fluid" src="' . esc_url(bizino_opt('bizino_mobile_logo', 'url')) . '" alt="' . esc_attr__('logo', 'bizino') . '" />';
-        return '<a class="logo" href="' . esc_url($siteUrl) . '">' . wp_kses_post($siteLogo) . '</a>';
+        return '<a class="logo m-logo" href="' . esc_url($siteUrl) . '">' . wp_kses_post($siteLogo) . '</a>';
 
 
     } elseif (bizino_opt('bizino_text_title')) {
@@ -130,7 +130,7 @@ function bizino_blog_date_permalink()
 function bizino_iframe_match()
 {
     $audio_content = bizino_embedded_media(array('audio', 'iframe'));
-    $iframe_match = preg_match("/\iframe\b/i", $audio_content, $match);
+    $iframe_match = preg_match("/iframe\b/i", $audio_content, $match);
     return $iframe_match;
 }
 
@@ -353,7 +353,7 @@ function bizino_footer_global_option()
         'b' => array(),
     );
 
-    echo '<footer class="footer-wrapper footer-layout1" data-bg-src="' . esc_url($bizino_footer_background_image) .'">';
+    echo '<footer class="footer-wrapper footer-layout1" data-bg-src="' . esc_url($bizino_footer_background_image) . '">';
     echo '<div class="widget-area">';
     echo '<div class="container">';
     if ((is_active_sidebar('bizino-footer-1') || is_active_sidebar('bizino-footer-2') || is_active_sidebar('bizino-footer-3') || is_active_sidebar('bizino-footer-4'))) :
@@ -384,15 +384,15 @@ function bizino_footer_global_option()
                     <div class="container">
                         <div class="row align-items-center justify-content-between">
                             <div class="col-auto">';
-        if (!empty(bizino_opt('bizino_copyright_text'))) {
-            echo '<p class="copyright-text">' . wp_kses(bizino_opt('bizino_copyright_text'), $allowhtml) . '</p>';
-        }
-        echo '</div>
-                            <div class="col-auto d-none d-md-block">
-                                <div class="header-social">';
-        bizino_social_icon();
-        echo '</div>
-                            </div>
+                                if (!empty(bizino_opt('bizino_copyright_text'))) {
+                                    echo '<p class="copyright-text">' . wp_kses(bizino_opt('bizino_copyright_text'), $allowhtml) . '</p>';
+                                }
+                                echo '</div>
+                                <div class="col-auto d-none d-md-block">
+                                    <div class="header-social">';
+                                    bizino_social_icon();
+                                    echo '</div>
+                                </div>
                         </div>
                     </div>
                 </div>';
@@ -465,21 +465,22 @@ function bizino_global_header_option()
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <?php if (class_exists('GTranslate')){ ?>
-                                <div class="header-dropdown">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                        <li>
-                                            <?php echo do_shortcode('[gtranslate]'); ?>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <?php if (class_exists('GTranslate')) { ?>
+                                    <div class="header-dropdown">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1"
+                                           data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                            <li>
+                                                <?php echo do_shortcode('[gtranslate]'); ?>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 <?php } ?>
                             </div>
                             <div class="col-auto">
                                 <div class="header-social">
-                                    <span class="social-label"><?php esc_attr_e('Get In Touch:', 'bizino');?></span>
-                                    <?php bizino_social_icon();?>
+                                    <span class="social-label"><?php esc_html_e('Get In Touch:', 'bizino'); ?></span>
+                                    <?php bizino_social_icon(); ?>
                                 </div>
                             </div>
                         </div>
@@ -514,7 +515,7 @@ function bizino_global_header_option()
                             <?php
                             if (!empty($mobile)) {
                                 echo '<div class="col-auto d-none d-xxl-block">
-                                        <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '"><img src="' . $bizino_phone_icon['url'] .'" alt="Phone"> ' . esc_html($mobile) . '</a>
+                                        <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '"><img src="' . $bizino_phone_icon['url'] . '" alt="Phone"> ' . esc_html($mobile) . '</a>
                                     </div>';
                             }
                             if (!empty(bizino_opt('bizino_btn_text'))) {
@@ -741,146 +742,3 @@ function bizino_post_classes($classes, $class, $post_id)
 }
 
 add_filter('post_class', 'bizino_post_classes', 10, 3);
-
-function bizino_megamenu_add_theme_bizino_1659624929($themes)
-{
-    $themes["bizino_1659624929"] = array(
-        'title' => 'Bizino',
-        'container_background_from' => 'rgb(255, 255, 255)',
-        'container_background_to' => 'rgb(255, 255, 255)',
-        'arrow_up' => 'dash-f343',
-        'arrow_down' => 'dash-f347',
-        'arrow_left' => 'dash-f341',
-        'arrow_right' => 'dash-f345',
-        'menu_item_background_hover_from' => 'rgb(255, 255, 255)',
-        'menu_item_background_hover_to' => 'rgb(255, 255, 255)',
-        'menu_item_link_font_size' => '18px',
-        'menu_item_link_height' => '110px',
-        'menu_item_link_color' => 'rgb(20, 20, 20)',
-        'menu_item_link_weight' => 'inherit',
-        'menu_item_link_color_hover' => 'rgb(133, 133, 133)',
-        'menu_item_link_weight_hover' => 'inherit',
-        'menu_item_highlight_current' => 'off',
-        'menu_item_divider_color' => 'rgba(0, 0, 0, 0.1)',
-        'panel_background_from' => 'rgb(255, 255, 255)',
-        'panel_background_to' => 'rgb(255, 255, 255)',
-        'panel_width' => '.mega-menu-inner',
-        'panel_inner_width' => '.container',
-        'panel_border_color' => 'rgb(221, 221, 221)',
-        'panel_border_radius_bottom_left' => '5px',
-        'panel_border_radius_bottom_right' => '5px',
-        'panel_header_color' => 'rgb(173, 136, 88)',
-        'panel_header_text_transform' => 'none',
-        'panel_header_font_weight' => 'inherit',
-        'panel_header_border_color' => 'rgb(173, 136, 88)',
-        'panel_header_border_right' => '5px',
-        'panel_header_border_bottom' => '1px',
-        'panel_widget_padding_left' => '20px',
-        'panel_widget_padding_right' => '20px',
-        'panel_widget_padding_top' => '20px',
-        'panel_widget_padding_bottom' => '20px',
-        'panel_font_size' => '16px',
-        'panel_font_color' => 'rgb(255, 255, 255)',
-        'panel_font_family' => 'inherit',
-        'panel_second_level_font_color' => 'rgb(173, 136, 88)',
-        'panel_second_level_font_color_hover' => 'rgb(173, 136, 88)',
-        'panel_second_level_text_transform' => 'none',
-        'panel_second_level_font' => 'inherit',
-        'panel_second_level_font_size' => '16px',
-        'panel_second_level_font_weight' => 'inherit',
-        'panel_second_level_font_weight_hover' => 'inherit',
-        'panel_second_level_text_decoration' => 'none',
-        'panel_second_level_text_decoration_hover' => 'none',
-        'panel_second_level_padding_bottom' => '10px',
-        'panel_second_level_margin_bottom' => '15px',
-        'panel_second_level_border_color' => 'rgb(173, 136, 88)',
-        'panel_second_level_border_color_hover' => 'rgb(173, 136, 88)',
-        'panel_second_level_border_bottom' => '1px',
-        'panel_third_level_font_color' => 'rgb(34, 34, 34)',
-        'panel_third_level_font_color_hover' => 'rgb(173, 136, 88)',
-        'panel_third_level_font' => 'inherit',
-        'panel_third_level_font_size' => '16px',
-        'panel_third_level_font_weight' => 'inherit',
-        'panel_third_level_font_weight_hover' => 'inherit',
-        'panel_third_level_padding_top' => '4px',
-        'panel_third_level_padding_bottom' => '3px',
-        'flyout_width' => '200px',
-        'flyout_menu_background_from' => 'rgb(255, 255, 255)',
-        'flyout_menu_background_to' => 'rgb(255, 255, 255)',
-        'flyout_border_radius_bottom_left' => '5px',
-        'flyout_border_radius_bottom_right' => '5px',
-        'flyout_padding_top' => '9px',
-        'flyout_padding_right' => '7px',
-        'flyout_padding_bottom' => '9px',
-        'flyout_padding_left' => '7px',
-        'flyout_link_padding_left' => '9px',
-        'flyout_link_padding_right' => '9px',
-        'flyout_link_padding_top' => '2px',
-        'flyout_link_padding_bottom' => '2px',
-        'flyout_link_weight' => 'inherit',
-        'flyout_link_weight_hover' => 'inherit',
-        'flyout_link_height' => '26px',
-        'flyout_background_from' => 'rgb(255, 255, 255)',
-        'flyout_background_to' => 'rgb(255, 255, 255)',
-        'flyout_background_hover_from' => 'rgb(255, 255, 255)',
-        'flyout_background_hover_to' => 'rgb(255, 255, 255)',
-        'flyout_link_size' => '16px',
-        'flyout_link_color' => 'rgb(34, 34, 34)',
-        'flyout_link_color_hover' => 'rgb(173, 136, 88)',
-        'flyout_link_family' => 'inherit',
-        'responsive_breakpoint' => '991px',
-        'line_height' => '26px',
-        'z_index' => '9999',
-        'shadow' => 'on',
-        'shadow_vertical' => '5px',
-        'shadow_blur' => '10px',
-        'transitions' => 'on',
-        'toggle_background_from' => '#222',
-        'toggle_background_to' => '#222',
-        'mobile_background_from' => '#222',
-        'mobile_background_to' => '#222',
-        'mobile_menu_item_link_font_size' => '14px',
-        'mobile_menu_item_link_color' => '#ffffff',
-        'mobile_menu_item_link_text_align' => 'left',
-        'mobile_menu_item_link_color_hover' => '#ffffff',
-        'mobile_menu_item_background_hover_from' => '#333',
-        'mobile_menu_item_background_hover_to' => '#333',
-        'disable_mobile_toggle' => 'on',
-        'custom_css' => '#{$wrap} {
-    clear: both;
-	z-index:99;
-	font-family:\"Open Sans\";
-}
-
-#{$wrap} #{$menu}>li.mega-menu-item>a.mega-menu-link {
-  font-family: \'Open Sans\', sans-serif;
-  letter-spacing: 0;
-}
-
-#{$wrap} #{$menu} li.mega-menu-item-has-children>a.mega-menu-link>span.mega-indicator:after {
-  margin: 0 0 0 4px;
-  font-size: 15px;
-  top: 3px;
-}
-
-div#{$wrap},
-ul#{$menu} {
-  position: static !important;
-  background-color: transparent !important;
-}
-
-
-
-#{$wrap} #{$menu} > li.mega-menu-item > a.mega-menu-link,
-#{$wrap} #{$menu} > li.mega-menu-item > a.mega-menu-link:hover {
-	background-color: transparent !important;
-}
-
-#{$wrap} #{$menu} > li.mega-menu-item > a.mega-menu-link:hover {
-	color: #ad8858;
-}',
-    );
-    return $themes;
-}
-
-add_filter("megamenu_themes", "bizino_megamenu_add_theme_bizino_1659624929");

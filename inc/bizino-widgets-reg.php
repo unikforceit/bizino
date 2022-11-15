@@ -70,19 +70,6 @@ function bizino_widgets_init()
             'after_title' => '</h3>',
         ));
     }
-    if (class_exists('woocommerce')) {
-        register_sidebar(
-            array(
-                'name' => esc_html__('WooCommerce Sidebar', 'bizino'),
-                'id' => 'bizino-woo-sidebar',
-                'description' => esc_html__('Add widgets here to appear in your woocommerce page sidebar.', 'bizino'),
-                'before_widget' => '<div class="widget %2$s">',
-                'after_widget' => '</div>',
-                'before_title' => '<div class="widget_title"><h4>',
-                'after_title' => '</h4></div>',
-            )
-        );
-    }
 
 }
 

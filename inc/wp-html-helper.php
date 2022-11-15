@@ -364,7 +364,7 @@ if (!function_exists('bizino_span_tag')) {
         if (!empty($args['wrap_before'])) {
             $tagdata .= $args['wrap_before'];
         }
-        $tagdata .= '<' . esc_attr($tag) . $attr . '>' . $args['text'] . '</' . esc_attr($tag) . '>';;
+        $tagdata .= '<' . esc_attr($tag) . $attr . '>' . $args['text'] . '</' . esc_attr($tag) . '>';
         // Button Wrapper End
         if (!empty($args['wrap_after'])) {
             $tagdata .= $args['wrap_after'];

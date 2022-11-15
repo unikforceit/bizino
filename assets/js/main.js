@@ -413,5 +413,20 @@
         });
     });
 
+    function slickFixer() {
+        setTimeout(function () {
+            $('.slick-slider').each(function () {
+                $(this).slick('refresh');
+            });
+        }, 400);
+    }
+    $(window).on('resize', function (){
+        slickFixer()
+    });
+
+    $(window).on('load', function () {
+        $('.preloader').fadeOut();
+        slickFixer();
+    });
 
 })(jQuery);

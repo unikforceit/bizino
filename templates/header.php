@@ -8,6 +8,9 @@
  */
 
 // Block direct access
+use Elementor\Core\Settings\Manager;
+use Elementor\Plugin;
+
 if (!defined('ABSPATH')) {
     exit();
 }
@@ -17,7 +20,7 @@ if (class_exists('ReduxFramework') && defined('ELEMENTOR_VERSION')) {
         $bizino_post_id = get_the_ID();
 
         // Get the page settings manager
-        $bizino_page_settings_manager = \Elementor\Core\Settings\Manager::get_settings_managers('page');
+        $bizino_page_settings_manager = Manager::get_settings_managers('page');
 
         // Get the settings model for current post
         $bizino_page_settings_model = $bizino_page_settings_manager->get_model($bizino_post_id);
@@ -31,7 +34,7 @@ if (class_exists('ReduxFramework') && defined('ELEMENTOR_VERSION')) {
             if (!empty($bizino_header_builder_option)) {
                 $bizinoheader = get_post($bizino_header_builder_option);
                 echo '<header class="header">';
-                echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($bizinoheader->ID);
+                echo Plugin::instance()->frontend->get_builder_content_for_display($bizinoheader->ID);
                 echo '</header>';
             }
         } else {
@@ -41,7 +44,7 @@ if (class_exists('ReduxFramework') && defined('ELEMENTOR_VERSION')) {
                 echo '<header>';
                 $bizino_global_header_select = get_post(bizino_opt('bizino_header_select_options'));
                 $header_post = get_post($bizino_global_header_select);
-                echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($header_post->ID);
+                echo Plugin::instance()->frontend->get_builder_content_for_display($header_post->ID);
                 echo '</header>';
             } else {
                 // wordpress Header
@@ -56,7 +59,7 @@ if (class_exists('ReduxFramework') && defined('ELEMENTOR_VERSION')) {
             $bizino_header_select_options = bizino_opt('bizino_header_select_options');
             $bizinoheader = get_post($bizino_header_select_options);
             echo '<header class="header">';
-            echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($bizinoheader->ID);
+            echo Plugin::instance()->frontend->get_builder_content_for_display($bizinoheader->ID);
             echo '</header>';
         }
     }

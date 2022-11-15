@@ -28,7 +28,7 @@ if (class_exists('ReduxFramework')) {
 
 // get header
 get_header();
-echo ' <section data-bg-src="'.esc_url($bizino_404_image).'" class="overflow-hidden error-wrapper">
+echo ' <section data-bg-src="' . esc_url($bizino_404_image) . '" class="overflow-hidden error-wrapper">
             <div class="error-content">
                 <div class="error-shape1"></div>
                 <h1 class="error-number">' . esc_html($bizino404title) . '</h1>

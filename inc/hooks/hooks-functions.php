@@ -8,6 +8,9 @@
  */
 
 // Block direct access
+use Elementor\Core\Settings\Manager;
+use Elementor\Plugin;
+
 if (!defined('ABSPATH')) {
     exit();
 }
@@ -31,7 +34,7 @@ if (!function_exists('bizino_preloader_wrap_cb')) {
                         'class' => 'loader-img',
                     ));
 
-                };
+                }
                 echo '<span class="loader"></span>';
                 echo '</div>';
                 echo '</div>';
@@ -40,7 +43,9 @@ if (!function_exists('bizino_preloader_wrap_cb')) {
             echo '<div class="preloader  ">';
             echo '<button class="vs-btn preloaderCls">' . esc_html__('Cancel Preloader', 'bizino') . ' </button>';
             echo '<div class="preloader-inner">';
-                    the_custom_logo();
+            if (has_custom_logo()){
+                the_custom_logo();
+            }
             echo '<span class="loader"></span>';
             echo '</div>';
             echo '</div>';
@@ -287,7 +292,7 @@ if (!function_exists('bizino_footer_content_cb')) {
                 $post_id = get_the_ID();
 
                 // Get the page settings manager
-                $page_settings_manager = \Elementor\Core\Settings\Manager::get_settings_managers('page');
+                $page_settings_manager = Manager::get_settings_managers('page');
 
                 // Get the settings model for current post
                 $page_settings_model = $page_settings_manager->get_model($post_id);
@@ -305,14 +310,14 @@ if (!function_exists('bizino_footer_content_cb')) {
                     if ($footer_settings == 'footer_builder') {
                         // local options
                         $bizino_local_footer = get_post($footer_local);
-                        echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($bizino_local_footer->ID);
+                        echo Plugin::instance()->frontend->get_builder_content_for_display($bizino_local_footer->ID);
                     } else {
                         // global options
                         $bizino_footer_builder_trigger = bizino_opt('bizino_footer_builder_trigger');
                         if ($bizino_footer_builder_trigger == 'footer_builder') {
                             $bizino_global_footer_select = get_post(bizino_opt('bizino_footer_builder_select'));
                             $footer_post = get_post($bizino_global_footer_select);
-                            echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($footer_post->ID);
+                            echo Plugin::instance()->frontend->get_builder_content_for_display($footer_post->ID);
                         } else {
                             // wordpress widgets
                             bizino_footer_global_option();
@@ -325,7 +330,7 @@ if (!function_exists('bizino_footer_content_cb')) {
                 if ($bizino_footer_builder_trigger == 'footer_builder') {
                     $bizino_global_footer_select = get_post(bizino_opt('bizino_footer_builder_select'));
                     $footer_post = get_post($bizino_global_footer_select);
-                    echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($footer_post->ID);
+                    echo Plugin::instance()->frontend->get_builder_content_for_display($footer_post->ID);
                 } else {
                     // wordpress widgets
                     bizino_footer_global_option();
