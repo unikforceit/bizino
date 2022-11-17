@@ -1,0 +1,8 @@
+.cta-video {
+    margin-top: 100px;
+}
+@media (max-width: 1199px){
+    .cta-video {
+        margin-top: 70px;
+    }
+}

@@ -38,6 +38,9 @@ function bizino_essential_scripts()
     // bizino app style
     wp_enqueue_style('bizino-main-style', get_theme_file_uri('/assets/css/style.css'), array(), wp_get_theme()->get('Version'));
 
+    // bizino custom style
+    wp_enqueue_style('bizino-custom-style', get_theme_file_uri('/assets/css/custom.css'), array(), wp_get_theme()->get('Version'));
+
 
     // Load Js
 
