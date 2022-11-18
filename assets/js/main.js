@@ -27,6 +27,7 @@
     /*---------- 01. On Load Function ----------*/
     $(window).on("load", function () {
         $(".preloader").fadeOut();
+        slickFixer();
     });
 
     /*---------- 02. Preloader ----------*/
@@ -423,10 +424,4 @@
     $(window).on('resize', function (){
         slickFixer()
     });
-
-    $(window).on('load', function () {
-        $('.preloader').fadeOut();
-        slickFixer();
-    });
-
 })(jQuery);
