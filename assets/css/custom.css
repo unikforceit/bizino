@@ -1,6 +1,11 @@
 .cta-video {
     margin-top: 100px;
 }
+@media (max-width: 1500px) {
+    .cta-shape3, .cta-shape2 {
+        height: 100%;
+    }
+}
 @media (max-width: 1199px){
     .cta-video {
         margin-top: 70px;
