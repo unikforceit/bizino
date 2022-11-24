@@ -17,7 +17,8 @@ if (class_exists('ReduxFramework')) {
     $bizino404subtitle = bizino_opt('bizino_fof_subtitle');
     $bizino404desc = bizino_opt('bizino_fof_description');
     $bizino404btntext = bizino_opt('bizino_fof_btn_text');
-    $bizino_404_image = bizino_opt('bizino_404_image', 'url');
+    $bizino_404_image = bizino_opt('bizino_404_background');
+    $bizino_404_image_url = !empty($bizino_404_image['url']) ? 'data-bg-src="' . esc_url($bizino_404_image['url']) . '"' :  '';
 } else {
     $bizino404title = __('404', 'bizino');
     $bizino404subtitle = __('Oops, Page Not Found', 'bizino');
@@ -25,10 +26,9 @@ if (class_exists('ReduxFramework')) {
     $bizino404btntext = __('Go Back Home', 'bizino');
     $bizino_404_image = get_template_directory_uri() . '/assets/img/error-bg.jpg';
 }
-
 // get header
 get_header();
-echo ' <section data-bg-src="' . esc_url($bizino_404_image) . '" class="overflow-hidden error-wrapper">
+echo ' <section ' . $bizino_404_image_url . ' class="overflow-hidden error-wrapper">
             <div class="error-content">
                 <div class="error-shape1"></div>
                 <h1 class="error-number">' . esc_html($bizino404title) . '</h1>

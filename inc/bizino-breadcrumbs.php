@@ -78,7 +78,7 @@ if (!function_exists('bizino_breadcrumbs')) {
                 foreach ($cat_parents as $parent) {
                     $html .= '<li>' . wp_kses($parent, wp_kses_allowed_html('a')) . '</li>';
                 }
-                $html .= '<li class="active" title="' . esc_attr(get_the_title()) . '">' . wp_kses(wp_trim_words(get_the_title(), 2), $allowhtml) . '</li>';
+                $html .= '<li class="active" title="' . esc_attr(get_the_title()) . '">' . wp_kses(get_the_title(), $allowhtml) . '</li>';
             }
         } elseif (is_singular('page')) {
             if ($post->post_parent) {

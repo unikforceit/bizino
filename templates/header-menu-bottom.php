@@ -232,7 +232,7 @@ if (is_page() || is_page_template('template-builder.php')) {
                 echo bizino_heading_tag(
                     array(
                         "tag" => esc_attr($bizino_page_title_tag),
-                        "text" => wp_kses(wp_trim_words(get_the_title(), 4, ''), $allowhtml),
+                        "text" => wp_kses(get_the_title(), $allowhtml),
                         'class' => 'breadcumb-title'
                     )
                 );
@@ -240,7 +240,7 @@ if (is_page() || is_page_template('template-builder.php')) {
                 if (class_exists('ReduxFramework')) {
                     $bizino_post_details_custom_title = bizino_opt('bizino_post_details_custom_title');
                 } else {
-                    $bizino_post_details_custom_title = __(wp_trim_words(get_the_title(), 4, ''), 'bizino');
+                    $bizino_post_details_custom_title = __(get_the_title(), 'bizino');
                 }
 
                 if (!empty($bizino_post_details_custom_title)) {

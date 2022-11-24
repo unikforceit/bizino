@@ -3234,6 +3234,13 @@ a.text-theme:hover,
   padding-bottom: 0;
   border-bottom: none;
 }
+.sidebar-area p.wp-block-tag-cloud {
+  margin-bottom: -15px;
+}
+.sidebar-area .wp-block-categories {
+  padding-left: 0;
+  margin-bottom: 0;
+}
 
 .recent-product {
   display: flex;
@@ -4557,7 +4564,7 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
   bottom: 5px;
 }
 
-.vs-quote {
+blockquote.vs-quote {
   background-color: var(--secondary-color);
   color: var(--white-color);
   border: none;
@@ -4566,35 +4573,35 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
   font-style: normal;
   padding: 53px 70px;
 }
-.vs-quote p {
+blockquote.vs-quote p {
   font-style: inherit;
 }
-.vs-quote:before {
+blockquote.vs-quote:before {
   display: none;
 }
-.vs-quote .quote {
+blockquote.vs-quote .quote {
   position: absolute;
   right: 0;
   bottom: 0;
 }
-.vs-quote .label {
+blockquote.vs-quote .label {
   color: var(--theme-color);
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 700;
   display: block;
 }
-.vs-quote p {
+blockquote.vs-quote p {
   margin: 0 0 18px 0 !important;
 }
-.vs-quote cite {
+blockquote.vs-quote cite {
   margin: 0;
   padding: 0;
   font-size: 24px;
   font-weight: 700;
   color: var(--white-color);
 }
-.vs-quote cite:before {
+blockquote.vs-quote cite:before {
   display: none;
 }
 
@@ -4765,6 +4772,12 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
 }
 .blog-single .share-links .row {
   align-items: center;
+  margin-bottom: -20px;
+}
+.blog-single .share-links .col-md-auto {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 .blog-single .share-links .tagcloud {
   display: inline;
@@ -4860,6 +4873,10 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
 .blog-single.format-video .blog-content {
   border-radius: 0 0 15px 15px;
   border-top: none;
+}
+.blog-single.format-video .blog-img + .blog-content {
+  border-radius: 15px;
+  border-top: 1px solid #e0e0e0;
 }
 .blog-single:hover .blog-img .slick-arrow {
   opacity: 1;
@@ -5066,15 +5083,15 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
     font-size: 18px;
     padding: 23px 30px 26px 30px;
   }
-  .vs-quote {
+  blockquote.vs-quote {
     font-size: 20px;
     line-height: 26px;
     padding: 40px 25px;
   }
-  .vs-quote cite {
+  blockquote.vs-quote cite {
     font-size: 20px;
   }
-  .vs-quote .label {
+  blockquote.vs-quote .label {
     font-size: 14px;
     margin: 0 0 8px 0;
   }
@@ -6070,7 +6087,7 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
 /* Large devices */
 @media (max-width: 1199px) {
   .ripple-thumb {
-    --thumb-size: 400px;
+    --thumb-size: 550px;
   }
   .exp-pill {
     width: 140px;
@@ -6088,6 +6105,9 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
 }
 /* Medium devices */
 @media (max-width: 991px) {
+  .ripple-thumb {
+    --thumb-size: 400px;
+  }
   .about-box2 {
     padding-left: 0;
     padding-right: 0;
@@ -6657,8 +6677,28 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
   position: relative;
   z-index: 1;
 }
-.service-wrap1 .row {
+.service-wrap1 .service-row1 {
   --bs-gutter-y: 50px;
+}
+.service-wrap1 .service-row1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  --bs-gutter-x: 30px;
+  --bs-gutter-y: 50px;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+}
+.service-wrap1 .service-column {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 440px;
+  padding-right: calc(var(--bs-gutter-x) / 2);
+  padding-left: calc(var(--bs-gutter-x) / 2);
+  margin-top: var(--bs-gutter-y);
+}
+.service-wrap1 .service-column:nth-child(even) {
+  margin-left: auto;
 }
 .service-wrap1 .clearfix {
   margin: 0;
@@ -6824,16 +6864,22 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
     position: relative;
     left: 0;
     top: 0;
-    transform: rotate(45deg);
-    margin: 80px auto 80px auto;
+    margin: 0 auto 40px auto;
     max-width: 80%;
+    transform: rotate(0);
+  }
+  .service-shape1 img {
+    transform: none;
+  }
+  .service-wrap1 .service-row1 {
+    --bs-gutter-y: 1.5rem;
+  }
+  .service-wrap1 .service-column {
+    max-width: 100%;
   }
 }
 /* Medium devices */
 @media (max-width: 991px) {
-  .service-wrap1 .row {
-    --bs-gutter-y: 1.5rem;
-  }
   .service-style3 {
     --shape-extra: -10px;
     --icon-size: 100px;
@@ -6850,20 +6896,11 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
   .service-box-list {
     padding: 40px 20px 50px 20px;
   }
-  .service-shape1 {
-    max-width: 73%;
-    margin: 80px auto 50px auto;
-  }
 }
 /* Small devices */
 @media (max-width: 767px) {
-  .service-shape1 {
-    margin: 0 auto 40px auto;
-    max-width: 80%;
-    transform: rotate(0);
-  }
-  .service-shape1 img {
-    transform: none;
+  .service-wrap1 .service-row1 {
+    display: block;
   }
 }
 /*------------------- 4.14. Team -------------------*/
@@ -7185,6 +7222,14 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
     font-size: 50px;
   }
 }
+/* Large devices */
+@media (max-width: 1199px) {
+  .team-box__img {
+    width: 450px;
+    height: 450px;
+    margin: auto;
+  }
+}
 /* Medium devices */
 @media (max-width: 991px) {
   .team-style1 {
@@ -7484,6 +7529,17 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
   right: 15px;
   top: 13px;
   text-transform: uppercase;
+}
+.newsletter-style1 + .alert {
+  margin-bottom: 0;
+  border-radius: 9999px;
+  padding: 11px 31px;
+  /* Small devices */
+}
+@media (max-width: 767px) {
+  .newsletter-style1 + .alert {
+    padding: 10px 20px;
+  }
 }
 
 .newsletter-bg1 {
@@ -8685,18 +8741,19 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
     margin: 20px auto;
   }
   .process-style1 .process-body {
-    width: 200px;
-    height: 200px;
+    width: 166px;
+    height: 166px;
     padding: 21px 20px 10px 20px;
     margin-left: auto;
     margin-right: auto;
   }
   .process-style1 .process-number {
-    top: -10px;
+    top: -15px;
     font-size: 16px;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     line-height: 50px;
+    border-width: 5px;
   }
   .process-style1 .process-text {
     font-size: 16px;
@@ -8835,6 +8892,9 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
 }
 /* Large devices */
 @media (max-width: 1199px) {
+  .form-style1 {
+    max-width: 100%;
+  }
   .contact-box {
     padding: 45px 25px 42px 25px;
   }

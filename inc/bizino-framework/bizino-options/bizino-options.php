@@ -998,10 +998,9 @@ Redux::setSection($opt_name, array(
     'fields' => array(
         array(
             'id' => 'bizino_404_background',
-            'type' => 'background',
+            'type' => 'media',
             'title' => esc_html__('404 Background', 'bizino'),
             'subtitle' => esc_html__('Set 404 background.', 'bizino'),
-            'output' => array('.vs-error-wrapper'),
         ),
         array(
             'id' => 'bizino_fof_title',
