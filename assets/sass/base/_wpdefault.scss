@@ -1,3 +1,11 @@
+#goog-gt-tt {display: none !important;}
+.goog-te-banner-frame {display: none !important;}
+.goog-te-menu-value:hover {text-decoration: none !important;}
+.goog-text-highlight { background-color: transparent !important;  box-shadow: none !important;}
+body {top: 0 !important;}
+#google_translate_element2 {display: none !important;}
+
+
 p.has-drop-cap {
   margin-bottom: 20px;
 }
@@ -174,6 +182,10 @@ figure.wp-block-gallery {
 
 .wp-block-latest-comments a {
   color: inherit;
+
+  &:hover {
+    color: $theme-color;
+  }
 }
 
 .wp-block-button {
@@ -243,18 +255,20 @@ ul.wp-block-latest-posts {
   .wp-block-search__input {
     width: 100%;
     max-width: calc(100% - 120px);
-    border: 1px solid rgba($color: #000000, $alpha: 0.10);
     height: 50px;
-    padding-left: 20px;
+    padding-left: 30px;
+    padding-right: 15px;
+    // border: 1px solid rgba($color: #000000, $alpha: 0.10);
   }
 
   .wp-block-search__button {
-    margin: 0;
+    margin: 0 0 0 10px;
     width: 120px;
     border: none;
     height: 50px;
     color: #fff;
     background-color: $theme-color;
+    border-radius: 9999px;
 
     &:hover {
       background-color: $title-color;
@@ -310,10 +324,10 @@ ul.wp-block-rss a {
 
   .theme-input-style {
     width: 100%;
-    max-width: calc(100% - 120px);
-    border: 1px solid rgba($color: #000000, $alpha: 0.10);
+    max-width: calc(100% - 130px);
+    // border: 1px solid rgba($color: #000000, $alpha: 0.10);
     height: 50px;
-    padding-left: 20px;
+    padding-left: 30px;
   }
 
   .submit-btn {
@@ -323,6 +337,8 @@ ul.wp-block-rss a {
     height: 50px;
     color: #fff;
     background-color: $theme-color;
+    border-radius: 9999px;
+    margin-left: 10px;
 
 
     &:hover {
@@ -386,7 +402,6 @@ ul.wp-block-rss a {
 
     .blog-content {
       background-color: $smoke-color;
-      padding: 40px;
       border: none;
 
       &:before {
@@ -412,16 +427,17 @@ ul.wp-block-rss a {
   &.sticky {
     &::before {
       content: "Featured";
-      right: 0;
-      top: 0;
-      font-size: 18px;
-      color: $white-color;
-      background-color: $theme-color;
+      right: 15px;
+      top: 15px;
+      font-size: 16px;
+      color: $title-color;
+      background-color: rgba(#fd5115, 0.2);
       font-family: $title-font;
       opacity: 1;
-      text-transform: capitalize;
+      text-transform: uppercase;
       padding: 10px 23px;
-      font-weight: 400;
+      font-weight: 700;
+      border-radius: 10px;
     }
   }
 
@@ -534,10 +550,6 @@ ul.wp-block-rss a {
         font-size: 14px;
         padding: 8px 16px;
       }
-
-      .blog-content {
-        padding: 30px;
-      }
     }
   }
 }
@@ -553,10 +565,6 @@ ul.wp-block-rss a {
       &:before {
         font-size: 14px;
         padding: 8px 16px;
-      }
-
-      .blog-content {
-        padding: 30px 15px;
       }
     }
   }

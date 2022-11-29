@@ -83,6 +83,16 @@
   z-index: -1;
 }
 
+.error-wrapper {
+  padding-top: 109px;
+  background-color: $black-color;
+}
+
+@include lg {
+  .error-wrapper {
+    padding-top: 0;
+  }
+}
 
 @include md {
   .error-number {

@@ -257,7 +257,7 @@
   }
 
   .footer-address {
-    max-width: 270px;
+    max-width: 100%;
   }
 
   .footer-layout3 {
@@ -301,5 +301,10 @@
 @include sm {
   .footer-info {
     max-width: 100%;
+  }
+
+  .footer-number2,
+  .footer-number {
+    font-size: 20px;
   }
 }

@@ -113,19 +113,20 @@
     margin: 20px auto;
 
     .process-body {
-      width: 200px;
-      height: 200px;
+      width: 166px;
+      height: 166px;
       padding: 21px 20px 10px 20px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .process-number {
-      top: -10px;
+      top: -15px;
       font-size: 16px;
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       line-height: 50px;
+      border-width: 5px;
     }
 
     .process-text {
@@ -137,5 +138,7 @@
       margin: 0 0 18px 0;
     }
   }
+
+
 
 }

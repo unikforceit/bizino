@@ -341,19 +341,19 @@
 .progress-multi {
   margin-bottom: 30px;
 
-  .progress-style1 {
-    &:nth-child(1) {
-      --theme-color: #ff468c;
-    }
+  // .progress-style1 {
+  //   &:nth-child(1) {
+  //     --theme-color: #ff468c;
+  //   }
 
-    &:nth-child(2) {
-      --theme-color: #5ac8ff;
-    }
+  //   &:nth-child(2) {
+  //     --theme-color: #5ac8ff;
+  //   }
 
-    &:nth-child(3) {
-      --theme-color: #85ef51;
-    }
-  }
+  //   &:nth-child(3) {
+  //     --theme-color: #85ef51;
+  //   }
+  // }
 }
 
 
@@ -392,6 +392,12 @@
     font-size: 18px;
     font-weight: 700;
     margin: 0;
+  }
+}
+
+@include hd {
+  .img-box3 {
+    justify-content: flex-end;
   }
 }
 
@@ -483,7 +489,7 @@
 
 @include lg {
   .ripple-thumb {
-    --thumb-size: 400px;
+    --thumb-size: 550px;
   }
 
   .exp-pill {
@@ -507,6 +513,10 @@
 }
 
 @include md {
+  .ripple-thumb {
+    --thumb-size: 400px;
+  }
+  
   .about-box2 {
     padding-left: 0;
     padding-right: 0;

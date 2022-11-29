@@ -82,8 +82,9 @@
 }
 
 .breadcumb-wrapper {
-  padding-top: 115px;
+  padding-top: 224px;
   padding-bottom: 30px;
+  background-color: $black-color;
   overflow: hidden;
 }
 
@@ -98,31 +99,31 @@
   .breadcumb-title {
     font-size: 40px;
   }
-}
 
-@include md {
   .breadcumb-wrapper {
-    padding-top: 55px;
+    padding-top: 75px;
     padding-bottom: 0px;
     text-align: center;
   }
-
-
+  
   .breadcumb-menu-wrap {
     justify-content: center;
     text-align: center;
     margin-top: 40px;
   }
-
+  
   .breadcumb-menu {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 7px 7px 0 0;
-
+  
     &:after {
       display: none;
     }
   }
+}
+
+@include md {
 
   .breadcumb-title {
     font-size: 36px;

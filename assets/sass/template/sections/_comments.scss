@@ -112,9 +112,9 @@
     word-wrap: break-word;
   }
 
-  blockquote {
-    background-color: #eaf8f9
-  }
+  // blockquote {
+  //   background-color: #eaf8f9
+  // }
 
   li {
     margin: 0;
@@ -176,7 +176,7 @@
   .commented-on {
     font-size: 14px;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: $theme-color;
     text-transform: uppercase;
     display: inline-block;

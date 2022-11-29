@@ -111,7 +111,7 @@
 
 
   @media (min-width: $md) {
-    &:nth-child(even) {
+    &.event-layout2 {
       .event-wrap {
         flex-direction: row;
       }

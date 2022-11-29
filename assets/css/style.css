@@ -2369,6 +2369,10 @@ textarea.is-invalid, textarea.is-invalid.style3 {
   width: 100%;
 }
 
+.home-two-bg img {
+  width: 100%;
+}
+
 /* Hight Resoulation devices */
 @media (min-width: 1922px) {
   .body-shape1.background-image {
@@ -9226,5 +9230,3 @@ blockquote.vs-quote cite:before {
     padding-top: 0;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

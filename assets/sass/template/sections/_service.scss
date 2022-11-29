@@ -153,8 +153,31 @@
   position: relative;
   z-index: 1;
 
-  .row {
+  .service-row1 {
     --bs-gutter-y: 50px;
+  }
+
+  .service-row1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    --bs-gutter-x: 30px;
+    --bs-gutter-y: 50px;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x)/ -2);
+    margin-left: calc(var(--bs-gutter-x)/ -2);
+  }
+
+  .service-column {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 440px;
+    padding-right: calc(var(--bs-gutter-x)/ 2);
+    padding-left: calc(var(--bs-gutter-x)/ 2);
+    margin-top: var(--bs-gutter-y);
+
+    &:nth-child(even) {
+      margin-left: auto;
+    }
   }
 
   .clearfix {
@@ -352,19 +375,34 @@
   }
 }
 
-@include md {
-  .service-wrap1 .row {
-    --bs-gutter-y: 1.5rem;
-  }
 
+@media (max-width: 1024px) {
   .service-shape1 {
     position: relative;
     left: 0;
     top: 0;
-    transform: rotate(45deg);
-    margin: 80px auto 80px auto;
+    margin: 0 auto 40px auto;
     max-width: 80%;
+    transform: rotate(0);
+
+    img {
+      transform: none;
+    }
   }
+
+  .service-wrap1 {    
+    .service-row1 {
+      --bs-gutter-y: 1.5rem;
+    }
+
+    .service-column {
+      max-width: 100%;
+    }
+  }
+}
+
+
+@include md {
 
   .service-style3 {
     --shape-extra: -10px;
@@ -392,13 +430,9 @@
 
 
 @include sm {
-  .service-shape1 {
-    margin: 0 auto 40px auto;
-    max-width: 80%;
-    transform: rotate(0);
-
-    img {
-      transform: none;
+  .service-wrap1 {
+    .service-row1 {
+      display: block;
     }
   }
 }

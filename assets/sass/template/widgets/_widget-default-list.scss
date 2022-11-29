@@ -61,6 +61,11 @@
   .children {
     margin-left: 10px;
   }
+
+  .children,
+  .sub-menu {
+    margin-bottom: 0;
+  }
 }
 
 .widget_nav_menu,

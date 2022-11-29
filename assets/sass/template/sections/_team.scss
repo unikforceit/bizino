@@ -342,6 +342,12 @@
     }
   }
 
+  .team-style1 {
+    .team-content {
+      padding: 148px 35px 50px 35px;
+    }
+  }
+
   .team-box {
     padding: 80px 60px 80px 60px;
 
@@ -384,6 +390,17 @@
   }
 }
 
+@include lg {
+  .team-box {
+    &__img {
+      width: 450px;
+      height: 450px;
+      margin-left: auto;
+      margin-bottom: 0;
+      margin-right: auto;
+    }
+  }
+}
 
 @include md {
   .team-style1 {
@@ -401,11 +418,6 @@
 
     &__shape {
       display: none;
-    }
-
-    &__img {
-      margin-left: 50px;
-      margin-bottom: 45px;
     }
   }
 

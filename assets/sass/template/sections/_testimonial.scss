@@ -122,6 +122,12 @@
   }
 }
 
+.testimonial-nav-cs {
+  position: absolute;
+  left: -436px;
+  bottom: 125px;
+}
+
 
 @include xl {
   .testi-style1 {
@@ -132,6 +138,10 @@
 
 
 @include ml {
+
+  .testimonial-nav-cs {
+    display: none;
+  }
 
   .testi-style1 {
 

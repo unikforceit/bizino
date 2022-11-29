@@ -140,6 +140,10 @@
 }
 
 @include lg {
+  .form-style1 {
+    max-width: 100%;
+  }
+  
   .contact-box {
     padding: 45px 25px 42px 25px;
 

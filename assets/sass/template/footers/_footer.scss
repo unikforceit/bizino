@@ -64,6 +64,10 @@
   .copyright-text a:hover {
     color: $secondary-color;
   }
+
+  .elementor-heading-title {
+    font-size: 22px;
+  }
 }
 
 .footer-layout3 {
@@ -102,5 +106,15 @@
       padding-bottom: 80px;
       margin-bottom: 0;
     }
+  }
+}
+
+@include sm {
+  .footer_contact .elementor-widget-icon-box .elementor-icon-box-content {
+    padding: 10px 0 0 10px;
+  }
+
+  .footer_contact .elementor-widget-icon-box.elementor-mobile-position-top .elementor-icon-box-wrapper {
+    display: flex;
   }
 }

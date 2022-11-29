@@ -118,6 +118,37 @@
   }
 }
 
+
+.bizino-icon-flex .elementor-widget-container .elementor-icon-box-wrapper {
+  display: flex !important;
+}
+
+.bizino-icon-flex .elementor-widget-container .elementor-icon-box-wrapper .elementor-icon-box-icon {
+  margin-right: 15px;
+}
+
+
+.fal.fa-laptop-house:before {
+  content: "\f966";
+}
+
+.far {
+  font-family: $icon-font !important;
+}
+
+.elementor-image-gallery {
+  .gallery-item {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+
+.home-two-bg img {
+  width: 100%;
+}
+
 @include hd {
   .body-shape1.background-image {
     background-size: 100% 100%;

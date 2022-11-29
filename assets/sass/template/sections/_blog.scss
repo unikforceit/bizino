@@ -1,38 +1,43 @@
+blockquote.wp-block-quote,
+blockquote.wp-block-quote.is-style-large,
 blockquote {
+  font-size: 24px;
+  line-height: 34px;
+  padding: 50px 60px 50px 60px;
   display: block;
   position: relative;
+  background-color: $smoke-color;
   overflow: hidden;
-  font-size: 20px;
-  line-height: 30px;
-  font-weight: 400;
-  color: $title-color;
-  background-color: var(--quote-bg, #F0F4F5);
-  border-left: 4px solid $theme-color;
-  padding: 43px 50px 42px 35px;
   margin: 35px 0;
+  color: $title-color;
+  border-color: $theme-color;
 
   p {
     font-family: inherit;
     margin-bottom: 0 !important;
-    line-height: 1.5;
+    line-height: 1.6;
     color: inherit;
+    // max-width: 550px;
     width: 100%;
     position: relative;
     z-index: 3;
-    font-style: italic;
+    font-style: normal;
   }
 
   &:before {
     content: '\f10e';
     font-family: $icon-font;
     position: absolute;
-    right: 70px;
-    bottom: 27px;
-    font-size: 3.5rem;
-    font-weight: 900;
+    right: 40px;
+    bottom: 40px;
+    font-size: 7rem;
+    font-weight: 300;
+    opacity: 0.10;
     line-height: 1;
     color: $theme-color;
   }
+
+
 
   p {
     margin-bottom: 0;
@@ -44,28 +49,97 @@ blockquote {
 
   cite {
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     position: relative;
     padding-left: 45px;
+    border-color: inherit;
     line-height: 1;
     font-weight: 400;
-    margin-top: 22px;
+    margin-top: 2px;
     font-style: normal;
-    color: $title-color;
+    color: $theme-color;
 
     &:before {
       content: '';
       position: absolute;
       left: 0;
-      bottom: 8px;
+      bottom: 7px;
       width: 30px;
       height: 2px;
-      border-top: 2px solid $theme-color;
+      border-top: 2px solid;
+      border-color: inherit;
     }
   }
 }
 
-.vs-quote {
+.wp-block-pullquote blockquote:after {
+  display: none;
+}
+
+.wp-block-pullquote blockquote {
+  text-align: center;
+  border-left: none;
+}
+
+blockquote.wp-block-quote.is-style-large:not(.is-style-plain) {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.wp-block-pullquote blockquote cite {
+  text-align: center;
+  width: fit-content;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-block-pullquote.is-style-solid-color {
+
+  cite {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// blockquote.has-very-dark-gray-color {
+//   color: $white-color !important;
+// }
+
+figure.wp-block-pullquote {
+  border-width: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 30px 0;
+}
+
+
+blockquote.wp-block-quote.has-text-align-right {
+  border-right-color: $theme-color;
+  padding: 50px 60px 50px 60px;
+
+  &::before {
+    left: 40px;
+    right: auto;
+    transform: rotate(180deg);
+  }
+
+  cite {
+    padding-left: 0;
+    padding-right: 40px;
+    text-align: right;
+    font-weight: 600;
+
+    &:before {
+      left: auto;
+      right: 0;
+      bottom: 5px;
+    }
+  }
+}
+
+
+blockquote.vs-quote {
   background-color: $secondary-color;
   color: $white-color;
   border: none;
@@ -220,12 +294,13 @@ blockquote {
     margin-top: -0.45em;
     padding-top: 0;
 
-    > span,
+    >span,
     a {
       font-size: 14px;
-      margin: 0 17px 0 0;
+      margin: 0 22px 0 0;
       padding: 0;
-      color: #555555;
+      // color: #555555;
+      color: $title-color;
 
       i {
         color: $theme-color;
@@ -287,7 +362,7 @@ blockquote {
     display: block;
     width: max-content;
     padding: 4.5px 20px;
-    margin: -17.5px 0 26px 0;
+    margin: 0 0 26px 0;
     border-radius: 10px;
 
     &:hover {
@@ -312,10 +387,17 @@ blockquote {
 
     .row {
       align-items: center;
+      margin-bottom: -20px;
+    }
+    
+    .col-md-auto {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
     }
 
     .tagcloud {
-      display: inline-block;
+      display: inline;
 
       a {
         border: none;
@@ -364,8 +446,8 @@ blockquote {
   }
 
   .blog-content {
-    margin: 0 80px 0 80px;
-    padding: 0.1px var(--blog-space-x, 50px) 24px var(--blog-space-x, 50px);
+    margin: 0;
+    padding: 50px var(--blog-space-x, 50px) 24px var(--blog-space-x, 50px);
     position: relative;
     border: 1px solid #e0e0e0;
     background-color: $white-color;
@@ -416,6 +498,35 @@ blockquote {
     }
   }
 
+  &.has-post-thumbnail {
+    .blog-img + .blog-content {
+      margin: 0 80px 0 80px;
+      padding-top: 0.01px;
+
+      .blog-date {
+        margin-top: -17.5px;
+      }
+    }
+  }
+
+  .blog-video {
+    line-height: 0;  
+  }
+
+  &.format-video {    
+    .blog-content {
+      border-radius: 0 0 15px 15px;
+      border-top: none;
+    }
+
+    .blog-img {
+      + .blog-content {
+        border-radius: 15px;
+        border-top: 1px solid #e0e0e0;
+      }
+    }
+  }
+
   &:hover {
     .blog-img {
       .slick-arrow {
@@ -445,9 +556,21 @@ blockquote {
 
   .blog-title {
     font-size: 45px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
+  .blog-single {
+    &.has-post-thumbnail {
+      
+      .blog-img + .blog-content {
+        margin: 0;
+
+        .blog-date {
+          margin-top: 0;
+        }
+      }
+    }
+  }
 }
 
 
@@ -669,9 +792,12 @@ blockquote {
   }
 
   .blog-single {
-    .blog-content {
-      margin: 0 50px 0 50px;
+    &.has-post-thumbnail {
+     .blog-img + .blog-content {
+        margin: 0 50px 0 50px;
+      }
     }
+
   }
 }
 
@@ -682,7 +808,7 @@ blockquote {
     padding: 23px 30px 26px 30px;
   }
 
-  .vs-quote {
+  blockquote.vs-quote {
     font-size: 20px;
     line-height: 26px;
     padding: 40px 25px;
@@ -726,9 +852,12 @@ blockquote {
       font-size: 24px;
     }
 
-    .blog-content {
-      margin: 0 30px 0 30px;
+    &.has-post-thumbnail {
+      .blog-img + .blog-content {
+        margin: 0 30px 0 30px;
+      }
     }
+
 
     .blog-img {
       margin-bottom: -50px;
@@ -772,6 +901,13 @@ blockquote {
       margin: -17.5px 0 15px 0;
     }
   }
+
+  .blog-single {
+    .blog-content {
+      padding-top: 40px;
+      padding-bottom: 14px;
+    }
+  }
 }
 
 
@@ -811,22 +947,12 @@ blockquote {
       margin: 0 0 10px 0;
     }
 
-    .blog-meta {
-
-      > span,
-      a {
-        &:not(:last-child) {
-          &:after {
-            content: "";
-            margin: 0 10px 0 14px;
-          }
-        }
+    &.has-post-thumbnail {
+      .blog-img + .blog-content {
+        margin: 0 10px 0 10px;
       }
     }
 
-    .blog-content {
-      margin: 0 10px 0 10px;
-    }
 
     .blog-img {
       margin-bottom: -20px;
@@ -862,16 +988,5 @@ blockquote {
     .blog-body {
       margin: -20px 10px 0 10px;
     }
-  }
-}
-
-.blog-details {
-  .blog-img {
-    margin-bottom: 40px;
-  }
-
-  .blog-content {
-    margin: 0;
-    padding: 0;
   }
 }

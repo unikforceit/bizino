@@ -1,6 +1,6 @@
 :root {
   --theme-color: #fd5115;
-  --secondary-color: #001a71;
+  --theme-color2: #001a71;
   --title-color: #000000;
   --body-color: #555555;
   --smoke-color: #f3f5fc;
@@ -25,7 +25,8 @@
 
 // Color Variation
 $theme-color: var(--theme-color);
-$secondary-color: var(--secondary-color);
+$theme-color2: var(--theme-color2);
+$secondary-color: var(--theme-color2);
 $title-color: var(--title-color);
 $body-color: var(--body-color);
 $smoke-color: var(--smoke-color);
